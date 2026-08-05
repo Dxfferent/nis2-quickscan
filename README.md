@@ -11,15 +11,17 @@
 **[Releases](../../releases)** ·
 **[Wijzigingen](CHANGELOG.md)**
 
-**Uw klanten gaan vragen hoe zij aan NIS2 voldoen.** De Cyberbeveiligingswet
-treedt op 15 augustus 2026 in werking. Organisaties die eronder vallen moeten
+**Uw klanten gaan vragen hoe zij aan NIS2 voldoen.** De Cyberbeveiligingswet —
+de Nederlandse uitvoering van de Europese NIS2-richtlijn — treedt op
+15 augustus 2026 in werking. Organisaties die eronder vallen moeten
 hun toeleveringsketen borgen (art. 21), en die eis komt contractueel terecht
 bij hun IT-leverancier: bij u.
 
 Deze gratis, open-source intake maakt dat gesprek concreet. In tien minuten
 ziet u of een organisatie in scope valt, hoe snel ze na een incident terug moet
-zijn en welke van de 78 maatregelen nog open staan. Geen account, geen
-installatie, rapport als PDF.
+zijn en welke van de 78 maatregelen nog open staan — stuurinformatie voor het
+vervolggesprek, geen invuloefening. Geen account, geen installatie, rapport
+als PDF.
 
 Voor wie het technisch wil beoordelen: de tool is volledig statisch, draait
 zonder backend en bewaart de antwoorden op het apparaat van de invuller.
@@ -99,8 +101,10 @@ Dezelfde tool, twee inzetten. Kiezen doet u met `?mode=` in de URL (of met
 
 Beide standen bewaren de voortgang automatisch op het apparaat (localStorage),
 dus een per ongeluk gesloten tabblad kost niets. De pro-stand is het
-werkinstrument met de klant aan tafel, dossier per klant. De lead-stand is de
-vanger op uw site.
+werkinstrument met de klant aan tafel, dossier per klant — en net zo bruikbaar
+voor de interne security officer of CISO van een essentiële of belangrijke
+entiteit die zijn eigen organisatie doorlicht. De lead-stand is de vanger op
+uw site.
 
 ## Snel starten
 
@@ -238,11 +242,13 @@ procesoptimalisatie, ISO 27001- en NIS2/Cbw-implementaties, Security
 Officer-training en vCISO-invulling. Daarnaast volgen we de consolidatie in de
 MSP-markt met een redactioneel marktregister.
 
-Deze quickscan hoort bij dat werk. In een markt die consolideert weegt
-aantoonbare compliance mee in wat een MSP waard is, en via het
-white-label-partnermodel voert u er het NIS2-gesprek met uw klanten mee. Op
-dezelfde lijn als alles wat we publiceren: geen claim zonder bron. Vragen,
-support of samenwerken: **hallo@dxfferent.nl**.
+Deze quickscan hoort bij dat werk: het is de GRC-meting uit het
+Dxfferent-volwassenheidsmodel voor MSP's, toegepast op uw klant. In een markt
+die consolideert weegt aantoonbare compliance mee in wat een MSP waard is, en
+via het white-label-partnermodel voert u er het NIS2-gesprek met uw klanten
+mee. Wilt u na het rapport door naar een plan, dan is de **NIS2 Readiness
+Sprint** de kortste route. Op dezelfde lijn als alles wat we publiceren: geen
+claim zonder bron. Vragen, support of samenwerken: **hallo@dxfferent.nl**.
 
 ## Bijdragen
 

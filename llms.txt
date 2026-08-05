@@ -1,7 +1,8 @@
 # NIS2 Quickscan
 
-> Gratis open-source NIS2 / Cyberbeveiligingswet-quickscan voor Nederlandse
-> organisaties en MSP's, gebouwd door Dxfferent (dxfferent.com).
+> Gratis open-source quickscan voor de Cyberbeveiligingswet — de Nederlandse
+> uitvoering van de Europese NIS2-richtlijn — voor Nederlandse organisaties en
+> MSP's, gebouwd door Dxfferent (dxfferent.com).
 >
 > Vijf begeleide stappen, zes in de pro-stand: een Cbw-scope-indicatie
 > (essentieel / belangrijk / indirect geraakt via de keten / buiten scope),

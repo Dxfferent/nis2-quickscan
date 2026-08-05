@@ -1,7 +1,10 @@
 # MSP-enablement — NIS2 Quickscan white-label
 
 De tool is white-label inzetbaar door elke MSP-partner: eigen naam, kleur,
-mailbox en leadflow, met één config-blok en zonder rebuild.
+mailbox en leadflow, met één config-blok en zonder rebuild. Inhoudelijk is de
+quickscan de GRC-meting uit het Dxfferent-volwassenheidsmodel voor MSP's,
+toegepast op uw klant — wilt u na het rapport door naar een plan, dan is de
+NIS2 Readiness Sprint de kortste route (hallo@dxfferent.nl).
 
 ## Snel starten (MSP-deploy)
 
