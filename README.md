@@ -207,10 +207,16 @@ gesloten product kan dus niet. Zie [ATTRIBUTION.md](ATTRIBUTION.md).
 
 ## Over Dxfferent
 
-[Dxfferent](https://dxfferent.nl) helpt MSP's en hun klanten met
-NIS2/Cyberbeveiligingswet-compliance: NIS2-implementaties, ISO 27001,
-Security Officer / vCISO-diensten en het white-label-partnermodel rond deze
-tool. Vragen, support of samenwerken: **hallo@dxfferent.nl**.
+[Dxfferent](https://dxfferent.nl) is de gids in MSP-ondernemerschap. Wij
+helpen MSP's hun bedrijf voorspelbaar, winstgevend en audit-proof te maken —
+procesoptimalisatie, ISO 27001- en NIS2/Cbw-implementaties, Security
+Officer-training en vCISO-invulling — en we volgen de consoliderende
+MSP-markt met een redactioneel marktregister. Deze quickscan hoort bij dat
+verhaal: in een consoliderende markt is aantoonbare compliance mede bepalend
+voor de waarde van een MSP, en via het white-label-partnermodel voert u er
+het NIS2-gesprek met uw klanten mee — op dezelfde lijn als alles wat we
+publiceren: geen claim zonder bron. Vragen, support of samenwerken:
+**hallo@dxfferent.nl**.
 
 ## Bijdragen
 

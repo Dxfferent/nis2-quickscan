@@ -31,4 +31,4 @@
 
 ## Contact
 
-- Dxfferent — NIS2-implementaties, ISO 27001, vCISO voor MSP's: hallo@dxfferent.nl
+- Dxfferent — gids in MSP-ondernemerschap: NIS2/Cbw- en ISO 27001-implementaties, Security Officer-training, vCISO en het white-label-partnermodel rond deze tool: hallo@dxfferent.nl
