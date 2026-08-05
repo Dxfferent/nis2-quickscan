@@ -234,6 +234,25 @@ inzetten, ook commercieel. Wie een aangepaste versie verspreidt of publiek
 host, deelt die aanpassingen onder dezelfde licentie terug; doorverkoop als
 gesloten product kan dus niet. Zie [ATTRIBUTION.md](ATTRIBUTION.md).
 
+## Waarom deze tool gratis is
+
+NIS2 is voor een MSP meer dan een verplichting die bij klanten landt: het is
+een strategische motor. De wet dwingt duizenden organisaties om hun
+beveiliging aantoonbaar te maken, en zij kijken daarvoor naar hun IT-partner.
+Wie dat moment pakt, groeit van leverancier door naar trusted advisor — de
+partij die het gesprek leidt in plaats van offertes najaagt.
+
+Die rol begint met een signaal: een klant die vraagt of de wet voor hem
+geldt. Deze quickscan vangt dat signaal en zet het om in een concreet
+gesprek. Daarom geven we hem gratis en open source weg: hij faciliteert de
+eerste stap, en hij is op zichzelf compleet — geen lokkertje, geen
+verplichtingen richting Dxfferent.
+
+Wilt u meer, dan staan wij ernaast als ondersteunende partner: realisatie van
+uw producten- en dienstencatalogus (PDC), route naar markt, procesoptimalisatie
+en compliance-begeleiding richting certificering — voor uw klanten én voor uw
+eigen organisatie. U kiest; de scan werkt hoe dan ook.
+
 ## Over Dxfferent
 
 [Dxfferent](https://dxfferent.com) is de gids in MSP-ondernemerschap. Wij

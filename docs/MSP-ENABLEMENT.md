@@ -6,6 +6,12 @@ quickscan de GRC-meting uit het Dxfferent-volwassenheidsmodel voor MSP's,
 toegepast op uw klant — wilt u na het rapport door naar een plan, dan is de
 NIS2 Readiness Sprint de kortste route (hallo@dxfferent.nl).
 
+De tool is op zichzelf compleet en verplicht u tot niets. Wilt u er een
+partner naast, dan ondersteunt Dxfferent MSP's met PDC-realisatie (uw
+producten- en dienstencatalogus NIS2-proof), route naar markt,
+procesoptimalisatie en compliance-begeleiding richting certificering — voor
+uw klanten én voor uw eigen organisatie.
+
 ## Snel starten (MSP-deploy)
 
 1. Draai `npm install && npm run build` → `dist/` is de complete site. Zonder
