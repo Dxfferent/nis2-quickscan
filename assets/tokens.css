@@ -1,0 +1,349 @@
+/* SPDX-License-Identifier: AGPL-3.0-only
+   Copyright (C) 2026 Dxfferent B.V.
+   Onderdeel van NIS2 Quickscan. Gelicenseerd onder de GNU AGPL v3.0 (zie LICENSE).
+   Aanvullende voorwaarden onder AGPL-3.0 §7 van toepassing: zie ATTRIBUTION.md,
+   sectie 'Licentie & aanvullende voorwaarden'. */
+/* ============================================================
+   NIS2 Quickscan — Design Tokens
+   Dark mode is the default; the [data-theme="light"] override
+   carries the inverse mapping.
+   Utility layer: this file is a small design-token library;
+   not every utility class is used by the app itself.
+   ============================================================ */
+
+/* ---------- 1. Fonts ----------
+   The Inter/JetBrains Mono font-vars below are always overridden
+   by dxfferent-theme.css, which loads three self-hosted families
+   (Archivo Black, DM Sans, IBM Plex Mono — shipped under OFL 1.1
+   in assets/fonts/). No CDN import here (AVG: geen
+   Google-Fonts-request); the system stack is the fallback.      */
+
+/* ---------- 2. Core tokens (dark — default) ---------- */
+
+:root,
+[data-theme="dark"] {
+  /* surfaces */
+  --bg-canvas:     #0a0f1c;
+  --bg-elevated:   #111827;
+  --bg-muted:      #1f2937;
+  --bg-overlay:    rgba(10, 15, 28, 0.72);
+
+  /* borders */
+  --border-default:    #27272a;
+  --border-strong:     #3f3f46;
+  --border-primary-40: rgba(99, 102, 241, 0.40);
+  --primary-bg:        rgba(99, 102, 241, 0.14);
+  --primary-fg:        #a5b4fc;
+
+  /* foreground */
+  --fg-highlighted: #fafafa;
+  --fg-default:     #e4e4e7;
+  --fg-muted:       #a1a1aa;
+  --fg-dimmed:      #71717a;
+  --fg-inverse:     #0a0f1c;
+
+  /* brand — primary alias = indigo (Nuxt UI v4: app.config.ts → ui.colors.primary) */
+  --primary-50:  #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+  --primary-on:  #ffffff;
+
+  /* secondary alias = blue (Nuxt UI v4 default, not overridden in app.config.ts) */
+  --secondary-500: #3b82f6;
+  --secondary-600: #2563eb;
+  --secondary-bg:  rgba(59, 130, 246, 0.10);
+  --secondary-fg:  #93c5fd;
+
+  /* semantic */
+  --success-500: #10b981;
+  --success-bg:  rgba(16, 185, 129, 0.10);
+  --success-fg:  #6ee7b7;
+
+  --warning-500: #f59e0b;
+  --warning-bg:  rgba(245, 158, 11, 0.10);
+  --warning-fg:  #fcd34d;
+
+  --error-500:   #ef4444;
+  --error-bg:    rgba(239, 68, 68, 0.10);
+  --error-fg:    #fca5a5;
+
+  /* info alias = blue (Nuxt UI v4 default) */
+  --info-500:    #3b82f6;
+  --info-bg:     rgba(59, 130, 246, 0.10);
+  --info-fg:     #93c5fd;
+
+  /* lead/score (Score bar utilities in main.css) */
+  --score-cold: #3b82f6;
+  --score-warm: #eab308;
+  --score-hot:  #ef4444;
+
+  /* radii */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-pill: 9999px;
+
+  /* shadows (sparingly applied) */
+  --shadow-none: none;
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md:   0 4px 6px -1px rgba(0, 0, 0, 0.50), 0 2px 4px -2px rgba(0, 0, 0, 0.40);
+  --shadow-lg:   0 10px 15px -3px rgba(0, 0, 0, 0.55), 0 4px 6px -4px rgba(0, 0, 0, 0.45);
+  --shadow-xl:   0 20px 25px -5px rgba(0, 0, 0, 0.55), 0 8px 10px -6px rgba(0, 0, 0, 0.50);
+
+  /* spacing scale (4px base — matches Tailwind) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* layout constants */
+  --sidebar-width:           240px;
+  --sidebar-width-collapsed: 60px;
+  --navbar-height:           56px;
+  --toolbar-height:          48px;
+
+  /* type scale */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-page-h1-size:    30px;
+  --text-page-h1-weight:  700;
+  --text-page-h1-tracking:-0.02em;
+  --text-page-h1-leading: 1.2;
+
+  --text-section-h2-size:   20px;
+  --text-section-h2-weight: 600;
+
+  --text-stat-value-size:   30px;
+  --text-stat-value-weight: 700;
+
+  --text-stat-label-size:    12px;
+  --text-stat-label-weight:  500;
+  --text-stat-label-tracking:0.05em;
+
+  --text-body-size:    14px;
+  --text-body-weight:  400;
+  --text-body-leading: 1.5;
+
+  --text-helper-size:    12px;
+  --text-helper-weight:  400;
+
+  --text-mono-size:      13px;
+
+  /* motion */
+  --ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:  150ms;
+  --duration-base:  200ms;
+  --duration-slow:  300ms;
+}
+
+/* ---------- 3. Light theme override ---------- */
+
+[data-theme="light"] {
+  --bg-canvas:    #ffffff;
+  --bg-elevated:  #ffffff;
+  --bg-muted:     #f4f4f5;
+  --bg-overlay:   rgba(255, 255, 255, 0.85);
+
+  --border-default: #e4e4e7;
+  --border-strong:  #d4d4d8;
+  --border-primary-40: rgba(99, 102, 241, 0.45);
+
+  --fg-highlighted: #18181b;
+  --fg-default:     #27272a;
+  --fg-muted:       #52525b;
+  --fg-dimmed:      #71717a;
+  --fg-inverse:     #fafafa;
+
+  --primary-on:     #ffffff;
+
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --warning-bg: rgba(245, 158, 11, 0.14);
+  --error-bg:   rgba(239, 68, 68, 0.12);
+  --info-bg:    rgba(99, 102, 241, 0.10);
+
+  /* semantische fg's: donkere varianten — de root-waarden (pasteltinten voor
+     donkere achtergrond) halen op licht geen 4.5:1 contrast */
+  --success-fg: #065f46;
+  --warning-fg: #92400e;
+  --error-fg:   #b91c1c;
+  --info-fg:    #4338ca;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.10), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.10), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+}
+
+/* ---------- 4. Semantic element styles ---------- */
+
+html, body {
+  background: var(--bg-canvas);
+  color: var(--fg-default);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-size: var(--text-page-h1-size);
+  font-weight: var(--text-page-h1-weight);
+  letter-spacing: var(--text-page-h1-tracking);
+  line-height: var(--text-page-h1-leading);
+  color: var(--fg-highlighted);
+}
+
+h2, .h2 {
+  font-size: var(--text-section-h2-size);
+  font-weight: var(--text-section-h2-weight);
+  color: var(--fg-highlighted);
+}
+
+p { color: var(--fg-default); }
+.text-muted    { color: var(--fg-muted); }
+.text-dimmed   { color: var(--fg-dimmed); }
+.text-primary  { color: var(--primary-500); }
+.text-success  { color: var(--success-fg); }
+.text-warning  { color: var(--warning-fg); }
+.text-error    { color: var(--error-fg); }
+
+.stat-label {
+  font-size: var(--text-stat-label-size);
+  font-weight: var(--text-stat-label-weight);
+  letter-spacing: var(--text-stat-label-tracking);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.stat-value {
+  font-size: var(--text-stat-value-size);
+  font-weight: var(--text-stat-value-weight);
+  color: var(--fg-highlighted);
+  line-height: 1.1;
+}
+
+.helper {
+  font-size: var(--text-helper-size);
+  color: var(--fg-dimmed);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-size);
+}
+
+/* ---------- 5. Component primitives ---------- */
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: border-color var(--duration-base) var(--ease),
+              box-shadow var(--duration-base) var(--ease);
+}
+.card:hover { border-color: var(--border-primary-40); box-shadow: var(--shadow-md); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-size);
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease),
+              color var(--duration-fast) var(--ease),
+              border-color var(--duration-fast) var(--ease);
+}
+.btn-primary {
+  background: var(--primary-500);
+  color: var(--primary-on);
+}
+.btn-primary:hover { background: var(--primary-600); }
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-default);
+}
+.btn-ghost:hover { background: var(--bg-muted); }
+.btn-outline {
+  background: transparent;
+  color: var(--fg-default);
+  border-color: var(--border-default);
+}
+.btn-outline:hover { border-color: var(--border-strong); background: var(--bg-muted); }
+
+.btn-xs { height: 24px; padding: 0 var(--space-2); font-size: 12px; }
+.btn-sm { height: 30px; padding: 0 var(--space-3); font-size: 13px; }
+.btn-lg { height: 44px; padding: 0 var(--space-5); font-size: 15px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+}
+.badge-success { background: var(--success-bg); color: var(--success-fg); }
+.badge-warning { background: var(--warning-bg); color: var(--warning-fg); }
+.badge-error   { background: var(--error-bg);   color: var(--error-fg); }
+.badge-info    { background: var(--info-bg);    color: var(--info-fg); }
+.badge-neutral { background: var(--bg-muted);   color: var(--fg-muted); }
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-3);
+  background: var(--bg-canvas);
+  color: var(--fg-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-size);
+  width: 100%;
+}
+.input:focus, .input:focus-within {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.20);
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--success-500);
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in var(--duration-slow) var(--ease); }

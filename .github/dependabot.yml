@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # react/react-dom zijn gepind (vendored naar dist/), esbuild is build-tooling.
+  # React 19 levert geen UMD-builds meer en de build kopieert juist die
+  # bestanden — major-bumps van react/react-dom zijn dus nooit mergebaar.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    ignore:
+      - dependency-name: react
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react-dom
+        update-types: ["version-update:semver-major"]
+
+  # De CLA-action draait op pull_request_target mét schrijfrechten en staat
+  # daarom op een commit-SHA gepind in plaats van een verplaatsbare tag. Die pin
+  # krijgt nooit vanzelf een securityfix — Dependabot bumpt hem hier in een PR.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

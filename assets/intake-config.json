@@ -1,0 +1,4112 @@
+{
+    "schema_version": "1.0",
+    "attribution": {
+        "cbw": {
+            "source": "Cbw (NIS2) Control Framework v1.2 — Auditdienst Rijk en NOREA",
+            "provider": "Auditdienst Rijk (ADR) / NOREA",
+            "license": "ADR & NOREA, Cbw (NIS2) Control Framework (2025), CC BY 4.0 gelicenseerd — bewerkt door Dxfferent B.V.",
+            "law_version": "Cbw (Stb. 2026, 187) en Cyberbeveiligingsbesluit (Stb. 2026, 189), beide in werking 15 augustus 2026; framework v1.2 opgesteld o.b.v. wetsvoorstel 36764 + de concept-AMvB; artikelverwijzingen geverifieerd tegen de gepubliceerde teksten (Stb. 2026, 187 en 189), laatst herbevestigd 05-08-2026",
+            "status": "law_published",
+            "version": "v1.2",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "sc": {
+            "source": "NIS2 Supply Chain",
+            "provider": "Stichting Kwaliteitsinnovatie",
+            "version": "V3.2, 15-12-2025"
+        }
+    },
+    "cbw_domains": [
+        {
+            "code": "1",
+            "title": "Beleid over netwerk en informatiesystemen",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.1, 21.3, 24.1",
+                "Cbw art. 21.3.a"
+            ],
+            "article_codes": [
+                "21.1",
+                "21.3",
+                "24.1",
+                "21.3.a"
+            ],
+            "control_codes": [
+                "1.1"
+            ]
+        },
+        {
+            "code": "2",
+            "title": "Beleid over risicomanagement",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.2",
+                "Cbw art. 21.3.a"
+            ],
+            "article_codes": [
+                "21.2",
+                "21.3.a"
+            ],
+            "control_codes": [
+                "2.1"
+            ]
+        },
+        {
+            "code": "3",
+            "title": "Evaluatie",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.f"
+            ],
+            "article_codes": [
+                "21.3.f"
+            ],
+            "control_codes": [
+                "3.1"
+            ]
+        },
+        {
+            "code": "4",
+            "title": "Incidentenbehandeling",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.b"
+            ],
+            "article_codes": [
+                "21.3.b"
+            ],
+            "control_codes": [
+                "4.1",
+                "4.2"
+            ]
+        },
+        {
+            "code": "5",
+            "title": "Bedrijfscontinuïteit en crisisbeheer",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.c",
+                "Cbw art. 21.3.j"
+            ],
+            "article_codes": [
+                "21.3.c",
+                "21.3.j"
+            ],
+            "control_codes": [
+                "5.1",
+                "5.2",
+                "5.3"
+            ]
+        },
+        {
+            "code": "6",
+            "title": "Beveiliging van de toeleveringsketen",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.d, 21.4"
+            ],
+            "article_codes": [
+                "21.3.d",
+                "21.4"
+            ],
+            "control_codes": [
+                "6.1",
+                "6.2",
+                "6.3"
+            ]
+        },
+        {
+            "code": "7",
+            "title": "Verwerven, ontwikkelen en onderhouden van informatiesystemen",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.e"
+            ],
+            "article_codes": [
+                "21.3.e"
+            ],
+            "control_codes": [
+                "7.1",
+                "7.2",
+                "7.3"
+            ]
+        },
+        {
+            "code": "8",
+            "title": "Cyberhygiëne en opleidingen",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.g"
+            ],
+            "article_codes": [
+                "21.3.g"
+            ],
+            "control_codes": [
+                "8.1",
+                "8.2"
+            ]
+        },
+        {
+            "code": "9",
+            "title": "Beleid over cryptografie",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.h"
+            ],
+            "article_codes": [
+                "21.3.h"
+            ],
+            "control_codes": [
+                "9.1"
+            ]
+        },
+        {
+            "code": "10",
+            "title": "Beveiligingsaspecten t.a.v. personeel",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.i"
+            ],
+            "article_codes": [
+                "21.3.i"
+            ],
+            "control_codes": [
+                "10.1"
+            ]
+        },
+        {
+            "code": "11",
+            "title": "Beveiligingsaspecten t.a.v. toegangsbeleid",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.i",
+                "Cbw art. 21.3.j"
+            ],
+            "article_codes": [
+                "21.3.i",
+                "21.3.j"
+            ],
+            "control_codes": [
+                "11.1"
+            ]
+        },
+        {
+            "code": "12",
+            "title": "Beveiligingsaspecten t.a.v. beheer van assets",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.i"
+            ],
+            "article_codes": [
+                "21.3.i"
+            ],
+            "control_codes": [
+                "12.1",
+                "12.2"
+            ]
+        },
+        {
+            "code": "13",
+            "title": "Attenderingen, adviezen en informatie",
+            "thema": "Zorgplicht (art. 21)",
+            "article_refs": [
+                "Cbw art. 21.3.a"
+            ],
+            "article_codes": [
+                "21.3.a"
+            ],
+            "control_codes": [
+                "13.1"
+            ]
+        },
+        {
+            "code": "14",
+            "title": "Eisen aan de training, de trainer en het certificaat en doel van de training",
+            "thema": "Governance (art. 24)",
+            "article_refs": [
+                "Cbw art. 24.2, 24.3, 24.4"
+            ],
+            "article_codes": [
+                "24.2",
+                "24.3",
+                "24.4"
+            ],
+            "control_codes": [
+                "14.1",
+                "14.2"
+            ]
+        },
+        {
+            "code": "15",
+            "title": "Meldplicht significante incidenten",
+            "thema": "Meldplicht (art. 25)",
+            "article_refs": [
+                "Cbw art. 25.1, 25.2, 26.1, 33"
+            ],
+            "article_codes": [
+                "25.1",
+                "25.2",
+                "26.1",
+                "33"
+            ],
+            "control_codes": [
+                "15.1"
+            ]
+        },
+        {
+            "code": "16",
+            "title": "Vroegtijdige waarschuwing",
+            "thema": "Meldplicht (art. 25)",
+            "article_refs": [
+                "Cbw art. 26, 27, 29"
+            ],
+            "article_codes": [
+                "26",
+                "27",
+                "29"
+            ],
+            "control_codes": [
+                "16.1"
+            ]
+        },
+        {
+            "code": "17",
+            "title": "Nadere regels over meldingen",
+            "thema": "Meldplicht (art. 25)",
+            "article_refs": [
+                "Cbw art. 30"
+            ],
+            "article_codes": [
+                "30"
+            ],
+            "control_codes": [
+                "17.1"
+            ]
+        }
+    ],
+    "ref_groups": [
+        {
+            "key": "cbw",
+            "label": "Cbw"
+        },
+        {
+            "key": "sc",
+            "label": "NIS2 SC"
+        },
+        {
+            "key": "iso27001",
+            "label": "ISO 27001"
+        },
+        {
+            "key": "cis8",
+            "label": "CIS v8"
+        },
+        {
+            "key": "iec62443",
+            "label": "IEC 62443"
+        },
+        {
+            "key": "nist",
+            "label": "NIST"
+        }
+    ],
+    "tiers": {
+        "definitions": {
+            "kritiek": {
+                "id": "kritiek",
+                "label": "Kritiek",
+                "rto": "< 1 uur",
+                "rpo": "< 15 min",
+                "tone": "error",
+                "blurb": "Vrijwel geen uitval of dataverlies acceptabel."
+            },
+            "hoog": {
+                "id": "hoog",
+                "label": "Hoog",
+                "rto": "< 4 uur",
+                "rpo": "< 1 uur",
+                "tone": "warning",
+                "blurb": "Snel herstel vereist; minimaal dataverlies."
+            },
+            "middel": {
+                "id": "middel",
+                "label": "Middel",
+                "rto": "< 24 uur",
+                "rpo": "< 12 uur",
+                "tone": "info",
+                "blurb": "Herstel binnen een werkdag is acceptabel."
+            },
+            "basis": {
+                "id": "basis",
+                "label": "Basis",
+                "rto": "< 72 uur",
+                "rpo": "< 24 uur",
+                "tone": "neutral",
+                "blurb": "Beperkte impact; standaard back-up volstaat."
+            }
+        },
+        "order": [
+            "basis",
+            "middel",
+            "hoog",
+            "kritiek"
+        ],
+        "rto_by_avail": [
+            "< 72 uur",
+            "< 24 uur",
+            "< 4 uur",
+            "< 1 uur"
+        ],
+        "rpo_by_freq": [
+            "< 15 min",
+            "< 1 uur",
+            "< 12 uur",
+            "< 24 uur"
+        ]
+    },
+    "priority_meta": {
+        "hoog": {
+            "label": "Hoge prioriteit",
+            "weight": 3,
+            "target": 100,
+            "phase": "Nu — 0-3 maanden",
+            "tone": "error"
+        },
+        "aanbevolen": {
+            "label": "Aanbevolen",
+            "weight": 2,
+            "target": 90,
+            "phase": "Dit kwartaal",
+            "tone": "warning"
+        },
+        "baseline": {
+            "label": "Basislijn",
+            "weight": 1,
+            "target": 75,
+            "phase": "Doorlopend",
+            "tone": "info"
+        }
+    },
+    "scope_check": {
+        "sectors": [
+            {
+                "id": "energie",
+                "label": "Energie (elektriciteit, olie, gas, waterstof, stadsverwarming en -koeling)",
+                "annex": "1"
+            },
+            {
+                "id": "vervoer",
+                "label": "Vervoer (lucht, spoor, water, weg)",
+                "annex": "1"
+            },
+            {
+                "id": "bankwezen",
+                "label": "Bankwezen",
+                "annex": "1"
+            },
+            {
+                "id": "financiele_infra",
+                "label": "Infrastructuur voor de financiële markt",
+                "annex": "1"
+            },
+            {
+                "id": "zorg",
+                "label": "Gezondheidszorg",
+                "annex": "1"
+            },
+            {
+                "id": "drinkwater",
+                "label": "Drinkwater",
+                "annex": "1"
+            },
+            {
+                "id": "afvalwater",
+                "label": "Afvalwater",
+                "annex": "1"
+            },
+            {
+                "id": "digitale_infra",
+                "label": "Digitale infrastructuur (o.a. DNS, TLD, cloud, datacenters, CDN, internetknooppunten, vertrouwensdiensten, e-communicatie)",
+                "annex": "1"
+            },
+            {
+                "id": "ict_beheer_b2b",
+                "label": "Beheer van ICT-diensten (business-to-business, o.a. MSP's en MSSP's)",
+                "annex": "1"
+            },
+            {
+                "id": "overheid",
+                "label": "Overheid",
+                "annex": "1"
+            },
+            {
+                "id": "ruimtevaart",
+                "label": "Ruimtevaart",
+                "annex": "1"
+            },
+            {
+                "id": "post",
+                "label": "Post- en koeriersdiensten",
+                "annex": "2"
+            },
+            {
+                "id": "afvalbeheer",
+                "label": "Afvalstoffenbeheer",
+                "annex": "2"
+            },
+            {
+                "id": "chemie",
+                "label": "Productie, vervaardiging en handel van chemische stoffen",
+                "annex": "2"
+            },
+            {
+                "id": "voedsel",
+                "label": "Productie, verwerking en distributie van voedsel",
+                "annex": "2"
+            },
+            {
+                "id": "fabricage",
+                "label": "Fabricage (medische hulpmiddelen, elektronica, machines, voertuigen)",
+                "annex": "2"
+            },
+            {
+                "id": "digitale_aanbieders",
+                "label": "Aanbieders van digitale diensten (online marktplaatsen, zoekmachines, sociale-netwerkdiensten)",
+                "annex": "2"
+            },
+            {
+                "id": "onderzoek",
+                "label": "Onderzoeksorganisaties (toegepast onderzoek/experimentele ontwikkeling gericht op commerciële exploitatie; onderwijsinstellingen uitgezonderd)",
+                "annex": "2"
+            }
+        ],
+        "size_cap_criteria": [
+            {
+                "id": "employees",
+                "label": "Aantal medewerkers (jaarlijkse arbeidseenheden, incl. meewerkend eigenaar)"
+            },
+            {
+                "id": "annual_turnover",
+                "label": "Jaaromzet"
+            },
+            {
+                "id": "balance_sheet_total",
+                "label": "Balanstotaal"
+            }
+        ],
+        "always_in_scope": [
+            {
+                "id": "e_communicatienetwerken",
+                "label": "Aanbieders van openbare elektronische communicatienetwerken",
+                "note": "Middelgroot of groter: essentieel; klein/micro: belangrijk.",
+                "outcome": "size_based"
+            },
+            {
+                "id": "e_communicatiediensten",
+                "label": "Aanbieders van openbare elektronische communicatiediensten",
+                "note": "Middelgroot of groter: essentieel; klein/micro: belangrijk.",
+                "outcome": "size_based"
+            },
+            {
+                "id": "vertrouwensdiensten_gekwalificeerd",
+                "label": "Gekwalificeerde verleners van vertrouwensdiensten",
+                "note": null,
+                "outcome": "essentieel"
+            },
+            {
+                "id": "vertrouwensdiensten_overig",
+                "label": "Niet-gekwalificeerde verleners van vertrouwensdiensten",
+                "note": null,
+                "outcome": "size_based_large"
+            },
+            {
+                "id": "tld_registers",
+                "label": "Aanbieders van registers voor topleveldomeinnamen (TLD)",
+                "note": null,
+                "outcome": "essentieel"
+            },
+            {
+                "id": "dns_diensten",
+                "label": "DNS-dienstverleners",
+                "note": null,
+                "outcome": "essentieel"
+            },
+            {
+                "id": "domeinnaamregistratie",
+                "label": "Verleners van domeinnaamregistratiediensten",
+                "note": "Niet vermeld in bijlage 1/2 zelf; registratie- en informatieplicht, geen volledige entiteitsclassificatie.",
+                "outcome": "informatief"
+            },
+            {
+                "id": "wwke_kritiek",
+                "label": "Kritieke entiteiten aangewezen onder de Wwke",
+                "note": "Organisaties die onder de Wet weerbaarheid kritieke entiteiten als kritiek zijn aangewezen, zijn van rechtswege essentiële entiteit — ongeacht omvang.",
+                "outcome": "essentieel"
+            },
+            {
+                "id": "overheidsorganisaties",
+                "label": "Overheidsorganisaties",
+                "note": "Rijk, ZBO's, provincies, gemeenten en waterschappen. Uitgezonderd: o.a. Defensie, inlichtingen- en veiligheidsdiensten, politie, OM, rechterlijke macht, Staten-Generaal en DNB.",
+                "outcome": "essentieel"
+            }
+        ],
+        "outcomes": [
+            {
+                "id": "essentieel",
+                "label": "Essentiële entiteit",
+                "blocks_intake": false
+            },
+            {
+                "id": "belangrijk",
+                "label": "Belangrijke entiteit",
+                "blocks_intake": false
+            },
+            {
+                "id": "waarschijnlijk_buiten_scope",
+                "label": "Waarschijnlijk buiten scope",
+                "blocks_intake": false
+            },
+            {
+                "id": "keten",
+                "label": "Indirect geraakt via de keten",
+                "blocks_intake": false
+            }
+        ],
+        "rdi_self_assessment_url": "https://regelhulpenvoorbedrijven.nl/NIS-2-NL/",
+        "registration_portal_url": "https://mijn.ncsc.nl",
+        "registration_note": "Registratie en incidentmelding zijn twee losse verplichtingen, maar lopen via hetzelfde loket: MijnNCSC (mijn.ncsc.nl). Essentiële en belangrijke entiteiten registreren zich daar in het entiteitenregister en melden er hun significante incidenten; één melding bereikt in één keer zowel het sectorale CSIRT als de toezichthouder. Beide verplichtingen gelden vanaf de inwerkingtreding van de Cbw op 15 augustus 2026.",
+        "disclaimer": "Deze scope-check is indicatief en vormt geen juridisch advies. De indicatie gaat uit van een organisatie met hoofdvestiging en beslissingscentrum in Nederland; bij een internationale structuur is voor digitale aanbieders (cloud, MSP's/MSSP's, DNS e.d.) de hoofdvestiging bepalend, overige sectoren vallen onder het recht van het land van vestiging. Bepalend is de wettekst (Cyberbeveiligingswet en Cyberbeveiligingsbesluit); de RDI-zelfevaluatie op regelhulpenvoorbedrijven.nl is het officiële hulpmiddel om uw classificatie vast te stellen, en uw sectorale toezichthouder oordeelt uiteindelijk. Raadpleeg bij twijfel de wettekst of een juridisch adviseur.",
+        "chain_question": {
+            "title": "Levert u diensten aan organisaties die (vermoedelijk) onder de Cbw vallen?",
+            "help": "Denk aan klanten in zorg, energie, industrie, overheid of transport. De wet verplicht die organisaties hun toeleveringsketen te borgen (art. 21) — die eisen komen contractueel bij hun leveranciers terecht.",
+            "options": [
+                {
+                    "v": "none",
+                    "t": "Nee / niet van toepassing",
+                    "d": "Onze klanten vallen er niet onder, voor zover bekend."
+                },
+                {
+                    "v": "supplier",
+                    "t": "Ja, wij leveren aan zulke organisaties",
+                    "d": "Maar zonder toegang tot hun systemen of gegevens."
+                },
+                {
+                    "v": "access",
+                    "t": "Ja, mét toegang tot hun systemen of gegevens",
+                    "d": "Beheer, koppelingen, inloggegevens of gevoelige data."
+                }
+            ]
+        },
+        "eu2690": {
+            "sectors": [
+                "digitale_infra",
+                "ict_beheer_b2b",
+                "digitale_aanbieders"
+            ],
+            "note": "Uw sector valt onder de rechtstreeks werkende Uitvoeringsverordening (EU) 2024/2690: de precieze maatregel-eisen staan dáár, niet in de artikelen 6 t/m 18 van het Cyberbeveiligingsbesluit (Cbb art. 4). Voor deze intake maakt dat inhoudelijk weinig uit — de maatregelen in het rapport blijven relevant; alleen de formele normbasis verschilt. Geldt voor o.a. DNS- en TLD-aanbieders, cloud, datacenters, CDN's, aanbieders van beheerde diensten en beheerde beveiligingsdiensten (MSP's en MSSP's), onlineplatforms en vertrouwensdienstverleners — Cbb art. 4 noemt ze letterlijk. Geldt níet voor aanbieders van openbare elektronische communicatie en internetknooppunten."
+        }
+    },
+    "reporting_obligation": {
+        "phases": [
+            {
+                "id": "early_warning",
+                "label": "Vroegtijdige waarschuwing",
+                "deadline": "≤ 24 uur",
+                "description": "Meld — voor zover op dat moment bekend — of het incident vermoedelijk door onrechtmatig of kwaadwillig handelen is veroorzaakt en of er grensoverschrijdende gevolgen kunnen zijn. Meer hoeft wettelijk nog niet; contactgegevens en een eerste beeld meesturen versnelt wel de afhandeling."
+            },
+            {
+                "id": "update",
+                "label": "Incidentmelding",
+                "deadline": "≤ 72 uur na kennisname van het incident",
+                "description": "Update op de vroegtijdige melding, inclusief (indien van toepassing) een initiële beoordeling van ernst en gevolgen, indicatoren voor aantasting, en informatie over eventuele grensoverschrijdende gevolgen. Verplicht ook als de status van het incident niet is gewijzigd."
+            },
+            {
+                "id": "interim_report",
+                "label": "Tussentijds verslag",
+                "deadline": "Op verzoek van het CSIRT of de bevoegde autoriteit",
+                "description": "Relevante statusupdates zolang het incident loopt, wanneer het CSIRT of de bevoegde autoriteit daarom vraagt. Geen vaste wettelijke termijn."
+            },
+            {
+                "id": "final_report",
+                "label": "Eindverslag",
+                "deadline": "≤ 1 maand na de incidentmelding",
+                "description": "Gedetailleerde beschrijving van het incident, ernst en gevolgen, vermoedelijke oorzaak of dreigingssoort, toegepaste en lopende risicobeperkende maatregelen en eventuele grensoverschrijdende gevolgen. Duurt het incident nog voort, dan dient u op dat moment een voortgangsverslag in; het eindverslag volgt binnen een maand na de afhandeling van het incident."
+            }
+        ],
+        "exceptions": [
+            {
+                "id": "vertrouwensdiensten",
+                "label": "Vertrouwensdiensten",
+                "deadline": "24 uur"
+            }
+        ],
+        "lex_specialis_note": "Valt u als financiële entiteit onder DORA? Dan gelden de Cbw-zorgplicht en -meldplicht niet voor u — u meldt onder DORA (initiële melding binnen 4 uur na classificatie als majeur incident, uiterlijk 24 uur na kennisname). Voor als critical- of high-impact aangemerkte elektriciteitsentiteiten geldt daarnaast de netcode cyberbeveiliging (Verordening (EU) 2024/1366): melding binnen vier uur nadat een aanval als meldwaardig is geclassificeerd.",
+        "recipients_note": "Raakt een significant incident (mogelijk) uw afnemers, dan informeert u ook de ontvangers van uw dienst, waar zinvol met de maatregelen die zij zelf kunnen treffen.",
+        "significance_note": "Een incident is significant als het (i) een ernstige operationele verstoring van de dienst of financiële verliezen veroorzaakt of kan veroorzaken, of (ii) andere natuurlijke personen of rechtspersonen aanzienlijke materiële of immateriële schade toebrengt of kan toebrengen (art. 23 lid 3 NIS2). Voor DNS-, cloud-, datacenter-, CDN-, MSP/MSSP-, onlineplatform- en vertrouwensdienstaanbieders zijn de exacte drempels kwantitatief vastgelegd in Uitvoeringsverordening (EU) 2024/2690; voor de overige sectoren volgt nadere invulling bij ministeriële regeling.",
+        "voluntary_note": "Naast de meldplicht kan elke entiteit vrijwillig een incident, bijna-incident of cyberdreiging melden bij haar CSIRT of bevoegde autoriteit.",
+        "portal_url": "https://mijn.ncsc.nl"
+    },
+    "package_suggestion": {
+        "heading": "Ambitieniveau en passend dienstenpakket",
+        "legal_note": "De NIS2-richtlijn (EU 2022/2555) is in Nederland omgezet in de Cyberbeveiligingswet. Artikel 21 verplicht passende maatregelen; de artikelen hieronder tonen welk wettelijk voorschrift elke dienst raakt. De niveaus SC-10 / SC-20 / SC-30 zijn de aantoonbaarheidsroute van NIS2 Supply Chain: geen extra verplichting, maar de manier waarop u kunt láten zien dat u aan artikel 21 voldoet.",
+        "note": "Indicatief — dit is een menukaart om met uw IT-partner naast diens eigen dienstenaanbod te leggen, geen offerte. Diensten zonder wetsartikel zijn eisen van het SC-schema zonder rechtstreekse Cbw-pendant. De niveaunamen zeggen niets over welke maatregelen op uw organisatie van toepassing zijn.",
+        "tiers": [
+            {
+                "id": "sc10",
+                "label": "Basis op orde",
+                "sc_ambition": "SC-10 Basic",
+                "when": "Uitval is hinderlijk maar niet bedrijfskritiek. U legt de basismaatregelen vast en kunt laten zien dat ze werken."
+            },
+            {
+                "id": "sc20",
+                "label": "Verhoogde weerbaarheid",
+                "sc_ambition": "SC-20 Substantial",
+                "when": "U valt onder de Cbw of levert aan wie eronder valt, en uw processen liggen binnen uren stil bij een incident."
+            },
+            {
+                "id": "sc30",
+                "label": "Volledige set",
+                "sc_ambition": "SC-30 High",
+                "when": "U kwalificeert als essentiële entiteit, of een uur stilstand is al bedrijfskritiek."
+            }
+        ],
+        "lines": [
+            {
+                "label": "Beheer van werkplekken",
+                "section": "workplace",
+                "from": 0,
+                "cbw": [
+                    "21.3.e",
+                    "21.3.i"
+                ],
+                "sc": [
+                    "4.1"
+                ]
+            },
+            {
+                "label": "Beveiliging van apparaten",
+                "section": "workplace",
+                "from": 0,
+                "cbw": [],
+                "sc": [
+                    "4.4"
+                ]
+            },
+            {
+                "label": "Beveiliging van e-mail",
+                "section": "workplace",
+                "from": 0,
+                "cbw": [
+                    "21.3.j"
+                ],
+                "sc": []
+            },
+            {
+                "label": "Sterke inlog en wachtwoordbeheer",
+                "section": "workplace",
+                "from": 0,
+                "cbw": [
+                    "21.3.i",
+                    "21.3.j"
+                ],
+                "sc": [
+                    "1.13",
+                    "4.10"
+                ]
+            },
+            {
+                "label": "Wijzigingsbeheer op servers en cloud",
+                "section": "server",
+                "from": 2,
+                "cbw": [
+                    "21.3.e"
+                ],
+                "sc": [
+                    "4.15"
+                ]
+            },
+            {
+                "label": "Back-up en herstel",
+                "section": "server",
+                "from": 0,
+                "cbw": [
+                    "21.3.c"
+                ],
+                "sc": [
+                    "4.5"
+                ]
+            },
+            {
+                "label": "Herstel aantoonbaar testen",
+                "section": "server",
+                "from": 2,
+                "cbw": [
+                    "21.3.c"
+                ],
+                "sc": [
+                    "4.6"
+                ]
+            },
+            {
+                "label": "Uitwijk bij langdurige uitval",
+                "section": "server",
+                "from": 0,
+                "cbw": [
+                    "21.3.c"
+                ],
+                "sc": [
+                    "1.23"
+                ]
+            },
+            {
+                "label": "Vastgelegde taken voor firewall- en netwerkbeheer",
+                "section": "network",
+                "from": 2,
+                "cbw": [],
+                "sc": [
+                    "4.8"
+                ]
+            },
+            {
+                "label": "Scheiding van netwerkzones",
+                "section": "network",
+                "from": 1,
+                "cbw": [],
+                "sc": [
+                    "4.9"
+                ]
+            },
+            {
+                "label": "Afgeschermde communicatie",
+                "section": "network",
+                "from": 2,
+                "cbw": [
+                    "21.3.h",
+                    "21.3.j"
+                ],
+                "sc": [
+                    "4.12"
+                ]
+            },
+            {
+                "label": "Updates en kwetsbaarheden dichten",
+                "section": "detect",
+                "from": 0,
+                "cbw": [],
+                "sc": [
+                    "4.7"
+                ]
+            },
+            {
+                "label": "Belegde aanpak van technische kwetsbaarheden",
+                "section": "detect",
+                "from": 2,
+                "cbw": [],
+                "sc": [
+                    "4.14"
+                ]
+            },
+            {
+                "label": "Actuele dreigingsinformatie",
+                "section": "detect",
+                "from": 2,
+                "cbw": [
+                    "21.3.a"
+                ],
+                "sc": [
+                    "1.5"
+                ]
+            },
+            {
+                "label": "Bewaking en respons rond de klok",
+                "section": "detect",
+                "from": 1,
+                "cbw": [
+                    "21.3.b"
+                ],
+                "sc": [
+                    "1.21",
+                    "4.11"
+                ]
+            },
+            {
+                "label": "Overzicht van systemen en gegevens",
+                "section": "data",
+                "from": 0,
+                "cbw": [
+                    "21.3.i"
+                ],
+                "sc": [
+                    "1.6.1",
+                    "1.6.2"
+                ]
+            },
+            {
+                "label": "Gevoelige gegevens herkennen en beschermen",
+                "section": "data",
+                "from": 1,
+                "cbw": [
+                    "21.3.i"
+                ],
+                "sc": [
+                    "1.9"
+                ]
+            },
+            {
+                "label": "Extra grip op beheerdersrechten",
+                "section": "data",
+                "from": 0,
+                "cbw": [
+                    "21.3.i"
+                ],
+                "sc": [
+                    "1.14",
+                    "4.2"
+                ]
+            },
+            {
+                "label": "Bewustwording en training",
+                "section": "people",
+                "from": 0,
+                "cbw": [
+                    "21.3.g"
+                ],
+                "sc": [
+                    "2.2",
+                    "2.7"
+                ]
+            },
+            {
+                "label": "Bestuurderstraining en aantoonbare kennis",
+                "section": "people",
+                "from": 0,
+                "cbw": [
+                    "24.2",
+                    "24.3"
+                ],
+                "sc": []
+            },
+            {
+                "label": "In- en uitdiensttreding zorgvuldig regelen",
+                "section": "people",
+                "from": 0,
+                "cbw": [
+                    "21.3.i"
+                ],
+                "sc": [
+                    "2.5",
+                    "2.8",
+                    "1.8"
+                ]
+            },
+            {
+                "label": "Veilig werken op afstand",
+                "section": "people",
+                "from": 0,
+                "cbw": [
+                    "21.3.g"
+                ],
+                "sc": [
+                    "2.6"
+                ]
+            },
+            {
+                "label": "Beleid, procedures en incidentplan",
+                "section": "policy",
+                "from": 0,
+                "cbw": [
+                    "21.3.a",
+                    "21.3.b",
+                    "24.1"
+                ],
+                "sc": [
+                    "1.2",
+                    "1.20"
+                ]
+            },
+            {
+                "label": "Vaste securityrol en directierapportage",
+                "section": "policy",
+                "from": 0,
+                "cbw": [
+                    "21.1",
+                    "24.1"
+                ],
+                "sc": [
+                    "1.3",
+                    "1.4"
+                ]
+            },
+            {
+                "label": "Onafhankelijke toetsing en pentests",
+                "section": "policy",
+                "from": 2,
+                "cbw": [
+                    "21.3.f"
+                ],
+                "sc": [
+                    "1.24",
+                    "1.25"
+                ]
+            },
+            {
+                "label": "Veilig ontwikkelen en uitrollen",
+                "section": "dev",
+                "from": 1,
+                "cbw": [
+                    "21.3.e"
+                ],
+                "sc": [
+                    "6.3",
+                    "6.7",
+                    "6.8"
+                ]
+            },
+            {
+                "label": "Beheer van code en componenten",
+                "section": "dev",
+                "from": 1,
+                "cbw": [
+                    "21.3.e"
+                ],
+                "sc": [
+                    "6.1",
+                    "6.2"
+                ]
+            },
+            {
+                "label": "Applicatie-securitytesten",
+                "section": "dev",
+                "from": 2,
+                "cbw": [
+                    "21.3.e"
+                ],
+                "sc": [
+                    "6.5"
+                ]
+            },
+            {
+                "label": "Regie op uitbestede ontwikkeling",
+                "section": "dev",
+                "from": 2,
+                "cbw": [
+                    "21.3.d"
+                ],
+                "sc": [
+                    "6.6"
+                ]
+            },
+            {
+                "label": "Overzicht van OT-systemen",
+                "section": "ot",
+                "from": 1,
+                "cbw": [],
+                "sc": [
+                    "5.1",
+                    "5.11"
+                ]
+            },
+            {
+                "label": "Back-up en uitwijk voor OT",
+                "section": "ot",
+                "from": 1,
+                "cbw": [],
+                "sc": [
+                    "5.4",
+                    "5.5"
+                ]
+            },
+            {
+                "label": "Updates op OT-systemen",
+                "section": "ot",
+                "from": 2,
+                "cbw": [],
+                "sc": [
+                    "5.9"
+                ]
+            },
+            {
+                "label": "Afgescheiden OT-netwerk en toegang op afstand",
+                "section": "ot",
+                "from": 2,
+                "cbw": [],
+                "sc": [
+                    "5.6",
+                    "5.8"
+                ]
+            }
+        ],
+        "sections": [
+            {
+                "id": "workplace",
+                "label": "Werkplekken en e-mail"
+            },
+            {
+                "id": "server",
+                "label": "Servers, cloud en herstel"
+            },
+            {
+                "id": "network",
+                "label": "Netwerk"
+            },
+            {
+                "id": "detect",
+                "label": "Detectie en respons"
+            },
+            {
+                "id": "data",
+                "label": "Gegevens en toegang"
+            },
+            {
+                "id": "people",
+                "label": "Mensen"
+            },
+            {
+                "id": "policy",
+                "label": "Beleid, sturing en toetsing"
+            },
+            {
+                "id": "dev",
+                "label": "Softwareontwikkeling",
+                "requires": "apps"
+            },
+            {
+                "id": "ot",
+                "label": "Productie- en OT-systemen",
+                "requires": "ot"
+            }
+        ]
+    },
+    "domains": [
+        {
+            "id": "continuity",
+            "label": "Bedrijfscontinuïteit & herstel",
+            "icon": "recover",
+            "intro": "Het hart van uw RTO/RPO: kunt u na een incident snel en met minimaal dataverlies terug?",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "metric": "max_crit",
+                            "op": "gte",
+                            "value": 2
+                        },
+                        "result": "hoog"
+                    },
+                    {
+                        "if": {
+                            "metric": "max_crit",
+                            "op": "gte",
+                            "value": 1
+                        },
+                        "result": "aanbevolen"
+                    }
+                ],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "bcdr",
+                    "label": "Continuïteitsplan & crisisbeheer"
+                },
+                {
+                    "id": "backup",
+                    "label": "Managed back-up"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.23",
+                    "sc_from": "10",
+                    "cbw_domain": "5",
+                    "cbw_ref": "Cbw art. 21.3.c (domein 5 — Bedrijfscontinuïteit en crisisbeheer)",
+                    "title": "Stel een plan op met ICT-continuïteitseisen en hersteltijddoelstellingen",
+                    "service": "Continuïteitsplan & Disaster Recovery (DRaaS)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.c"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.23"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.30"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "CP-2"
+                        }
+                    ],
+                    "theme": "bcdr",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.5",
+                    "sc_from": "10",
+                    "cbw_domain": "5",
+                    "cbw_ref": "Cbw art. 21.3.c (domein 5 — Bedrijfscontinuïteit en crisisbeheer)",
+                    "title": "Stel een back-upplan op met frequentie en scope van back-ups",
+                    "service": "Back-up & recovery (3-2-1, incl. M365/SaaS, restore-tests)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.c"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.5"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.13"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "11"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.4"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "CP-9"
+                        }
+                    ],
+                    "theme": "backup",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.6",
+                    "sc_from": "30",
+                    "cbw_domain": "5",
+                    "cbw_ref": "Cbw art. 21.3.c (domein 5 — Bedrijfscontinuïteit en crisisbeheer)",
+                    "title": "Stel bedrijfs- en ICT-continuïteitsdoelstellingen vast",
+                    "service": "Redundantie / failover & monitoring",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.c"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.6"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.14"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "1"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.3.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.4.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 4.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.2"
+                        }
+                    ],
+                    "theme": "bcdr",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "5",
+                    "cbw_ref": "Cbw art. 21.3.c en 21.3.j (domein 5 — Bedrijfscontinuïteit en crisisbeheer)",
+                    "title": "Stel een crisisbeheersingsplan met noodcommunicatie op en test het periodiek",
+                    "service": "Crisisbeheer & noodcommunicatie",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.c"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3.j"
+                        }
+                    ],
+                    "theme": "bcdr",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "incident",
+            "label": "Incidentdetectie & respons",
+            "icon": "siren",
+            "intro": "Detecteren, afhandelen en op tijd melden. Onder de Cbw geldt een meldplicht binnen 24 uur.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "metric": "max_crit",
+                            "op": "gte",
+                            "value": 2
+                        },
+                        "result": "hoog"
+                    }
+                ],
+                "default": "aanbevolen"
+            },
+            "themes": [
+                {
+                    "id": "monitoring",
+                    "label": "Monitoring & detectie (SOC/SIEM)"
+                },
+                {
+                    "id": "response",
+                    "label": "Incident-response & forensics"
+                },
+                {
+                    "id": "meldplicht",
+                    "label": "Meldplicht & incidentcommunicatie"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.20",
+                    "sc_from": "20",
+                    "cbw_domain": "4",
+                    "cbw_ref": "Cbw art. 21.3.b (domein 4 — Incidentenbehandeling)",
+                    "title": "Stel een plan op voor de omgang met informatiebeveiligingsinbreuken",
+                    "service": "Incident-response plan & draaiboeken",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.b"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.20"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.24"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "17"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.5.7"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.5.11"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IR-8"
+                        }
+                    ],
+                    "theme": "response",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.21",
+                    "sc_from": "30",
+                    "cbw_domain": "4",
+                    "cbw_ref": "Cbw art. 21.3.b (domein 4 — Incidentenbehandeling)",
+                    "title": "Beoordeel beveiligingsgebeurtenissen om te bepalen of het incidenten zijn",
+                    "service": "SOC / SIEM-monitoring + IR-retainer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.b"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.21"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.25"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "8"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IR-4"
+                        }
+                    ],
+                    "theme": "monitoring",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "1.22",
+                    "sc_from": "30",
+                    "cbw_domain": "15",
+                    "cbw_ref": "Cbw art. 25.1, 25.2, 26.1, 33 (domein 15 — Meldplicht significante incidenten)",
+                    "title": "Stel een meldprocedure op voor NIS2-incidenten richting bevoegde overheid",
+                    "service": "Meldplicht-ondersteuning (NIS2 / AVG)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "25.1"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "25.2"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "26.1"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "33"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.22"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.26"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "17"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.5.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IR-4"
+                        }
+                    ],
+                    "theme": "meldplicht",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.11",
+                    "sc_from": "20",
+                    "cbw_domain": "4",
+                    "cbw_ref": "Cbw art. 21.3.b (domein 4 — Incidentenbehandeling)",
+                    "title": "Voer een risicobeoordeling uit om relevante gebeurtenissen te bepalen",
+                    "service": "Centrale logging & detectie (incl. SaaS-monitoring)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.b"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.11"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.15"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "1"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.3.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.5.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.4.7"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.4.2.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.4.2.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.10"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.11"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.12"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AU-2"
+                        }
+                    ],
+                    "theme": "monitoring",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.27",
+                    "sc_from": "20",
+                    "cbw_domain": "4",
+                    "cbw_ref": "Cbw art. 21.3.b (domein 4 — Incidentenbehandeling)",
+                    "title": "Bepaal per incidenttype welk bewijsmateriaal verzameld moet worden",
+                    "service": "Forensics-gereedheid",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.b"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.27"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.28"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.29"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.10"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.11"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.12"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 6.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "CP-2"
+                        }
+                    ],
+                    "theme": "response",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "16",
+                    "cbw_ref": "Cbw art. 26, 27, 29 (domein 16 — Vroegtijdige waarschuwing)",
+                    "title": "Bewaak de meldplicht-tijdlijn: vroegtijdige waarschuwing, incidentmelding, eindverslag",
+                    "service": "Meldplicht-tijdlijnbegeleiding (24u/72u/1 mnd)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "26"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "27"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "29"
+                        }
+                    ],
+                    "theme": "meldplicht",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "17",
+                    "cbw_ref": "Cbw art. 30 (domein 17 — Nadere regels over meldingen)",
+                    "title": "Informeer ontvangers van diensten bij een incident met mogelijke impact",
+                    "service": "Klant-/dienstontvangercommunicatie bij incident",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "30"
+                        }
+                    ],
+                    "theme": "meldplicht",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "access",
+            "label": "Toegang & identiteit",
+            "icon": "key",
+            "intro": "Wie mag bij wat? Gecompromitteerde accounts zijn de belangrijkste inbraakroute.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "any": [
+                                {
+                                    "metric": "has",
+                                    "flag": "identity"
+                                },
+                                {
+                                    "metric": "max_conf",
+                                    "op": "gte",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        "result": "hoog"
+                    }
+                ],
+                "default": "aanbevolen"
+            },
+            "themes": [
+                {
+                    "id": "toegangsbeheer",
+                    "label": "Accountbeheer & veilig inloggen (IAM/MFA/PAM)"
+                },
+                {
+                    "id": "fysiek",
+                    "label": "Fysieke toegang"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.13",
+                    "sc_from": "20",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Stel een procedure op voor aanmaken, aanpassen en verwijderen van accounts",
+                    "service": "Identity lifecycle / IAM",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.13"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.16"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "1"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.5.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.5"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.7"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.9"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IA-2"
+                        }
+                    ],
+                    "theme": "toegangsbeheer",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.14",
+                    "sc_from": "10",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Stel een procedure op waarmee toegangsrechten juist worden verstrekt, aangepast en tijdig ingetrokken",
+                    "service": "Access governance (least privilege)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.14"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.18"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AC-2"
+                        }
+                    ],
+                    "theme": "toegangsbeheer",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.2",
+                    "sc_from": "30",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Stel een procedure op voor beheer van bijzondere toegangsrechten",
+                    "service": "Privileged Access Management (PAM)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.2"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.2"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.1"
+                        }
+                    ],
+                    "theme": "toegangsbeheer",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.10",
+                    "sc_from": "10",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.j en 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Pas authenticatie toe die past bij de gevoeligheid — MFA voor cruciale systemen",
+                    "service": "MFA / SSO & wachtwoordmanager",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.j"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.10"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.6.6"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.6"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IA-2"
+                        }
+                    ],
+                    "theme": "toegangsbeheer",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "3.9",
+                    "sc_from": "10",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Definieer per functie of rol de benodigde fysieke toegangsrechten tot gebouwen en ruimtes",
+                    "service": "Fysieke toegangsbeveiliging",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "3.9"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.15"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AC-3"
+                        }
+                    ],
+                    "theme": "fysiek",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "3.5",
+                    "sc_from": "20",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Stel regels op voor schermvergrendeling en een opgeruimde werkplek",
+                    "service": "Clean desk- & clear screen-beleid",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "3.5"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.7.7"
+                        }
+                    ],
+                    "theme": "fysiek",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "3.1",
+                    "sc_from": "30",
+                    "cbw_domain": "11",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 11 — Beveiligingsaspecten t.a.v. toegangsbeleid)",
+                    "title": "Ontwerp fysieke beveiliging van locaties op basis van een risicobeoordeling",
+                    "service": "Fysieke beveiliging & zonering",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "3.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.7.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.7.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.3.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.3.8"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PE-2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PE-3"
+                        }
+                    ],
+                    "theme": "fysiek",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "technical",
+            "label": "Netwerk & technische beveiliging",
+            "icon": "cpu",
+            "intro": "De technische basislaag: endpoints, patches, netwerk en encryptie.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "any": [
+                                {
+                                    "metric": "max_crit",
+                                    "op": "gte",
+                                    "value": 2
+                                },
+                                {
+                                    "metric": "has",
+                                    "flag": "web"
+                                },
+                                {
+                                    "metric": "has",
+                                    "flag": "apps"
+                                }
+                            ]
+                        },
+                        "result": "hoog"
+                    }
+                ],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "endpoint",
+                    "label": "Endpointbeveiliging & patching"
+                },
+                {
+                    "id": "netwerk",
+                    "label": "Netwerkbeheer & segmentatie"
+                },
+                {
+                    "id": "encryptie",
+                    "label": "Encryptie & sleutelbeheer"
+                },
+                {
+                    "id": "kwetsbaarheden",
+                    "label": "Kwetsbaarheden- & wijzigingsbeheer"
+                },
+                {
+                    "id": "sdlc",
+                    "label": "Veilige softwareontwikkeling"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "4.4",
+                    "sc_from": "10",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Implementeer technische maatregelen voor detectie en verwijdering van malware",
+                    "service": "Endpoint protection (EDR / XDR)",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "4.4"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "8"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "10"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "SI-3"
+                        }
+                    ],
+                    "theme": "endpoint",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": null,
+                    "cbw_ref": "Cbw art. 21.3.j",
+                    "title": "Bescherm zakelijke e-mail tegen phishing, spoofing en malware",
+                    "service": "Managed e-mailsecurity (filtering, SPF/DKIM/DMARC)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.j"
+                        }
+                    ],
+                    "theme": "endpoint",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "4.7",
+                    "sc_from": "10",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel een beleid op voor het up-to-date en veilig houden van software",
+                    "service": "Patchmanagement (servers & werkplekken)",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "4.7"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.19"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "1"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.6"
+                        }
+                    ],
+                    "theme": "endpoint",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.8",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Leg taken en plichten vast en wijs ze toe voor het beheer en de configuratie van netwerken en netwerkapparatuur",
+                    "service": "Firewall- & netwerkbeheer",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "4.8"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.20"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.8"
+                        }
+                    ],
+                    "theme": "netwerk",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.9",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel regels op voor netwerksegmentatie van gebruikers, systemen en diensten",
+                    "service": "Segmentatie / zero-trust",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "4.9"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.22"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.8"
+                        }
+                    ],
+                    "theme": "netwerk",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": null,
+                    "cbw_ref": "Cbw art. 21.3.j",
+                    "title": "Gebruik beveiligde kanalen voor zakelijke spraak-, video- en tekstcommunicatie",
+                    "service": "Beveiligde communicatie (Teams-telefonie / UC)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.j"
+                        }
+                    ],
+                    "theme": "netwerk",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "4.12",
+                    "sc_from": "30",
+                    "cbw_domain": "9",
+                    "cbw_ref": "Cbw art. 21.3.h (domein 9 — Beleid over cryptografie)",
+                    "title": "Voer een risicobeoordeling uit voor opslag en verzending van informatie",
+                    "service": "Encryptie & certificaatbeheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.h"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.12"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.24"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "SC-13"
+                        }
+                    ],
+                    "theme": "encryptie",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.14",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Wijs verantwoordelijkheden toe voor het op tijd opsporen, registreren en repareren van technische kwetsbaarheden",
+                    "service": "Vulnerability management",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "4.14"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.8"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "10"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "RA-5"
+                        }
+                    ],
+                    "theme": "kwetsbaarheden",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.3",
+                    "sc_from": "20",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stel 'best practices' vast voor het ontwikkelen van veilige software",
+                    "service": "Secure software development lifecycle (SDLC)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.3"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.27"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.1",
+                    "sc_from": "20",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Beperk en bewaak de toegang tot broncode en software-libraries",
+                    "service": "Broncode-toegangsbeheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.4"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "6.2",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Houd programmacode en externe componenten aantoonbaar actueel",
+                    "service": "Dependency- & componentenbeheer (SBOM)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.2"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "6.4",
+                    "sc_from": "30",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Zorg dat ontwikkelaars zich bewust zijn van beveiligingseisen bij het ontwikkelen",
+                    "service": "Secure-coding-training",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.4"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "14"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.4.2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AT-2"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "6.5",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stel vooraf beveiligingseisen aan applicaties en test daar aantoonbaar op",
+                    "service": "Applicatie-securitytesten (SAST/DAST)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.5"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.29"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "8"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "10"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.7"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "SA-11"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "toetsing"
+                },
+                {
+                    "sc_code": "6.7",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Scheid ontwikkel-, test-, acceptatie- en productieomgevingen",
+                    "service": "OTAP-omgevingsscheiding",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.7"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.31"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "6.8",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stel procedures op voor het gecontroleerd en veilig deployen van software",
+                    "service": "Release- & deploymentbeheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.8"
+                        }
+                    ],
+                    "theme": "sdlc",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.15",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stel een wijzigingsbeheerproces op voor netwerken en informatiesystemen",
+                    "service": "Server- & infrastructuurbeheer (change & configuratie)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.15"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.32"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.3.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.6"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "CM-3"
+                        }
+                    ],
+                    "theme": "kwetsbaarheden",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "9",
+                    "cbw_ref": "Cbw art. 21.3.h (domein 9 — Beleid over cryptografie)",
+                    "title": "Stel sleutelbeheerbeleid vast: bewaring, rotatie en verantwoordelijkheden",
+                    "service": "Sleutelbeheer & cryptografiebeleid",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.h"
+                        }
+                    ],
+                    "theme": "encryptie",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "assets",
+            "label": "Assets & classificatie",
+            "icon": "layers",
+            "intro": "U kunt alleen beschermen wat u kent — en weet hoe gevoelig het is.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "metric": "max_conf",
+                            "op": "gte",
+                            "value": 2
+                        },
+                        "result": "aanbevolen"
+                    }
+                ],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "assetbeheer",
+                    "label": "Asset- & devicebeheer (CMDB/RMM/MDM)"
+                },
+                {
+                    "id": "datahuishouding",
+                    "label": "Dataclassificatie & veilige uitwisseling"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.6.2",
+                    "sc_from": "10",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Stel een overzicht op van ICT-bedrijfsmiddelen",
+                    "service": "Asset-management / CMDB",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.6.2"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.9"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.8"
+                        }
+                    ],
+                    "theme": "assetbeheer",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.6.1",
+                    "sc_from": "10",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Leg vast welke informatie de organisatie heeft, waar die staat en wie eigenaar is",
+                    "service": "Informatie-inventarisatie & eigenaarschap",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.6.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.9"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 7.8"
+                        }
+                    ],
+                    "theme": "datahuishouding",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.9",
+                    "sc_from": "20",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Houd een overzicht bij van categorieën bedrijfsinformatie met hetzelfde vereiste niveau van vertrouwelijkheid",
+                    "service": "Dataclassificatie & DLP (gegevenslabels)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.9"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "RA-2"
+                        }
+                    ],
+                    "theme": "datahuishouding",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.11",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel richtlijnen op voor veilige overdracht van vertrouwelijke informatie",
+                    "service": "Beveiligde gegevensoverdracht",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "1.11"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.14"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.4"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "SC-8"
+                        }
+                    ],
+                    "theme": "datahuishouding",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "4.1",
+                    "sc_from": "10",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Stel beveiligingsmaatregelen in voor PC's, laptops, telefoons en tablets",
+                    "service": "Werkplekbeheer (RMM/MDM)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "4.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.1"
+                        }
+                    ],
+                    "theme": "assetbeheer",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "3.8",
+                    "sc_from": "20",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Stel een procedure op voor het veilig afvoeren of hergebruiken van apparatuur",
+                    "service": "Veilige afvoer & hergebruik (ITAD)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "3.8"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.7.14"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.4.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 4.2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "MP-6"
+                        }
+                    ],
+                    "theme": "assetbeheer",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "supply",
+            "label": "Leveranciers & keten",
+            "icon": "truck",
+            "intro": "Uw risico is zo groot als uw zwakste leverancier. De Cbw vraagt expliciet om ketenbeheer.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "any": [
+                                {
+                                    "metric": "has",
+                                    "flag": "apps"
+                                },
+                                {
+                                    "metric": "has",
+                                    "flag": "web"
+                                },
+                                {
+                                    "metric": "has",
+                                    "flag": "email"
+                                }
+                            ]
+                        },
+                        "result": "aanbevolen"
+                    }
+                ],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "leveranciers",
+                    "label": "Leveranciersbeoordeling & contracten"
+                },
+                {
+                    "id": "cloudinkoop",
+                    "label": "Cloudbeoordeling & inkoopbeleid"
+                },
+                {
+                    "id": "klantlevering",
+                    "label": "Levering aan klanten"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.15",
+                    "sc_from": "20",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d, 21.4 (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Definieer processen om te bepalen of diensten en producten van leveranciers aan de beveiligingseisen voldoen",
+                    "service": "Leveranciers-risicobeheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.15"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.19"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.2"
+                        }
+                    ],
+                    "theme": "leveranciers",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.16",
+                    "sc_from": "30",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d, 21.4 (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Definieer processen om te beoordelen of de waarborgen die leveranciers bieden toereikend zijn",
+                    "service": "Contract- & SLA-beheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.16"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.20"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.6.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.6.7"
+                        }
+                    ],
+                    "theme": "leveranciers",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.18",
+                    "sc_from": "30",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d, 21.4 (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Voer een risicobeoordeling uit op leveranciers van diensten",
+                    "service": "Vendor monitoring",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.18"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.22"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.6"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.10"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.12"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.14"
+                        }
+                    ],
+                    "theme": "leveranciers",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.19",
+                    "sc_from": "30",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d, 21.4 (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Definieer processen voor beoordeling van cloudleveranciers",
+                    "service": "Cloudbeheer & -security (CSPM)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.19"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.23"
+                        }
+                    ],
+                    "theme": "cloudinkoop",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.26",
+                    "sc_from": "10",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d, 21.4 (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Tref voor de leveringsketen passende en evenredige technische, operationele en organisatorische maatregelen",
+                    "service": "Supply-chain security / vCISO",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.26"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.21"
+                        }
+                    ],
+                    "theme": "leveranciers",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.6",
+                    "sc_from": "30",
+                    "cbw_domain": "6",
+                    "cbw_ref": "Cbw art. 21.3.d (domein 6 — Beveiliging van de toeleveringsketen)",
+                    "title": "Bewaak actief de beveiliging van uitbestede softwareontwikkeling",
+                    "service": "Regie op uitbestede ontwikkeling",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.d"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.6"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.8.3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "12"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AC-3"
+                        }
+                    ],
+                    "theme": "leveranciers",
+                    "work": "toetsing"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stel verwervingsbeleid voor software, hardware en diensten vast",
+                    "service": "Secure procurement-beleid",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        }
+                    ],
+                    "theme": "cloudinkoop",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.9",
+                    "sc_from": "20",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Registreer welke klanten geleverde software gebruiken, inclusief versies",
+                    "service": "Register geleverde software",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.9"
+                        }
+                    ],
+                    "theme": "klantlevering",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.10",
+                    "sc_from": "30",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Inventariseer per klant welke apparatuur en programmatuur is geleverd",
+                    "service": "Register geleverde apparatuur & programmatuur",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.10"
+                        }
+                    ],
+                    "theme": "klantlevering",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "6.12",
+                    "sc_from": "20",
+                    "cbw_domain": "7",
+                    "cbw_ref": "Cbw art. 21.3.e (domein 7 — Verwerven, ontwikkelen en onderhouden van informatiesystemen)",
+                    "title": "Stem de installatie van nieuwe versies en updates af met klanten",
+                    "service": "Update-afstemming met klanten",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.e"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "6.12"
+                        }
+                    ],
+                    "theme": "klantlevering",
+                    "work": "beleid"
+                }
+            ]
+        },
+        {
+            "id": "governance",
+            "label": "Governance & beleid",
+            "icon": "shield",
+            "intro": "De Cbw maakt het bestuur aansprakelijk. Beleid, rollen en toezicht moeten aantoonbaar zijn.",
+            "trigger": {
+                "rules": [],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "beleid",
+                    "label": "Beleid, rollen & risicomanagement (vCISO)"
+                },
+                {
+                    "id": "toetsing",
+                    "label": "Audit, pentest & rapportage"
+                },
+                {
+                    "id": "dreigingsinfo",
+                    "label": "Dreigingsinformatie & opvolging"
+                },
+                {
+                    "id": "bestuur",
+                    "label": "Bestuurderstraining"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "1.2",
+                    "sc_from": "10",
+                    "cbw_domain": "1",
+                    "cbw_ref": "Cbw art. 21.3.a (domein 1 — Beleid over netwerk en informatiesystemen)",
+                    "title": "Stel informatiebeveiligingsbeleid op met strategische doelstellingen",
+                    "service": "Beleid & governance-begeleiding",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.a"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.1"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "24.1"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.2"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.2.3.6"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PL-1"
+                        }
+                    ],
+                    "theme": "beleid",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.3",
+                    "sc_from": "10",
+                    "cbw_domain": "1",
+                    "cbw_ref": "Cbw art. 21.1, 21.3, 24.1 (domein 1 — Beleid over netwerk en informatiesystemen)",
+                    "title": "Definieer taken en verantwoordelijkheden voor cybersecurity",
+                    "service": "Security Officer / vCISO",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.1"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "24.1"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.3"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.2"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "17"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.3.3"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PM-1"
+                        }
+                    ],
+                    "theme": "beleid",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.4",
+                    "sc_from": "30",
+                    "cbw_domain": "1",
+                    "cbw_ref": "Cbw art. 21.1, 21.3, 24.1 (domein 1 — Beleid over netwerk en informatiesystemen)",
+                    "title": "Leg de verplichting tot naleving vast voor alle medewerkers",
+                    "service": "Directie-rapportage & sturing",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.1"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "24.1"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.4"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.3"
+                        }
+                    ],
+                    "theme": "beleid",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "1.5",
+                    "sc_from": "30",
+                    "cbw_domain": "13",
+                    "cbw_ref": "Cbw art. 21.3.a (domein 13 — Attenderingen, adviezen en informatie)",
+                    "title": "Identificeer geschikte bronnen voor dreigingsinformatie",
+                    "service": "Threat intelligence & darkweb-monitoring",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.a"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.5"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.7"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "RA-5"
+                        }
+                    ],
+                    "theme": "dreigingsinfo",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "1.24",
+                    "sc_from": "30",
+                    "cbw_domain": "3",
+                    "cbw_ref": "Cbw art. 21.3.f (domein 3 — Evaluatie)",
+                    "title": "Plan periodieke onafhankelijke beoordelingen van de informatiebeveiligingsaanpak",
+                    "service": "Audit & pentest",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.f"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.24"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.35"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "CA-2"
+                        }
+                    ],
+                    "theme": "toetsing",
+                    "work": "toetsing"
+                },
+                {
+                    "sc_code": "1.25",
+                    "sc_from": "30",
+                    "cbw_domain": "3",
+                    "cbw_ref": "Cbw art. 21.3.f (domein 3 — Evaluatie)",
+                    "title": "Laat periodiek onafhankelijk toetsen of voorschriften en standaarden worden nageleefd",
+                    "service": "Compliance-toetsing & naleving",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.f"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.25"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.36"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "2"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "18"
+                        }
+                    ],
+                    "theme": "toetsing",
+                    "work": "toetsing"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "2",
+                    "cbw_ref": "Cbw art. 21.2 en 21.3.a (domein 2 — Beleid over risicomanagement)",
+                    "title": "Stel risicomanagementbeleid vast en onderhoud het",
+                    "service": "Risicomanagementbeleid & -methodiek",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.2"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "21.3.a"
+                        }
+                    ],
+                    "theme": "beleid",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "3",
+                    "cbw_ref": "Cbw art. 21.3.f (domein 3 — Evaluatie)",
+                    "title": "Leg de periodieke effectiviteitsbeoordeling van maatregelen vast",
+                    "service": "Management review & effectiviteitsrapportage",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.f"
+                        }
+                    ],
+                    "theme": "toetsing",
+                    "work": "toetsing"
+                },
+                {
+                    "sc_code": null,
+                    "cbw_domain": "13",
+                    "cbw_ref": "Cbw art. 21.3.a (domein 13 — Attenderingen, adviezen en informatie)",
+                    "title": "CSIRT- en autoriteitsadviezen structureel verwerken en beoordelen",
+                    "service": "Threat-advisory opvolging",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.a"
+                        }
+                    ],
+                    "theme": "dreigingsinfo",
+                    "work": "techniek"
+                },
+                {
+                    "sc_code": "2.2",
+                    "sc_from": "10",
+                    "cbw_domain": "14",
+                    "cbw_ref": "Cbw art. 24.2, 24.3, 24.4 (domein 14 — Eisen aan de training, de trainer en het certificaat en doel van de training)",
+                    "title": "Laat directie en bestuurders een opleiding volgen in het identificeren en beoordelen van cyberbeveiligingsrisico's",
+                    "service": "Bestuurderstraining NIS2/Cbw + certificaat",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "24.2"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "24.3"
+                        },
+                        {
+                            "group": "cbw",
+                            "code": "24.4"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.2"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "14"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.4.2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AT-3"
+                        }
+                    ],
+                    "theme": "bestuur",
+                    "work": "mensen"
+                }
+            ]
+        },
+        {
+            "id": "people",
+            "label": "Mens & awareness",
+            "icon": "graduation",
+            "intro": "De grootste risico's zitten bij mensen. Bewustwording is de goedkoopste sterke maatregel.",
+            "trigger": {
+                "rules": [],
+                "default": "baseline"
+            },
+            "themes": [
+                {
+                    "id": "awareness",
+                    "label": "Awareness & meldcultuur"
+                },
+                {
+                    "id": "hr",
+                    "label": "HR & veilig (thuis)werken"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "2.2",
+                    "sc_from": "10",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Organiseer periodieke security-awareness-training voor alle medewerkers",
+                    "service": "Security-awareness training",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.2"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.3"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "14"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "16"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.2.4.2"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AT-3"
+                        }
+                    ],
+                    "theme": "awareness",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "2.7",
+                    "sc_from": "10",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Stel een meldprocedure op voor informatiebeveiligingsincidenten",
+                    "service": "Phishing-simulatie & meldcultuur",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.7"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.8"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.4.5.9"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 6.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "IR-6"
+                        }
+                    ],
+                    "theme": "awareness",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "2.6",
+                    "sc_from": "10",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Formuleer regels voor veilige informatieverwerking op externe locaties",
+                    "service": "Secure remote work",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.6"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.7"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "5"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.6.6"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.7.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 1.13"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 2.6"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AC-17"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "2.1",
+                    "sc_from": "30",
+                    "cbw_domain": "10",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 10 — Beveiligingsaspecten t.a.v. personeel)",
+                    "title": "Neem een geheimhoudingsplicht op in alle arbeidsovereenkomsten",
+                    "service": "HR- & contractbeheer",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.1"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.2"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "4"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "6"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.1"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.2"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "4.3.3.2.3"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "2.8",
+                    "sc_from": "30",
+                    "cbw_domain": "10",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 10 — Beveiligingsaspecten t.a.v. personeel)",
+                    "title": "Stel richtlijnen op voor het screenen van kandidaten vóór indiensttreding",
+                    "service": "Screening",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.8"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PS-3"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "1.7",
+                    "sc_from": "20",
+                    "cbw_domain": "8",
+                    "cbw_ref": "Cbw art. 21.3.g (domein 8 — Cyberhygiëne en opleidingen)",
+                    "title": "Stel richtlijnen op voor acceptabel gebruik van informatie en bedrijfsmiddelen",
+                    "service": "Acceptabel-gebruik-beleid (AUP)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.g"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.7"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.10"
+                        },
+                        {
+                            "group": "cis8",
+                            "code": "3"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 3.4"
+                        },
+                        {
+                            "group": "iec62443",
+                            "code": "SR 4.1"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "AC-2"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "2.5",
+                    "sc_from": "30",
+                    "cbw_domain": "10",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 10 — Beveiligingsaspecten t.a.v. personeel)",
+                    "title": "Laat medewerkers en inhuurkrachten een geheimhoudingsovereenkomst ondertekenen",
+                    "service": "Geheimhoudingsovereenkomsten (NDA-beheer)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.5"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.6"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "2.4",
+                    "sc_from": "30",
+                    "cbw_domain": "10",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 10 — Beveiligingsaspecten t.a.v. personeel)",
+                    "title": "Leg vast welke verplichtingen blijven gelden na vertrek of functiewijziging",
+                    "service": "Exit-afspraken & doorlopende verplichtingen",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "2.4"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.6.5"
+                        },
+                        {
+                            "group": "nist",
+                            "code": "PS-4"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "mensen"
+                },
+                {
+                    "sc_code": "1.8",
+                    "sc_from": "10",
+                    "cbw_domain": "12",
+                    "cbw_ref": "Cbw art. 21.3.i (domein 12 — Beveiligingsaspecten t.a.v. beheer van assets)",
+                    "title": "Zorg dat vertrekkende medewerkers alle bedrijfsmiddelen aantoonbaar inleveren",
+                    "service": "Inname bedrijfsmiddelen (off-boarding)",
+                    "refs": [
+                        {
+                            "group": "cbw",
+                            "code": "21.3.i"
+                        },
+                        {
+                            "group": "sc",
+                            "code": "1.8"
+                        },
+                        {
+                            "group": "iso27001",
+                            "code": "A.5.11"
+                        }
+                    ],
+                    "theme": "hr",
+                    "work": "mensen"
+                }
+            ]
+        },
+        {
+            "id": "ot",
+            "label": "OT / productiesystemen",
+            "icon": "factory",
+            "intro": "Operationele technologie vraagt eigen maatregelen — uitval raakt direct de fysieke productie.",
+            "trigger": {
+                "rules": [
+                    {
+                        "if": {
+                            "metric": "has",
+                            "flag": "ot"
+                        },
+                        "result": "hoog"
+                    }
+                ],
+                "default": null
+            },
+            "themes": [
+                {
+                    "id": "ot_continuiteit",
+                    "label": "OT-inventarisatie & continuïteit"
+                },
+                {
+                    "id": "ot_netwerk",
+                    "label": "OT-netwerk & remote toegang"
+                }
+            ],
+            "measures": [
+                {
+                    "sc_code": "5.1",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel een overzicht op van OT-bedrijfsmiddelen inclusief configuratiegegevens",
+                    "service": "OT-asset-inventarisatie",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.1"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.2",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Breng per OT-systeem de afhankelijkheid, uitvalkans en impact in kaart",
+                    "service": "OT-risico- & impactanalyse",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.2"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.11",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Houd een actueel register bij van alle OT-systemen met kerngegevens",
+                    "service": "OT-systeemregister",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.11"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.4",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel een back-upplan op voor OT-systemen met frequentie en inhoud",
+                    "service": "OT-back-up",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.4"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.5",
+                    "sc_from": "20",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel een bedrijfscontinuïteitsplan op met continuïteitseisen voor OT-systemen",
+                    "service": "OT-disasterrecovery",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.5"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.9",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Wijs verantwoordelijkheden toe voor het tijdig patchen van OT-systemen",
+                    "service": "OT-patchmanagement",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.9"
+                        }
+                    ],
+                    "theme": "ot_continuiteit",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.6",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Stel regels op voor segmentatie van OT-netwerken",
+                    "service": "OT-netwerksegmentatie",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.6"
+                        }
+                    ],
+                    "theme": "ot_netwerk",
+                    "work": "beleid"
+                },
+                {
+                    "sc_code": "5.8",
+                    "sc_from": "30",
+                    "cbw_domain": null,
+                    "cbw_ref": null,
+                    "title": "Gebruik een beveiligde toegangsserver (jump host) voor remote toegang tot kritieke OT-systemen",
+                    "service": "Secure remote access (OT)",
+                    "refs": [
+                        {
+                            "group": "sc",
+                            "code": "5.8"
+                        }
+                    ],
+                    "theme": "ot_netwerk",
+                    "work": "techniek"
+                }
+            ],
+            "norm_note": "Voor OT-/ICS-beveiliging is BIACS het relevante verdiepingsschema; OT-maatregelen hebben daarom bewust geen losse normtags naar ISO 27001, CIS, IEC 62443 of NIST."
+        }
+    ]
+}

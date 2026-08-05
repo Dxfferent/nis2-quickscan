@@ -1,0 +1,7 @@
+# Tekstbestanden met LF in de repo, ongeacht het platform van de bijdrager.
+* text=auto eol=lf
+
+# Binair — nooit door line-ending-normalisatie halen.
+*.woff2 binary
+*.png binary
+*.pdf binary

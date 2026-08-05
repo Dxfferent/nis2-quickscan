@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Beveiligingsprobleem
+    url: https://github.com/Dxfferent/nis2-quickscan/blob/main/SECURITY.md
+    about: Meld kwetsbaarheden niet in een publiek issue — zie SECURITY.md.
+  - name: White-label of support
+    url: mailto:hallo@dxfferent.nl
+    about: Vragen over white-label-inzet, hosting of het partnermodel.

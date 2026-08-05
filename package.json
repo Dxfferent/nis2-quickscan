@@ -1,0 +1,21 @@
+{
+  "name": "nis2-quickscan",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  },
+  "description": "Gratis open-source NIS2 / Cyberbeveiligingswet risico-intake: scope-check, RTO/RPO-herstelprofielen en een concreet overzicht van wat er moet gebeuren. White-label inzetbaar voor MSP's.",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dxfferent/nis2-quickscan.git"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

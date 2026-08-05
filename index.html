@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: AGPL-3.0-only
+     Copyright (C) 2026 Dxfferent B.V.
+     Onderdeel van NIS2 Quickscan. Gelicenseerd onder de GNU AGPL v3.0 (zie LICENSE).
+     Aanvullende voorwaarden onder AGPL-3.0 §7 van toepassing: zie ATTRIBUTION.md,
+     sectie 'Licentie & aanvullende voorwaarden'. -->
+<html lang="nl" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NIS2 Quickscan — gratis risico-intake voor de Cyberbeveiligingswet</title>
+<meta name="description" content="Gratis NIS2 (Cyberbeveiligingswet) risico-intake: Cbw-scope-indicatie, RTO/RPO-herstelprofielen en een concreet overzicht van wat er moet gebeuren over 78 maatregelen, in 10 minuten. Open source, white-label inzetbaar voor MSP's." />
+<meta property="og:title" content="NIS2 Quickscan — gratis risico-intake voor de Cyberbeveiligingswet" />
+<meta property="og:description" content="Cbw-scope-indicatie, RTO/RPO-herstelprofielen en een concreet overzicht van wat er moet gebeuren, in 10 minuten. Open source, white-label inzetbaar voor MSP's." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nl_NL" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ed4c35' stroke-width='2' stroke-linejoin='round'><path d='M12 3l8 3v6c0 5-3.4 7.7-8 9-4.6-1.3-8-4-8-9V6z'/></svg>" />
+<link rel="stylesheet" href="assets/tokens.css" />
+<link rel="stylesheet" href="assets/wizard.css" />
+<link rel="stylesheet" href="assets/dxfferent-theme.css" />
+</head>
+<body>
+<div id="root"></div>
+<script>
+// Lead-gate: ids uit HubSpot > Forms (server-side invulbaar, geen rebuild nodig).
+// De productie-build zet enabled op true; dev-default is uit.
+window.HUBSPOT_GATE = { enabled: false, portalId: '', formId: '' };
+
+// White-label? Haal het blok hieronder uit commentaar en vul uw eigen gegevens
+// in — alle sleutels en de AVG-vereisten staan in docs/MSP-ENABLEMENT.md.
+// window.MSP_BRAND = {
+//   name: 'Uw bedrijfsnaam',
+//   logo: '/uw-logo.svg',
+//   accent: '#0d9488',
+//   legal: 'Uw Bedrijf B.V. · KvK 12345678 · Straat 1, 1234 AB Plaats',
+//   mailto: 'security@uwbedrijf.example',
+//   privacyUrl: 'https://uwbedrijf.example/privacy', // verplicht voor de lead-gate
+//   hubspot: { portalId: '', formId: '' },
+// };
+</script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/nis2-data.jsx"></script>
+<script type="text/babel" src="assets/wizard-app.jsx"></script>
+</body>
+</html>
