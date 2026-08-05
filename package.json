@@ -15,7 +15,7 @@
     "url": "https://github.com/Dxfferent/nis2-quickscan.git"
   },
   "dependencies": {
-    "react": "18.3.1",
+    "react": "19.2.8",
     "react-dom": "18.3.1"
   }
 }
