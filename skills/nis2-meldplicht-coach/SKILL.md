@@ -58,6 +58,7 @@ afwijkende termijn: vertrouwensdiensten melden binnen 24 uur.
 ([broncode](https://github.com/Dxfferent/nis2-quickscan)). Normbasis:
 ADR & NOREA, Cbw (NIS2) Control Framework (2025), CC BY 4.0 gelicenseerd —
 bewerkt door Dxfferent B.V.; maatregel-titels en codes uit NIS2 Supply Chain
-(Stichting Kwaliteitsinnovatie). Dxfferent is niet verbonden aan, gecertificeerd
-door of goedgekeurd door Stichting Kwaliteitsinnovatie. Uitkomsten zijn
+(Stichting Kwaliteitsinnovatie). Dxfferent is als auditor aangesloten bij AuditPlanner;
+deze skill is geen certificeringsinstrument en is niet door Stichting
+Kwaliteitsinnovatie beoordeeld of goedgekeurd. Uitkomsten zijn
 indicatief en vormen geen juridisch advies.*

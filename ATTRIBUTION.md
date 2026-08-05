@@ -35,11 +35,13 @@ De inhoudelijke basis van deze tool (`assets/intake-config.json` en de
   normversies SC10/20/30 V3.2 (15-12-2025); de release notes V3.2
   (Schema, Norm en Werkwijzer, 01-01-2026) melden geen norminhoudelijke
   wijzigingen in V3.1/V3.2 — uitsluitend schema en proces (terminologie,
-  governance, audittijd). Dxfferent B.V. en deze tool zijn niet verbonden aan,
-  gecertificeerd door of goedgekeurd door Stichting Kwaliteitsinnovatie.
-  De intake is geen certificeringsinstrument: het doorlopen ervan levert
-  geen NIS2 Supply Chain-certificaat (voorheen NIS2 Kwaliteitsmerk) op en
-  geeft geen recht op het voeren van dat keurmerk.
+  governance, audittijd). Dxfferent B.V. is als auditor aangesloten bij
+  AuditPlanner (auditplanner.eu) en voert audits uit voor certificering tegen
+  de norm NIS2 Supply Chain; deze tool en zijn normdata zijn niet door
+  Stichting Kwaliteitsinnovatie beoordeeld of goedgekeurd. De intake is geen
+  certificeringsinstrument: het doorlopen ervan levert geen NIS2 Supply
+  Chain-certificaat (voorheen NIS2 Kwaliteitsmerk) op en geeft geen recht op
+  het voeren van dat keurmerk.
 - **Officiële verwijzingen**: RDI-zelfevaluatie
   (regelhulpenvoorbedrijven.nl/NIS-2-NL), meldpunt mijn.ncsc.nl.
 

@@ -10,7 +10,10 @@ De tool is op zichzelf compleet en verplicht u tot niets. Wilt u er een
 partner naast, dan ondersteunt Dxfferent MSP's met PDC-realisatie (uw
 producten- en dienstencatalogus NIS2-proof), route naar markt,
 procesoptimalisatie en compliance-begeleiding richting certificering — voor
-uw klanten én voor uw eigen organisatie.
+uw klanten én voor uw eigen organisatie. Als bij
+[AuditPlanner](https://auditplanner.eu/auditoren/dxfferent/) aangesloten
+auditor voert Dxfferent daarnaast NIS2 Supply Chain-audits uit, strikt
+gescheiden van de adviestrajecten: wie wij begeleiden, auditeren wij niet.
 
 ## Snel starten (MSP-deploy)
 

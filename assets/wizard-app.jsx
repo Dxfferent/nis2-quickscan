@@ -1434,7 +1434,7 @@ function App() {
           {/* AI-NOTE: net als de Cbw-regel hierboven hardcoded fallback — de
               SC-bronvermelding is §7b-plicht en mag niet verdwijnen als een
               deploy attribution.sc uit de config sloopt. */}
-          <p>Maatregel-titels en normreferenties (ISO/IEC 27001, CIS Controls v8, IEC 62443, NIST SP 800-53) mede ontleend aan de norm {ATTRIBUTION.sc?.source || 'NIS2 Supply Chain'} (voorheen NIS2 Kwaliteitsmerk) van {ATTRIBUTION.sc?.provider || 'Stichting Kwaliteitsinnovatie'} ({ATTRIBUTION.sc?.version || 'V3.2, 15-12-2025'}). Geen certificering; niet verbonden aan Stichting Kwaliteitsinnovatie.</p>
+          <p>Maatregel-titels en normreferenties (ISO/IEC 27001, CIS Controls v8, IEC 62443, NIST SP 800-53) mede ontleend aan de norm {ATTRIBUTION.sc?.source || 'NIS2 Supply Chain'} (voorheen NIS2 Kwaliteitsmerk) van {ATTRIBUTION.sc?.provider || 'Stichting Kwaliteitsinnovatie'} ({ATTRIBUTION.sc?.version || 'V3.2, 15-12-2025'}). Geen certificeringsinstrument; niet door Stichting Kwaliteitsinnovatie beoordeeld of goedgekeurd.</p>
           {/* colofon (art. 3:15d BW): bij white-label vult de MSP zijn eigen
               gegevens — zie docs/MSP-ENABLEMENT.md */}
           {BRAND.legal && <p>{BRAND.legal}</p>}

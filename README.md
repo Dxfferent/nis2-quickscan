@@ -178,10 +178,12 @@ vastgesteld en gepubliceerd als Cyberbeveiligingswet (Stb. 2026, 187), met het
 Cyberbeveiligingsbesluit (Stb. 2026, 189); beide treden 15 augustus 2026 in
 werking. Volledige bronvermelding: [ATTRIBUTION.md](ATTRIBUTION.md).
 
-Dxfferent B.V. en deze tool zijn niet verbonden aan, gecertificeerd door of
-goedgekeurd door Stichting Kwaliteitsinnovatie. De intake is geen
-certificeringsinstrument; het doorlopen ervan levert geen keurmerk-certificaat
-op.
+Deze tool is geen certificeringsinstrument: hij is niet door Stichting
+Kwaliteitsinnovatie beoordeeld of goedgekeurd en het doorlopen ervan levert
+geen keurmerk-certificaat op. Dxfferent voert als bij
+[AuditPlanner](https://auditplanner.eu/auditoren/dxfferent/) aangesloten
+auditor wél audits uit voor certificering tegen NIS2 Supply Chain — advies-
+en audittrajecten blijven daarbij gescheiden.
 
 Bij een wetswijziging streeft Dxfferent ernaar de normdata te publiceren als
 een nieuwe `assets/intake-config.json`, dus als config-swap en niet als
@@ -251,7 +253,11 @@ verplichtingen richting Dxfferent.
 Wilt u meer, dan staan wij ernaast als ondersteunende partner: realisatie van
 uw producten- en dienstencatalogus (PDC), route naar markt, procesoptimalisatie
 en compliance-begeleiding richting certificering — voor uw klanten én voor uw
-eigen organisatie. U kiest; de scan werkt hoe dan ook.
+eigen organisatie. En als bij
+[AuditPlanner](https://auditplanner.eu/auditoren/dxfferent/) aangesloten
+auditor voeren we ook de NIS2 Supply Chain-audits zelf uit, strikt gescheiden
+van onze adviestrajecten: wie wij begeleiden, auditeren wij niet. U kiest; de
+scan werkt hoe dan ook.
 
 ## Over Dxfferent
 
