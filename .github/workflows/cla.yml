@@ -1,0 +1,29 @@
+name: CLA
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+  statuses: write
+
+jobs:
+  cla:
+    runs-on: ubuntu-latest
+    steps:
+      # Vastgezet op de commit-SHA van v2.6.1: deze job draait op
+      # pull_request_target met schrijfrechten, dus een verplaatsbare tag zou
+      # een derde partij code in die context laten uitvoeren.
+      - uses: contributor-assistant/github-action@ca4a40a7d1004f18d9960b404b97e5f30a505a08
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path-to-signatures: '.github/cla-signatures.json'
+          path-to-document: 'https://github.com/${{ github.repository }}/blob/main/CLA.md'
+          branch: 'main'
+          allowlist: jasperaap,dependabot[bot],renovate[bot]

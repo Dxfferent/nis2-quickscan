@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: AGPL-3.0-only
+     Copyright (C) 2026 Dxfferent B.V.
+     Onderdeel van NIS2 Quickscan. Gelicenseerd onder de GNU AGPL v3.0 (zie LICENSE).
+     Aanvullende voorwaarden onder AGPL-3.0 §7 van toepassing: zie ATTRIBUTION.md,
+     sectie 'Licentie & aanvullende voorwaarden'. -->
+<html lang="nl" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NIS2 voor MSP's — gratis risico-intake & white-label diagnose</title>
+<meta name="description" content="De gratis NIS2 Quickscan voor uw klanten: Cbw-scope, gaps en een concreet overzicht van wat er moet gebeuren, in tien minuten. White-label inzetbaar voor MSP's, gebouwd op het Cbw-framework van ADR/NOREA en de NIS2 Supply Chain-norm." />
+<meta property="og:title" content="NIS2 voor MSP's — gratis risico-intake & white-label diagnose" />
+<meta property="og:description" content="Cbw-scope, gaps en een concreet overzicht van wat er moet gebeuren, in tien minuten. White-label inzetbaar voor MSP's, gebouwd op het Cbw-framework van ADR/NOREA en de NIS2 Supply Chain-norm." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nl_NL" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ed4c35' stroke-width='2' stroke-linejoin='round'><path d='M12 3l8 3v6c0 5-3.4 7.7-8 9-4.6-1.3-8-4-8-9V6z'/></svg>" />
+<link rel="stylesheet" href="assets/tokens.css" />
+<link rel="stylesheet" href="assets/wizard.css" />
+<link rel="stylesheet" href="assets/dxfferent-theme.css" />
+<style>
+/* landing-specifiek — bouwt op dezelfde tokens, geen nieuwe kleuren */
+body { background: var(--bg-canvas); color: var(--fg-default); font-family: var(--font-sans); margin: 0; }
+.ld-wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.ld-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+.ld-logo { font-family: var(--font-mono); font-size: 13px; letter-spacing: var(--tracking-annot); text-transform: uppercase; color: var(--fg-highlighted); }
+.ld-logo b { color: var(--accent); }
+.ld-nav .btn { text-decoration: none; }
+
+.ld-hero { position: relative; padding: 72px 0 64px; border-bottom: 1px solid var(--border-default); overflow: hidden; }
+.ld-hero::before { content: ""; position: absolute; inset: 0; background-image: var(--dotgrid); background-size: var(--dotgrid-size); pointer-events: none; }
+.ld-hero > * { position: relative; }
+.ld-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: var(--tracking-annot); text-transform: uppercase; color: var(--accent); }
+.ld-h1 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(26px, 4.6vw, 44px); line-height: 1.08; color: var(--fg-highlighted); margin: 14px 0 18px; max-width: 21ch; }
+.ld-lead { font-size: 16px; line-height: 1.6; color: var(--fg-muted); max-width: 58ch; }
+.ld-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+.ld-cta-row .btn { text-decoration: none; }
+.ld-hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--fg-dimmed); margin-top: 22px; }
+
+.ld-sec { padding: 56px 0; border-bottom: 1px solid var(--border-default); }
+.ld-sec-h { font-family: var(--font-mono); font-size: 12px; letter-spacing: var(--tracking-annot); text-transform: uppercase; color: var(--fg-dimmed); margin-bottom: 26px; }
+.ld-sec-h::before { content: "— "; color: var(--accent); }
+.ld-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px) { .ld-grid { grid-template-columns: 1fr; } }
+.ld-card { border: 1px solid var(--border-default); border-radius: var(--radius-xl); background: var(--bg-elevated); padding: 22px; }
+.ld-card .n { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; }
+.ld-card h3 { font-size: 16px; font-weight: 700; color: var(--fg-highlighted); margin: 8px 0 8px; }
+.ld-card p { font-size: 13.5px; line-height: 1.55; color: var(--fg-muted); margin: 0; }
+
+.ld-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+@media (max-width: 760px) { .ld-split { grid-template-columns: 1fr; } }
+.ld-split h2 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 22px; line-height: 1.15; color: var(--fg-highlighted); margin: 0 0 14px; }
+.ld-split p { font-size: 14px; line-height: 1.6; color: var(--fg-muted); }
+.ld-check { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+.ld-check li { display: flex; gap: 10px; font-size: 14px; color: var(--fg-default); line-height: 1.5; }
+.ld-check li::before { content: "→"; color: var(--accent); font-weight: 700; flex: none; }
+
+.ld-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; }
+.ld-quote p { font-size: 15px; line-height: 1.6; color: var(--fg-default); margin: 0; }
+.ld-quote .who { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-dimmed); margin-top: 10px; }
+
+.ld-cta-band { padding: 64px 0; text-align: center; }
+.ld-cta-band h2 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(20px, 3.4vw, 30px); color: var(--fg-highlighted); margin: 0 0 12px; }
+.ld-cta-band p { color: var(--fg-muted); max-width: 52ch; margin: 0 auto 26px; font-size: 14.5px; line-height: 1.6; }
+.ld-cta-band .ld-cta-row { justify-content: center; }
+
+.ld-foot { padding: 26px 0 40px; }
+.ld-foot p { font-family: var(--font-mono); font-size: 10px; line-height: 1.6; color: var(--fg-dimmed); margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<div class="ld-wrap">
+  <nav class="ld-nav">
+    <span class="ld-logo">NIS2 <b>Quickscan</b> · powered by Dxfferent</span>
+    <a class="btn btn-outline btn-sm" href="index.html?mode=lead">Start de intake →</a>
+  </nav>
+</div>
+
+<header class="ld-hero">
+  <div class="ld-wrap">
+    <div class="ld-eyebrow">Cyberbeveiligingswet · in werking per 15 augustus 2026</div>
+    <h1 class="ld-h1">Word de NIS2-partner die uw klanten nú nodig hebben</h1>
+    <p class="ld-lead">De Cyberbeveiligingswet (NIS2) is vastgesteld en gepubliceerd. Duizenden Nederlandse bedrijven moeten aan de slag met zorgplicht, meldplicht en registratie — en kijken daarvoor naar hun IT-partner. Met deze gratis risico-intake maakt u dat gesprek concreet: Cbw-scope, gaps en een overzicht van wat er moet gebeuren, in tien minuten.</p>
+    <div class="ld-cta-row">
+      <a class="btn btn-primary" href="index.html?mode=lead">Probeer de intake gratis</a>
+      <a class="btn btn-outline" href="#msp">White-label voor uw MSP</a>
+    </div>
+    <div class="ld-hero-meta">Geen account nodig · uw antwoorden blijven op uw apparaat, tenzij u zelf het rapport aanvraagt · rapport als PDF</div>
+  </div>
+</header>
+
+<section class="ld-sec">
+  <div class="ld-wrap">
+    <div class="ld-sec-h">Wat de intake doet</div>
+    <div class="ld-grid">
+      <div class="ld-card"><div class="n">01</div><h3>Cbw-scope in kaart</h3><p>Sector, omvang en van-rechtswege-categorieën → een onderbouwde indicatie essentieel / belangrijk / buiten scope, met doorverwijzing naar de officiële RDI-zelfevaluatie.</p></div>
+      <div class="ld-card"><div class="n">02</div><h3>Risicoprofiel per datatype</h3><p>Impact en veranderfrequentie per systeem → concrete RTO/RPO-herstelprofielen, geen algemeenheden maar cijfers om op te sturen.</p></div>
+      <div class="ld-card"><div class="n">03</div><h3>Overzicht op maat</h3><p>78 maatregelen uit het Cbw-framework en de NIS2 Supply Chain-norm, gefilterd op relevantie, geclusterd in 25 herkenbare MSP-werkpakketten, geordend naar soort werk en prioriteit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ld-sec" id="msp">
+  <div class="ld-wrap">
+    <div class="ld-sec-h">Voor MSP's — white-label</div>
+    <div class="ld-split">
+      <div>
+        <h2>Uw merk, uw leads, onze normkennis</h2>
+        <p>Zet de intake in onder uw eigen naam en kleur, op uw eigen domein. Rapport-leads landen rechtstreeks in uw CRM. Dxfferent houdt de normdata bij — u voert het gesprek.</p>
+        <ul class="ld-check">
+          <li>Eigen naam, accentkleur en mailbox — één config-blok, geen rebuild</li>
+          <li>Lead-gate op het rapport, gekoppeld aan uw HubSpot-forms</li>
+          <li>Normdata-updates bij wetswijzigingen (Cbw, ministeriële regelingen) — op basis van een inspanningsverplichting, zonder gegarandeerde termijn</li>
+          <li>Inzetbaar in webinars, QBR's en new-business-gesprekken</li>
+        </ul>
+        <div class="ld-cta-row">
+          <a class="btn btn-outline btn-sm" href="index.html?mode=pro">Voor uw consultants: open de pro-stand →</a>
+        </div>
+      </div>
+      <div class="ld-quote">
+        <p>"Elke maatregel in het rapport is gekoppeld aan een dienst die een MSP herkent — van BCDR en SOC/SIEM tot IAM en vCISO. Het rapport ís uw offerte-voorbereiding."</p>
+        <div class="who">Het MSP-werkpakketten-model · 25 pakketten over 78 maatregelen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ld-sec">
+  <div class="ld-wrap">
+    <div class="ld-sec-h">Waarom dit klopt</div>
+    <div class="ld-split">
+      <div>
+        <h2>Gebouwd op de bron, niet op een blog</h2>
+        <p>Geen samenvatting-van-een-samenvatting: de intake is gegenereerd uit het Cbw (NIS2) Control Framework v1.2 van Auditdienst Rijk en NOREA, met maatregel-titelverwijzingen naar de NIS2 Supply Chain-norm (voorheen NIS2 Kwaliteitsmerk). Wet vastgesteld en gepubliceerd (Stb. 2026, 187), inwerkingtreding 15 augustus 2026 — de meldplicht-tijdlijnen in het rapport volgen de gepubliceerde wettekst; de significantie-drempels zijn voor de digitale sectoren kwantitatief vastgelegd in Uitvoeringsverordening (EU) 2024/2690 en volgen voor de overige sectoren bij ministeriële regeling.</p>
+      </div>
+      <div>
+        <ul class="ld-check">
+          <li>17 Cbw-domeinen volledig gedekt, elk met letterlijke artikelverwijzingen</li>
+          <li>Meldplicht-tijdlijn 24u / 72u / eindverslag, incl. de DORA-route (lex specialis) en de kortere termijn voor vertrouwensdiensten</li>
+          <li>Normfilter Cbw-verplicht + zoeken op letterlijke artikelcodes (Cbw, SC, ISO, NIST)</li>
+          <li>Volwassenheidsmeting in 5 niveaus per maatregel — geen zelfoverschatting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ld-cta-band">
+  <div class="ld-wrap">
+    <h2>Start vandaag het NIS2-gesprek</h2>
+    <p>Doorloop de intake zelf, of vraag de white-label-variant aan voor uw MSP en geef hem aan al uw klanten.</p>
+    <div class="ld-cta-row">
+      <a class="btn btn-primary" href="index.html?mode=lead">Start de intake</a>
+      <a class="btn btn-outline" href="mailto:hallo@dxfferent.nl?subject=White-label%20NIS2-intake%20voor%20ons%20MSP">Vraag white-label aan</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ld-foot">
+  <div class="ld-wrap">
+    <p>Bron: Cbw (NIS2) Control Framework v1.2 (2025) — ADR &amp; NOREA, CC BY 4.0 gelicenseerd, bewerkt door Dxfferent B.V.</p>
+    <p>Maatregel-titels mede ontleend aan de norm NIS2 Supply Chain (voorheen NIS2 Kwaliteitsmerk) van Stichting Kwaliteitsinnovatie. Geen certificering; niet verbonden aan Stichting Kwaliteitsinnovatie. Deze intake is indicatief en vormt geen juridisch advies.</p>
+    <p>Dxfferent B.V. · KvK 77524950 · Bataviastraat 5, 3531 XA Utrecht · hallo@dxfferent.nl</p>
+  </div>
+</footer>
+</body>
+</html>

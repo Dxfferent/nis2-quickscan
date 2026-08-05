@@ -1,0 +1,34 @@
+# NIS2 Quickscan
+
+> Gratis open-source NIS2 / Cyberbeveiligingswet-quickscan voor Nederlandse
+> organisaties en MSP's, gebouwd door Dxfferent (dxfferent.nl). Vijf stappen (zes in pro-stand):
+> Cbw-scope-indicatie (essentieel/belangrijk/indirect geraakt via de keten/
+> buiten scope), risicoprofiel per
+> datatype, RTO/RPO-herstelprofielen, volwassenheid per maatregel (5 niveaus),
+> en een overzicht van wat er moet gebeuren over 78 maatregelen uit het Cbw (NIS2) Control Framework v1.2
+> (ADR & NOREA, CC BY 4.0 — bewerkt door Dxfferent B.V.), met
+> titel- en normreferenties (SC-codes, ISO 27001, CIS v8, IEC 62443, NIST SP 800-53) uit NIS2 Supply Chain (voorheen NIS2 Kwaliteitsmerk), geclusterd in 25 MSP-werkpakketten,
+> geordend naar soort werk (techniek, beleid, mensen, toetsing) en met een
+> dienstenmenukaart van 33 regels over drie SC-niveaus. Statische site zonder backend; white-label inzetbaar
+> (eigen naam, logo, kleuren, leadflow). Cyberbeveiligingswet: Stb. 2026, 187 en
+> Cyberbeveiligingsbesluit: Stb. 2026, 189, beide vastgesteld en gepubliceerd,
+> in werking 15 augustus 2026. Uitkomsten zijn indicatief; de wettekst
+> (Cbw/Cbb) is bepalend en de RDI-zelfevaluatie
+> (regelhulpenvoorbedrijven.nl/NIS-2-NL) is het officiële hulpmiddel om de
+> classificatie vast te stellen; incidenten melden via mijn.ncsc.nl. Geen
+> juridisch advies.
+
+## Docs
+
+- [README.md](README.md): wat de intake doet, quick start, FAQ
+- [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md): white-label-config voor MSP's
+- [docs/HOSTING.md](docs/HOSTING.md): build en hosting
+- [ATTRIBUTION.md](ATTRIBUTION.md): bronnen en gebruiksvoorwaarden
+- [DISCLAIMER.md](DISCLAIMER.md): gebundelde disclaimer
+- [TRADEMARK.md](TRADEMARK.md): merkgebruik
+- [docs/PRIVACY-TEMPLATE.md](docs/PRIVACY-TEMPLATE.md): privacyverklaring-template voor eigen deploys
+- [skills/README.md](skills/README.md): Claude-skills (scope-check, meldplicht-coach, rapport-adviseur, MSP-GTM)
+
+## Contact
+
+- Dxfferent — NIS2-implementaties, ISO 27001, vCISO voor MSP's: hallo@dxfferent.nl

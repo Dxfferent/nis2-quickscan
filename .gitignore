@@ -1,0 +1,11 @@
+node_modules/
+dist/
+review/
+
+# lokale rommel — vangrail voor externe bijdragers
+.env
+.env.*
+*.local
+.DS_Store
+.idea/
+.vscode/

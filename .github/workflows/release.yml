@@ -1,0 +1,65 @@
+name: Release
+
+# Bij een versietag: bouw de site en hang hem als kant-en-klare zip onder de
+# release. Dat is de route voor iedereen zonder Node — downloaden, uitpakken,
+# uploaden naar de eigen webhosting.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node tests/engine-smoke.mjs
+      - run: npm run build
+
+      # De zip pakt de INHOUD van dist/, niet de map zelf: uitpakken levert
+      # index.html op het hoogste niveau, klaar om te uploaden. Géén dotfile-
+      # exclusie: .htaccess draagt de cache- en security-headers voor Apache.
+      - name: Zip de gebouwde site
+        run: cd dist && zip -r "../nis2-quickscan-${GITHUB_REF_NAME}.zip" .
+
+      - name: Controleer dat de zip compleet is
+        run: |
+          unzip -l "nis2-quickscan-${GITHUB_REF_NAME}.zip" > listing.txt
+          for f in index.html .htaccess _headers assets/intake-config.json assets/wizard-app.js assets/nis2-data.js vendor/react.production.min.js vendor/react-dom.production.min.js; do
+            grep -q " $f\$" listing.txt || { echo "ONTBREEKT in de zip: $f"; exit 1; }
+          done
+          echo "zip compleet"
+
+      # gh staat op de runner; geen third-party action nodig voor één upload.
+      - name: Publiceer de release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat > notes.md <<'EOF'
+          ## Zelf installeren (geen Node nodig)
+
+          1. Download de zip hieronder.
+          2. Pak uit. Open `index.html` in een teksteditor, haal het
+             `window.MSP_BRAND`-voorbeeldblok uit commentaar en vul je eigen
+             naam, logo en kleur in —
+             zie [docs/MSP-ENABLEMENT.md](https://github.com/Dxfferent/nis2-quickscan/blob/main/docs/MSP-ENABLEMENT.md).
+          3. Upload alle bestanden naar je webhosting.
+
+          Let op: dubbelklikken op `index.html` werkt niet — de tool laadt zijn
+          normdata met een netwerkverzoek en heeft dus een webserver nodig.
+          Uploaden naar je hosting is genoeg.
+
+          Hulp nodig? De skill `skills/nis2-installatie/` begeleidt de
+          installatie stap voor stap in Claude.
+          EOF
+          gh release create "$GITHUB_REF_NAME" \
+            "nis2-quickscan-${GITHUB_REF_NAME}.zip" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file notes.md \
+            --generate-notes

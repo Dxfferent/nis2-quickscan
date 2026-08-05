@@ -1,0 +1,157 @@
+/* SPDX-License-Identifier: AGPL-3.0-only
+   Copyright (C) 2026 Dxfferent B.V.
+   Onderdeel van NIS2 Quickscan. Gelicenseerd onder de GNU AGPL v3.0 (zie LICENSE).
+   Aanvullende voorwaarden onder AGPL-3.0 §7 van toepassing: zie ATTRIBUTION.md,
+   sectie 'Licentie & aanvullende voorwaarden'. */
+/* ============================================================
+   Dxfferent huisstijl-laag — NIS2 Quickscan
+   Geconformeerd aan de live dxfferent.com-huisstijl: near-zwart canvas,
+   Archivo Black-koppen (OFL), DM Sans body, IBM Plex Mono-annotaties,
+   accent #ed4c35, blueprint-DNA (dot-grid, hairlines, 3px radius).
+   Laadt NA tokens.css + wizard.css en overschrijft alleen tokens
+   en rapport-presentatie; accent blijft white-label (MSP_BRAND.accent).
+   ============================================================ */
+
+/* Fonts self-hosted (AVG: geen Google-Fonts-request; OFL-licenties in
+   assets/fonts/OFL-*.txt). DM Sans is een variable font (100-1000). */
+@font-face { font-family: 'Archivo Black'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/archivo-black-400.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 100 1000; font-display: swap; src: url('fonts/dm-sans-var.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-mono-600.woff2') format('woff2'); }
+
+/* ---------- tokens: donker = huisstijl-default ---------- */
+:root,
+[data-theme="dark"] {
+  --bg-canvas:   #030303;
+  --bg-elevated: #141414;
+  --bg-muted:    #1f1f1f;
+  --bg-overlay:  rgba(3, 3, 3, 0.78);
+
+  --border-default: rgba(255, 255, 255, 0.09);
+  --border-strong:  rgba(255, 255, 255, 0.20);
+
+  --fg-highlighted: #ffffff;
+  --fg-default:     #d6d6d6;
+  --fg-muted:       #afafaf;
+  --fg-dimmed:      #646464;
+  --fg-inverse:     #030303;
+
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+
+  --dotgrid: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  --dotgrid-size: 22px 22px;
+  --tracking-annot: 0.14em;
+}
+
+/* licht blijft beschikbaar (toggle + print) — afgeleide, geen live-pendant */
+[data-theme="light"] {
+  --bg-canvas:   #f6f6f6;
+  --bg-elevated: #ffffff;
+  --bg-muted:    #ececec;
+  --bg-overlay:  rgba(246, 246, 246, 0.85);
+
+  --border-default: rgba(0, 0, 0, 0.10);
+  --border-strong:  rgba(0, 0, 0, 0.22);
+
+  --fg-highlighted: #0a0a0a;
+  --fg-default:     #2e2e2e;
+  --fg-muted:       #5c5c5c;
+  --fg-dimmed:      #8f8f8f;
+  --fg-inverse:     #ffffff;
+
+  --dotgrid: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+}
+
+/* ---------- display-typografie (brede 900-display: kleiner zetten) ---------- */
+.step-h { font-family: var(--font-display); font-weight: 900; font-size: 26px; letter-spacing: 0; line-height: 1.12; text-transform: uppercase; }
+.rail-title { font-family: var(--font-display); font-weight: 900; font-size: 19px; letter-spacing: 0; line-height: 1.15; text-transform: uppercase; }
+.gauge .in b { font-family: var(--font-display); font-size: 30px; }
+.verdict-hero-title { font-family: var(--font-display); font-size: 20px; text-transform: uppercase; letter-spacing: 0; }
+
+/* mono-annotaties: eyebrows + sectiekoppen in blueprint-stijl */
+.eyebrow, .sec-h {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: var(--tracking-annot);
+}
+.sec-h::before { content: "— "; color: var(--accent); }
+
+/* ---------- rapport ---------- */
+.rep-annot {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: var(--tracking-annot);
+  text-transform: uppercase; color: var(--fg-dimmed); margin-top: 4px;
+}
+.rep-annot b { color: var(--accent); font-weight: 600; }
+
+.rep-score { position: relative; overflow: hidden; }
+.rep-score::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: var(--dotgrid); background-size: var(--dotgrid-size);
+  pointer-events: none;
+}
+.rep-score > * { position: relative; }
+.rep-stats { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 14px; }
+.rep-stat .v { font-family: var(--font-mono); font-size: 17px; font-weight: 600; color: var(--fg-highlighted); }
+.rep-stat .l { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: var(--tracking-annot); text-transform: uppercase; color: var(--fg-dimmed); margin-top: 2px; }
+
+/* percentages/refs strakker mono */
+.bar-row .bt .pc, .mp-deadline, .road-card .rh .ph, .road-card .rh .road-status { font-family: var(--font-mono); }
+.track { height: 8px; border-radius: 0; }
+.track .cur { border-radius: 0; }
+.legend i { border-radius: 0; }
+
+/* ---------- meldplicht: blueprint-deadline-rail ---------- */
+.meldplicht-timeline { grid-template-columns: 1fr; gap: 0; position: relative; margin-top: 4px; }
+.meldplicht-phase {
+  border-left: 1px solid var(--border-strong); padding: 12px 0 14px 20px; position: relative; cursor: pointer;
+}
+.meldplicht-phase:last-child { padding-bottom: 4px; }
+.meldplicht-phase::before {
+  content: ""; position: absolute; left: -4.5px; top: 19px;
+  width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+}
+.mp-n { display: none; }
+.mp-deadline {
+  margin-left: 0; order: -1; flex: none;
+  display: inline-flex; align-items: center; height: 20px; padding: 0 8px;
+  border: 1px solid var(--accent); color: var(--accent); border-radius: var(--radius-sm);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.mp-label { font-size: 14px; }
+.mp-desc {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  max-width: 66ch;
+}
+.meldplicht-phase.open .mp-desc { display: block; -webkit-line-clamp: unset; }
+.mp-more { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-dimmed); margin-top: 4px; }
+.meldplicht-phase.open .mp-more { display: none; }
+
+/* attributie als mono-kleinletter */
+.attribution p { font-family: var(--font-mono); font-size: 10px; line-height: 1.6; }
+
+/* ---------- vorm: kaarten hoekiger, hairlines ---------- */
+.gate, .rep-score, .meldplicht-block, .pkg-block, .rev-card, .verdict-hero { box-shadow: none; }
+
+/* ---------- print: altijd licht + volledige teksten ---------- */
+@media print {
+  :root, [data-theme="dark"], [data-theme="light"] {
+    --bg-canvas: #ffffff; --bg-elevated: #ffffff; --bg-muted: #f1f1f1;
+    --bg-overlay: #ffffff;
+    --border-default: rgba(0, 0, 0, 0.14); --border-strong: rgba(0, 0, 0, 0.30);
+    --fg-highlighted: #000000; --fg-default: #1c1c1c; --fg-muted: #444444;
+    --fg-dimmed: #6e6e6e; --fg-inverse: #ffffff;
+    --dotgrid: none;
+  }
+  .rep-score::before { display: none; }
+  .mp-desc { display: block; -webkit-line-clamp: unset; }
+  .mp-more { display: none; }
+  .meldplicht-phase { cursor: default; }
+}
