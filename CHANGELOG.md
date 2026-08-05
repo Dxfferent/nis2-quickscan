@@ -1,7 +1,7 @@
 # Wijzigingen
 
 Alle relevante wijzigingen per release, met de normdata-versie er expliciet
-bij — zo ziet u in één oogopslag of een update u raakt. Normdata-updates zijn
+bij. Zo ziet u in één oogopslag of een update u raakt. Een normdata-update is
 een config-swap (`assets/intake-config.json` vervangen), geen rebuild.
 
 Opzet volgens [Keep a Changelog](https://keepachangelog.com/nl/); versies

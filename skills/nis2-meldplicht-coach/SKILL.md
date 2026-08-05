@@ -13,8 +13,8 @@ geen essay. Meldpunt: **mijn.ncsc.nl**.
 
 Voorlopig criterium (drempels volgen bij ministeriële regeling): ernstige
 operationele verstoring of financiële schade (of dat risico), of aanzienlijke
-materiële/immateriële schade aan anderen. Bij twijfel: behandel als
-significant — te vroeg melden is herstelbaar; te laat niet.
+materiële/immateriële schade aan anderen. Bij twijfel: behandel het als
+significant. Te vroeg melden is herstelbaar, te laat niet.
 
 ## De tijdlijn
 
@@ -47,7 +47,7 @@ afwijkende termijn: vertrouwensdiensten melden binnen 24 uur.
 
 - Ontvangers van de dienst informeren bij mogelijke impact op hen (Cbw art. 30).
 - Bewijsmateriaal veiligstellen vóór herstel (forensics-gereedheid).
-- Parallel AVG-datalek? Aparte melding bij de AP binnen 72 uur — de
+- Parallel AVG-datalek? Aparte melding bij de AP binnen 72 uur; de
   NIS2-melding vervangt die niet.
 - Log elke melding met tijdstip; de 24/72-uursklok start bij kennisname.
 

@@ -10,7 +10,7 @@ native uitsluitend naar de **HubSpot Forms API v3**; andere CRM's kunnen ook,
 maar via HubSpot als tussenstation of een eigen code-aanpassing (zie onderaan).
 
 Werk stapsgewijs en wacht steeds op antwoord. Jij begeleidt; de MSP klikt zelf
-in zijn eigen HubSpot — vraag nooit om inloggegevens.
+in de eigen HubSpot. Vraag nooit om inloggegevens.
 
 ## Stap 0 — Welk CRM draait de MSP?
 
@@ -44,19 +44,19 @@ De gate stuurt dan per lead een compacte rapport-samenvatting mee (JSON:
 scope-uitkomst, totaalscore, score per domein, RTO/RPO-profielen, top-gaps).
 Daarmee ziet sales bij elke lead direct waar het gesprek over moet gaan.
 Ontbreekt de property, dan herhaalt de tool de submit automatisch zonder dit
-veld — de lead landt dan alsnog, alleen zonder diagnose.
+veld: de lead landt dan alsnog, alleen zonder diagnose.
 
-## Stap 3 — De rapportmail (workflow) — verplicht bij een actieve gate
+## Stap 3 — De rapportmail (workflow): verplicht bij een actieve gate
 
 De gate zegt tegen de bezoeker dat de MSP het rapport ook per e-mail stuurt.
-**Die mail verstuurt HubSpot niet vanzelf** — daar hoort een workflow bij:
+**Die mail verstuurt HubSpot niet vanzelf.** Daar hoort een workflow bij:
 
 1. **Automations → Workflows → Create**: trigger = *Form submission* van het
    form uit stap 1.
 2. Actie: *Send email* (geautomatiseerde marketing-e-mail). Advies-inhoud:
    bedankt-regel, de kern van de uitkomst, en een concrete
    vervolgstap-CTA ("plan het gesprek"). Let op: `nis2_rapport` is een
-   JSON-blok voor intern gebruik — plak het niet één-op-één in een klantmail;
+   JSON-blok voor intern gebruik. Plak het niet één-op-één in een klantmail;
    houd de mail leesbaar en verwijs naar het rapport dat de bezoeker al op
    het scherm (en als PDF) heeft.
 3. Draait de NIS2-updates-opt-in mee (`hubspot.subscriptionTypeId` in
@@ -87,7 +87,7 @@ Test daarna één keer **end-to-end met een eigen e-mailadres**, pas daarna live
 
 Faalt de submit ("Versturen lukte niet"): controleer reCAPTCHA (uit), de twee
 verplichte velden en de ids. Verschijnt er helemaal geen gate: er ontbreekt
-een verplichte sleutel (`name`, `privacyUrl` of een van de ids) — dat is
+een verplichte sleutel (`name`, `privacyUrl` of een van de ids). Dat is
 bedoeld gedrag, geen bug.
 
 ## Geen HubSpot?
@@ -98,7 +98,7 @@ Drie routes, in volgorde van minste werk:
    en stuurt de rapportmail; een native integratie of koppelaar (bijv. Zapier/
    Make) schuift het contact door naar het eigen CRM. Geen code-aanpassing.
 2. **Gate uit, eigen CTA.** Zonder gate is het rapport direct zichtbaar; de
-   MSP zet zijn bestaande contact-/afspraakkanaal in de opvolging. Nul
+   MSP zet het bestaande contact-/afspraakkanaal in voor de opvolging. Nul
    koppeling, ook nul leads.
 3. **Code aanpassen.** De submit zit in `submitGate` in
    `assets/wizard-app.jsx` en kan naar een eigen endpoint wijzen. Let op
@@ -108,7 +108,7 @@ Drie routes, in volgorde van minste werk:
 ## Grenzen
 
 - Wie een gate draait verwerkt persoonsgegevens: `privacyUrl` naar een eigen
-  privacyverklaring is verplicht, met HubSpot als verwerker benoemd — zie
+  privacyverklaring is verplicht, met HubSpot als verwerker benoemd; zie
   `docs/MSP-ENABLEMENT.md` (*Privacy (AVG)*) en `docs/PRIVACY-TEMPLATE.md`.
   Je geeft geen juridisch advies; adviseer een eigen juridische check.
 - Installatie van de tool zelf hoort bij `nis2-installatie/`; inhoudelijke

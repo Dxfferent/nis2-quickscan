@@ -540,7 +540,7 @@
             {
                 "id": "wwke_kritiek",
                 "label": "Kritieke entiteiten aangewezen onder de Wwke",
-                "note": "Organisaties die onder de Wet weerbaarheid kritieke entiteiten als kritiek zijn aangewezen, zijn van rechtswege essentiële entiteit — ongeacht omvang.",
+                "note": "Organisaties die onder de Wet weerbaarheid kritieke entiteiten als kritiek zijn aangewezen, zijn van rechtswege essentiële entiteit, ongeacht omvang.",
                 "outcome": "essentieel"
             },
             {
@@ -578,7 +578,7 @@
         "disclaimer": "Deze scope-check is indicatief en vormt geen juridisch advies. De indicatie gaat uit van een organisatie met hoofdvestiging en beslissingscentrum in Nederland; bij een internationale structuur is voor digitale aanbieders (cloud, MSP's/MSSP's, DNS e.d.) de hoofdvestiging bepalend, overige sectoren vallen onder het recht van het land van vestiging. Bepalend is de wettekst (Cyberbeveiligingswet en Cyberbeveiligingsbesluit); de RDI-zelfevaluatie op regelhulpenvoorbedrijven.nl is het officiële hulpmiddel om uw classificatie vast te stellen, en uw sectorale toezichthouder oordeelt uiteindelijk. Raadpleeg bij twijfel de wettekst of een juridisch adviseur.",
         "chain_question": {
             "title": "Levert u diensten aan organisaties die (vermoedelijk) onder de Cbw vallen?",
-            "help": "Denk aan klanten in zorg, energie, industrie, overheid of transport. De wet verplicht die organisaties hun toeleveringsketen te borgen (art. 21) — die eisen komen contractueel bij hun leveranciers terecht.",
+            "help": "Denk aan klanten in zorg, energie, industrie, overheid of transport. De wet verplicht die organisaties hun toeleveringsketen te borgen (art. 21), en die eisen komen contractueel bij hun leveranciers terecht.",
             "options": [
                 {
                     "v": "none",
@@ -603,7 +603,7 @@
                 "ict_beheer_b2b",
                 "digitale_aanbieders"
             ],
-            "note": "Uw sector valt onder de rechtstreeks werkende Uitvoeringsverordening (EU) 2024/2690: de precieze maatregel-eisen staan dáár, niet in de artikelen 6 t/m 18 van het Cyberbeveiligingsbesluit (Cbb art. 4). Voor deze intake maakt dat inhoudelijk weinig uit — de maatregelen in het rapport blijven relevant; alleen de formele normbasis verschilt. Geldt voor o.a. DNS- en TLD-aanbieders, cloud, datacenters, CDN's, aanbieders van beheerde diensten en beheerde beveiligingsdiensten (MSP's en MSSP's), onlineplatforms en vertrouwensdienstverleners — Cbb art. 4 noemt ze letterlijk. Geldt níet voor aanbieders van openbare elektronische communicatie en internetknooppunten."
+            "note": "Uw sector valt onder de rechtstreeks werkende Uitvoeringsverordening (EU) 2024/2690: de precieze maatregel-eisen staan dáár, niet in de artikelen 6 t/m 18 van het Cyberbeveiligingsbesluit (Cbb art. 4). Voor deze intake maakt dat inhoudelijk weinig uit: de maatregelen in het rapport blijven relevant, alleen de formele normbasis verschilt. Het geldt voor o.a. DNS- en TLD-aanbieders, cloud, datacenters, CDN's, aanbieders van beheerde diensten en beheerde beveiligingsdiensten (MSP's en MSSP's), onlineplatforms en vertrouwensdienstverleners; Cbb art. 4 noemt ze letterlijk. Het geldt níet voor aanbieders van openbare elektronische communicatie en internetknooppunten."
         }
     },
     "reporting_obligation": {
@@ -612,7 +612,7 @@
                 "id": "early_warning",
                 "label": "Vroegtijdige waarschuwing",
                 "deadline": "≤ 24 uur",
-                "description": "Meld — voor zover op dat moment bekend — of het incident vermoedelijk door onrechtmatig of kwaadwillig handelen is veroorzaakt en of er grensoverschrijdende gevolgen kunnen zijn. Meer hoeft wettelijk nog niet; contactgegevens en een eerste beeld meesturen versnelt wel de afhandeling."
+                "description": "Meld, voor zover op dat moment bekend, of het incident vermoedelijk door onrechtmatig of kwaadwillig handelen is veroorzaakt en of er grensoverschrijdende gevolgen kunnen zijn. Meer hoeft wettelijk nog niet; contactgegevens en een eerste beeld meesturen versnelt wel de afhandeling."
             },
             {
                 "id": "update",
@@ -649,7 +649,7 @@
     "package_suggestion": {
         "heading": "Ambitieniveau en passend dienstenpakket",
         "legal_note": "De NIS2-richtlijn (EU 2022/2555) is in Nederland omgezet in de Cyberbeveiligingswet. Artikel 21 verplicht passende maatregelen; de artikelen hieronder tonen welk wettelijk voorschrift elke dienst raakt. De niveaus SC-10 / SC-20 / SC-30 zijn de aantoonbaarheidsroute van NIS2 Supply Chain: geen extra verplichting, maar de manier waarop u kunt láten zien dat u aan artikel 21 voldoet.",
-        "note": "Indicatief — dit is een menukaart om met uw IT-partner naast diens eigen dienstenaanbod te leggen, geen offerte. Diensten zonder wetsartikel zijn eisen van het SC-schema zonder rechtstreekse Cbw-pendant. De niveaunamen zeggen niets over welke maatregelen op uw organisatie van toepassing zijn.",
+        "note": "Indicatief. Dit is een menukaart om naast het dienstenaanbod van uw IT-partner te leggen, geen offerte. Diensten zonder wetsartikel zijn eisen van het SC-schema zonder rechtstreekse Cbw-pendant. De niveaunamen zeggen niets over welke maatregelen op uw organisatie van toepassing zijn.",
         "tiers": [
             {
                 "id": "sc10",
@@ -1605,7 +1605,7 @@
             "id": "access",
             "label": "Toegang & identiteit",
             "icon": "key",
-            "intro": "Wie mag bij wat? Gecompromitteerde accounts zijn de belangrijkste inbraakroute.",
+            "intro": "Wie mag bij wat? Een overgenomen account geeft een aanvaller direct legitieme toegang.",
             "trigger": {
                 "rules": [
                     {
@@ -2628,7 +2628,7 @@
             "id": "assets",
             "label": "Assets & classificatie",
             "icon": "layers",
-            "intro": "U kunt alleen beschermen wat u kent — en weet hoe gevoelig het is.",
+            "intro": "U kunt alleen beschermen wat u kent en waarvan u weet hoe gevoelig het is.",
             "trigger": {
                 "rules": [
                     {
@@ -3607,7 +3607,7 @@
             "id": "people",
             "label": "Mens & awareness",
             "icon": "graduation",
-            "intro": "De grootste risico's zitten bij mensen. Bewustwording is de goedkoopste sterke maatregel.",
+            "intro": "Techniek houdt niet tegen wat een medewerker zelf toelaat. Bewustwording is hier de goedkoopste maatregel.",
             "trigger": {
                 "rules": [],
                 "default": "baseline"
@@ -3953,7 +3953,7 @@
             "id": "ot",
             "label": "OT / productiesystemen",
             "icon": "factory",
-            "intro": "Operationele technologie vraagt eigen maatregelen — uitval raakt direct de fysieke productie.",
+            "intro": "Operationele technologie vraagt eigen maatregelen: uitval raakt hier meteen de fysieke productie.",
             "trigger": {
                 "rules": [
                     {

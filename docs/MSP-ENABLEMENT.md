@@ -1,13 +1,13 @@
 # MSP-enablement — NIS2 Quickscan white-label
 
 De tool is white-label inzetbaar door elke MSP-partner: eigen naam, kleur,
-mailbox en leadflow — zonder rebuild, met één config-blok.
+mailbox en leadflow, met één config-blok en zonder rebuild.
 
 ## Snel starten (MSP-deploy)
 
 1. Draai `npm install && npm run build` → `dist/` is de complete site. Zonder
    ontwikkelomgeving: download de kant-en-klare zip van de laatste release
-   (zie [HOSTING.md](HOSTING.md)) — het brand-blok gaat dan in de `index.html`
+   (zie [HOSTING.md](HOSTING.md)); het brand-blok gaat dan in de `index.html`
    uit de zip.
 2. Zet in `dist/index.html` het brand-blok (of laat Dxfferent dit doen):
 
@@ -38,16 +38,16 @@ window.MSP_BRAND = {
 ```
 
 3. Host `dist/` statisch (elke webserver/CDN; `.htaccess` + `_headers` met de
-   cache-regel en de security-headers zitten in de build — draait u nginx, zie
+   cache-regel en de security-headers zitten in de build; draait u nginx, zie
    [HOSTING.md](HOSTING.md)).
 
 ### Controleer vóór u live gaat
 
 - [ ] `MSP_BRAND.name` is ingevuld. Zonder die sleutel toont de rail de
-      placeholder **`[Uw MSP]`** — óók in de rapportkop en dus in de PDF.
+      placeholder **`[Uw MSP]`**, ook in de rapportkop en dus in de PDF.
 - [ ] `MSP_BRAND.legal` gevuld (colofon, art. 3:15d BW).
 - [ ] Draait u de lead-gate? Dan zijn `privacyUrl` én de HubSpot-ids gezet.
-      Ontbreekt er één, dan verschijnt er bewust géén gate — zie
+      Ontbreekt er één, dan verschijnt er bewust géén gate; zie
       *Privacy (AVG)* hieronder.
 - [ ] Logo laadt (URL of data-URI); andere schema's worden genegeerd.
 - [ ] Gate aan? Test hem dan één keer end-to-end met een eigen e-mailadres.
@@ -57,14 +57,14 @@ window.MSP_BRAND = {
 
 ## Valt u als MSP zélf onder de Cbw?
 
-Vaak wel — als u ICT-omgevingen van klanten beheert — en dat is een
+Vaak wel, als u ICT-omgevingen van klanten beheert. En dat is een
 verkoopargument, geen bedreiging. "Beheer van ICT-diensten
 (business-to-business)", waaronder MSP's en MSSP's, staat in **bijlage 1**
 van de wet (sector met hoge kriticiteit).
 
 "Aanbieder van beheerde diensten" is in de wet afgebakend (NIS2 art. 6 lid
 39): u installeert, beheert, exploiteert of onderhoudt ICT-producten,
--netwerken, -infrastructuur of -toepassingen van klanten — op locatie of op
+-netwerken, -infrastructuur of -toepassingen van klanten, op locatie of op
 afstand. Een softwareleverancier of reseller zonder beheer valt daar niet
 onder.
 
@@ -74,16 +74,16 @@ Drie uitkomsten:
 |---|---|
 | Groot (≥ 250 FTE, óf omzet > € 50 mln én balans > € 43 mln) | **Essentiële entiteit** — zwaarste regime |
 | Middelgroot (≥ 50 FTE, óf omzet > € 10 mln én balans > € 10 mln, en onder de groot-drempels) | **Belangrijke entiteit** — zorgplicht, meldplicht en registratieplicht |
-| Kleiner | Niet rechtstreeks onder de wet — maar uw in-scope klanten leggen de eisen **contractueel** bij u neer (art. 21: ketenborging) en u kunt alsnog individueel aangewezen worden |
+| Kleiner | Niet rechtstreeks onder de wet. Maar uw in-scope klanten leggen de eisen **contractueel** bij u neer (art. 21: ketenborging), en u kunt alsnog individueel aangewezen worden |
 
 Tel bij de omvang ook moeder-, dochter- en partnerondernemingen mee
-(verbonden ondernemingen volledig, partnerondernemingen naar rato — bijlage
+(verbonden ondernemingen volledig, partnerondernemingen naar rato; bijlage
 bij Aanbeveling 2003/361/EG).
 
 Doorloop de intake dus óók één keer voor uw eigen organisatie (`?mode=pro`).
 Een MSP die zelf aantoonbaar aan de Cbw voldoet, voert het klantgesprek uit
-ervaring — en ook voor uw eigen classificatie is de wettekst bepalend, met de
-RDI-zelfevaluatie als het officiële hulpmiddel om die classificatie vast te
+ervaring. Ook voor uw eigen classificatie geldt: de wettekst is bepalend, en de
+RDI-zelfevaluatie is het officiële hulpmiddel om die classificatie vast te
 stellen.
 
 ## Twee standen: lead en pro
@@ -101,7 +101,7 @@ stellen.
   apparaat; "Nieuwe intake" of "Opnieuw beginnen" wist die.
 - **Dossier (pro):** "Dossier opslaan" op de rapportstap downloadt de
   volledige intake-staat als `nis2-dossier-<datum>.json`; "Dossier laden"
-  (op intro én rapportstap) zet hem terug. Bewaar per klant — bij de volgende
+  (op intro én rapportstap) zet hem terug. Bewaar per klant: bij de volgende
   QBR laadt u het dossier en meet u opnieuw.
 
 ## Ambitieniveau en menukaart
@@ -110,8 +110,8 @@ Het rapport sluit af met een **matrix**: dienstregels × de drie SC-niveaus, met
 een bolletje waar de dienst in dat niveau zit en het geadviseerde niveau
 uitgelicht. De keuze is deterministisch: essentiële entiteit of een kritiek
 herstelprofiel komt op SC-30 uit, belangrijke entiteit of een hoog profiel op
-SC-20, de rest op SC-10. **Er is geen 'geen keurmerk'-uitkomst** — een niveau
-waar u niet naartoe stuurt is geen bestemming.
+SC-20, de rest op SC-10. **Er is geen 'geen keurmerk'-uitkomst**: een niveau
+waar u niet naartoe stuurt, is geen bestemming.
 
 Elke dienstregel draagt het Cbw-artikel dat ze raakt, zodat de menukaart
 zichtbaar in de wet verankerd is en niet overkomt als een los verkoopblok.
@@ -120,8 +120,8 @@ zonder rechtstreeks wetsartikel.
 
 Default staan drie generieke niveaus in `assets/intake-config.json`
 (`package_suggestion`). Zet `MSP_BRAND.packages` om die te vervangen door uw
-eigen menukaart — `tiers` **oplopend in zwaarte** (de trap kiest op positie,
-niet op naam), `lines` in de volgorde waarin u ze wilt tonen:
+eigen menukaart. Geef `tiers` **oplopend in zwaarte** (de trap kiest op
+positie, niet op naam) en `lines` in de volgorde waarin u ze wilt tonen:
 
 ```js
 packages: {
@@ -158,7 +158,7 @@ packages: {
   blijven weg bij een administratiekantoor, ontwikkeldiensten bij een klant
   zonder eigen software. Lege secties vallen automatisch weg.
 - `cbw` en `sc` zijn de normverwijzingen die de dienst raakt; elke regel draagt
-  er minstens één. Gebruik alleen codes die in de normdata bestaan — een
+  er minstens één. Gebruik alleen codes die in de normdata bestaan; een
   smoke-assert bewaakt dat, zodat de menukaart geen tweede waarheid wordt die
   uit de pas loopt.
 - `sc_ambition` is **alleen een ambitie-indicatie** met de publieke
@@ -171,7 +171,7 @@ packages: {
 - **Lever `tiers` én `lines` altijd samen aan.** De override telt alleen als
   beide arrays aanwezig zijn; ontbreekt er één, dan wordt het hele
   `packages`-blok genegeerd en toont de tool de menukaart uit
-  `assets/intake-config.json` — zonder foutmelding.
+  `assets/intake-config.json`, zonder foutmelding.
 - Minder dan drie niveaus mag: de trap kiest dan het zwaarste beschikbare.
   Een lege `tiers` laat de hele kaart verdwijnen.
 - Houd de regels **functioneel en vendorneutraal** ("Bewaking en respons rond
@@ -186,12 +186,12 @@ De gate-submit stuurt naast het e-mailadres een compacte rapport-payload
 (JSON-string: scope-uitkomst, totaalscore, per-domein score, RTO/RPO-
 profielen, top-gaps) naar het veld `nis2_rapport`. Maak in HubSpot een
 **multi-line text contact-property `nis2_rapport`** aan en voeg het als
-(hidden) veld toe aan het form — dan landt de diagnose bij de lead in uw
+(hidden) veld toe aan het form. Dan landt de diagnose bij de lead in uw
 CRM.
 
 De skill [`skills/nis2-crm-koppeling/`](../skills/nis2-crm-koppeling/) loopt
 de hele koppeling met u door: form, property, rapportmail-workflow en de
-end-to-end-test — inclusief de routes voor MSP's zonder HubSpot.
+end-to-end-test, inclusief de routes voor MSP's zonder HubSpot.
 
 **Form-vereisten** (de tool submit via de HubSpot Forms API v3):
 
@@ -200,7 +200,7 @@ end-to-end-test — inclusief de routes voor MSP's zonder HubSpot.
 - `nis2_rapport` is optioneel: ontbreekt alleen dát veld, dan herhaalt de
   tool de submit automatisch zonder rapportveld. Ontbreken `email`/`message`
   of staat reCAPTCHA aan, dan faalt de submit en ziet de bezoeker de
-  mailto-fallback — test het form dus één keer end-to-end na aanmaak.
+  mailto-fallback. Test het form dus één keer end-to-end na aanmaak.
 
 ## Gedrag
 
@@ -208,7 +208,7 @@ end-to-end-test — inclusief de routes voor MSP's zonder HubSpot.
   persoonsgegevens en moet zich identificeren en naar zijn eigen
   privacyverklaring wijzen (art. 13 AVG). Ontbreekt een van beide, dan
   verschijnt er géén gate en blijft het rapport gewoon zichtbaar. Dat geldt voor
-  elke deployer, ook voor die van Dxfferent zelf — de tool kent hier geen
+  elke deployer, ook voor die van Dxfferent zelf: de tool kent hier geen
   ingebouwde uitzondering en geen Dxfferent-fallback.
 - `MSP_BRAND.hubspot` gezet → gate staat aan en submit gaat naar de
   HubSpot-forms van de MSP (rapportlevering zonder checkbox — de actieve
@@ -216,7 +216,7 @@ end-to-end-test — inclusief de routes voor MSP's zonder HubSpot.
   checkbox; de PDF-mail is een HubSpot-workflow aan MSP-kant).
 - Geen `hubspot` → gate volgt `window.HUBSPOT_GATE` (Dxfferent-default);
   zonder ingevulde ids verschijnt er **geen gate** en is het rapport direct
-  volledig zichtbaar — de gate belooft nooit verzending die niet bestaat.
+  volledig zichtbaar: de gate belooft nooit verzending die niet bestaat.
 - Het demo-paneel (naam/kleur live proeven) zit alleen in de review-variant
   (`review/nis2-quickscan-review.html`, bewust buiten `dist/` zodat u het niet
   per ongeluk meehost),
@@ -228,7 +228,7 @@ Bij een deploy met eigen HubSpot bent **u (de MSP) verwerkingsverantwoordelijke*
 voor de leaddata; Dxfferent ontvangt bij uw deploy geen leaddata (de browser
 stuurt direct naar uw portal). Concreet:
 
-1. Zet `MSP_BRAND.privacyUrl` naar uw eigen privacyverklaring — zonder die
+1. Zet `MSP_BRAND.privacyUrl` naar uw eigen privacyverklaring. Zonder die
    link hoort de gate niet live. Vermeld daarin: uw entiteit +
    contactgegevens, doel (rapportlevering; optioneel NIS2-updates), HubSpot
    als verwerker incl. EU-VS-doorgifte onder het Data Privacy Framework, het
@@ -243,6 +243,7 @@ stuurt direct naar uw portal). Concreet:
 4. **Colofon:** bij een white-label-deploy bent ú de dienstverlener — zet uw
    eigen bedrijfsnaam, KvK-nummer, btw-id en adres in de footer van de
    pagina waarop u de tool aanbiedt (art. 3:15d BW).
+
 ## Wat níet configureerbaar is (voorwaarden white-label-gebruik)
 
 Vier elementen zitten bewust buiten `MSP_BRAND` en blijven in elke variant staan
@@ -274,5 +275,5 @@ Vier elementen zitten bewust buiten `MSP_BRAND` en blijven in elke variant staan
 | MSP | hosting/subdomein, HubSpot-form + follow-up-workflow, opvolging van leads, eigen privacyverklaring + colofon |
 | Dxfferent | tool-updates, normdata-onderhoud (config-regen bij wetswijziging) en support — vrijblijvend, zonder gegarandeerde termijnen |
 
-Normdata komt uit `assets/intake-config.json` — bij een nieuwe versie is een
-config-swap voldoende (no-cache cache-regel zit in de build), geen rebuild.
+Normdata komt uit `assets/intake-config.json`. Bij een nieuwe versie volstaat
+een config-swap (de no-cache-regel zit in de build); een rebuild is niet nodig.

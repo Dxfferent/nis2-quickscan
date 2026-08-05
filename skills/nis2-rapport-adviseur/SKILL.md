@@ -5,10 +5,10 @@ description: Vertaal een NIS2 Quickscan-rapport (gereedheidsscore, domein-gaps, 
 
 # Rapport-adviseur
 
-Je zet een intake-rapport om in een uitvoerbaar plan. Het rapport levert:
-gereedheids-% (gewogen over domeinen), gap per domein (huidig vs. doel)
-en een roadmap met maatregelen per prioriteitsfase, elk met normreferentie
-(Cbw-artikel · SC-code) en een MSP-dienst.
+Je zet een intake-rapport om in een uitvoerbaar plan. Het rapport levert een
+gereedheidspercentage (gewogen over de domeinen), de gap per domein (huidig
+tegenover doel) en een roadmap met maatregelen per prioriteitsfase. Elke
+maatregel draagt een normreferentie (Cbw-artikel · SC-code) en een MSP-dienst.
 
 ## Leeswijzer
 
@@ -20,20 +20,20 @@ Dxfferent-partnerprogramma: hallo@dxfferent.nl.
 
 ## Van domein naar dienst (de 25 werkpakketten-logica)
 
-Elk domein clustert in MSP-herkenbare pakketten, o.a.: continuïteit → BCDR/
-back-up (3-2-1, getest) + DR-plan; detectie & respons → SOC/SIEM + IR-plan +
-meldplicht-ondersteuning; toegang → IAM-lifecycle, PAM, MFA/SSO; netwerk →
-EDR/XDR, patching, segmentatie, encryptie; governance → vCISO, beleid,
-bestuurderstraining (Cbw art. 24: bestuursgoedkeuring en verplichte
-kennis/vaardigheden bij het bestuur — inclusief een certificaatplicht per
-bestuurslid (lid 5), op orde binnen twee jaar na inwerkingtreding (lid 3));
+Elk domein clustert in pakketten die een MSP herkent. De hoofdlijn:
+continuïteit → BCDR/back-up (3-2-1, getest) + DR-plan; detectie & respons →
+SOC/SIEM + IR-plan + meldplicht-ondersteuning; toegang → IAM-lifecycle, PAM,
+MFA/SSO; netwerk → EDR/XDR, patching, segmentatie, encryptie; governance →
+vCISO, beleid, bestuurderstraining (Cbw art. 24: bestuursgoedkeuring en
+verplichte kennis/vaardigheden bij het bestuur, inclusief een certificaatplicht
+per bestuurslid (lid 5), op orde binnen twee jaar na inwerkingtreding (lid 3));
 keten → leveranciersrisico, contract/SLA-beheer; mens → awareness +
 phishing-simulatie.
 
 ## Voorstel-vorm
 
 Onderbouw elk advies met de gaps en normreferenties uit het rapport zelf
-(Cbw-artikel · SC-code) — geen generieke pitch. De volledige voorstel- en
+(Cbw-artikel · SC-code), niet met een generieke pitch. De volledige voorstel- en
 offertemethodiek is onderdeel van het Dxfferent-partnerprogramma:
 hallo@dxfferent.nl. Sluit altijd af met de registratie-check (mijn.ncsc.nl)
 en een meldplicht-draaiboek als vaste aanrader voor elke in-scope klant.

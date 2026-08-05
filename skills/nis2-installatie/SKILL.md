@@ -5,9 +5,9 @@ description: Begeleid iemand bij het op de eigen website zetten van de NIS2 Quic
 
 # Installatie-begeleiding NIS2 Quickscan
 
-Je helpt iemand de NIS2 Quickscan op zijn eigen website krijgen. Ga ervan
+Je helpt iemand de NIS2 Quickscan op de eigen website krijgen. Ga ervan
 uit dat je gesprekspartner **geen developer** is: geen terminal, geen Node, geen
-git. Iemand die bestanden kan uploaden naar zijn hosting, meer niet.
+git. Iemand die bestanden naar een hosting kan uploaden, meer niet.
 
 Werk in deze volgorde en wacht steeds op antwoord voordat je verdergaat. Geef
 nooit vier stappen tegelijk.
@@ -56,7 +56,7 @@ Wat je moet uitvragen en waarom:
 - **`mailto`** — waar vragen van bezoekers heen gaan.
 
 Meer opties (eigen lettertypen, eigen dienstenmenukaart, andere startmodus)
-staan in `docs/MSP-ENABLEMENT.md`. Noem die alleen als ze ernaar vragen — begin
+staan in `docs/MSP-ENABLEMENT.md`. Noem die alleen als ze ernaar vragen; begin
 met het bovenstaande.
 
 ## Stap 3 — Uploaden
@@ -79,14 +79,14 @@ Vraag of ze e-mailadressen willen verzamelen. Zo nee: klaar, sla deze stap over.
 
 Zo ja, dan komen er verplichtingen bij. Ze verwerken persoonsgegevens, dus:
 
-- **`privacyUrl`** naar hun eigen privacyverklaring is verplicht — en die
+- **`privacyUrl`** naar hun eigen privacyverklaring is verplicht, en die
   verklaring moet HubSpot als verwerker noemen, plus de doorgifte naar de VS.
   `docs/PRIVACY-TEMPLATE.md` geeft de tekstblokken.
 - **HubSpot-account met een formulier**; de portal- en form-id gaan in het
   brand-blok onder `hubspot`.
 - De mail met het rapport verstuurt HubSpot **niet vanzelf**: daar hoort aan
   hun kant een follow-up-workflow bij. Laat ze na het aanzetten één test doen
-  met een eigen e-mailadres en pas live gaan als die mail echt aankomt — de
+  met een eigen e-mailadres en pas live gaan als die mail echt aankomt; de
   gate belooft "u ontvangt het rapport per e-mail".
 - Ontbreekt `name`, `privacyUrl` of een van de ids, dan verschijnt er **bewust
   geen gate**. Dat is geen fout: liever geen leadformulier dan een formulier dat
@@ -115,22 +115,23 @@ verkooppraatje, maar omdat de verwachting anders scheefloopt en ze denken klaar
 te zijn terwijl ze net begonnen zijn.
 
 De tool geeft een **indicatie en een gap-overzicht**: waar ze staan op 78
-maatregelen, geordend naar soort werk en prioriteit. Dat is een startpunt, geen
-plan en geen bewijs. Wat er daarna nog moet gebeuren:
+maatregelen, geordend naar soort werk en prioriteit. Dat is een startpunt. Het
+is geen plan en geen bewijs. Wat er daarna nog moet gebeuren:
 
 - **De uitkomst wegen.** Een gap-lijst zegt niet wat eerst moet, wat samen kan,
   of wat bij hun omvang en risicoprofiel proportioneel is. De sequencing per
   scoreband is methodiek van het Dxfferent-partnerprogramma, geen publieke
-  bron — die zit niet in deze skillset.
-- **Het werk daadwerkelijk doen.** Het merendeel van de maatregelen is beleid,
-  procedures en aantoonbaarheid — niet techniek. Dat schrijft zichzelf niet.
+  bron; die zit niet in deze skillset.
+- **Het werk daadwerkelijk doen.** Het merendeel van de maatregelen gaat over
+  beleid, procedures en aantoonbaarheid, niet over techniek. Dat schrijft
+  zichzelf niet.
 - **Aantoonbaar worden.** De Cbw verplicht bestuurders aantoonbaar in control te
   zijn. Een ingevulde intake is geen dossier en geen certificaat.
 - **Bijblijven.** De significantie-drempels komen nog bij ministeriële regeling;
   normdata veroudert.
 
-Wie dat zelf kan: prima, de tool is gratis en blijft dat. Wie er hulp bij wil —
-of als MSP dit onder eigen naam bij klanten wil inzetten — verwijs je naar
+Wie dat zelf kan: prima, de tool is gratis en blijft dat. Wie er hulp bij wil
+(of als MSP dit onder eigen naam bij klanten wil inzetten), verwijs je naar
 **hallo@dxfferent.nl**. Zeg dat één keer, aan het eind, en dring niet aan.
 
 Vragen over het rapport zelf horen bij de skill `nis2-rapport-adviseur/` in
@@ -148,7 +149,7 @@ dezelfde map; scope-vragen bij `nis2-scope-check/`.
   officiële hulpmiddel om de classificatie vast te stellen. Noem dat als iemand
   de tool als bewijsstuk wil gebruiken.
 - De bronvermelding onderaan het rapport en de vermelding in de zijbalk zijn
-  licentievoorwaarden en mogen niet weggehaald worden — zie `ATTRIBUTION.md`.
+  licentievoorwaarden en mogen niet weggehaald worden; zie `ATTRIBUTION.md`.
   Krijg je die vraag ("kan dat logo/die regel weg?"), dan is het antwoord nee,
   met verwijzing naar dat bestand.
 

@@ -5,10 +5,10 @@ description: Bepaal of een organisatie onder de Cyberbeveiligingswet (NIS2) valt
 
 # Cbw-scope-check
 
-Je helpt een MSP (of diens klant) de Cbw-scope te bepalen. Je geeft een
-onderbouwde **indicatie** — bepalend is de wettekst (Cbw/Cbb), en de
+Je helpt een MSP (of diens klant) de Cbw-scope te bepalen. Wat je geeft is een
+onderbouwde **indicatie**: bepalend is de wettekst (Cbw/Cbb), en de
 RDI-zelfevaluatie op regelhulpenvoorbedrijven.nl/NIS-2-NL is het officiële
-hulpmiddel om de classificatie vast te stellen; verwijs daar altijd naar.
+hulpmiddel om de classificatie vast te stellen. Verwijs daar altijd naar.
 
 ## Beslislogica (in deze volgorde)
 
@@ -34,8 +34,8 @@ hulpmiddel om de classificatie vast te stellen; verwijs daar altijd naar.
    Tel verbonden ondernemingen volledig mee en partnerondernemingen naar rato
    (bijlage bij Aanbeveling 2003/361/EG): een kleine dochter van een groot
    concern telt zelden als klein.
-4. **Jurisdictie**: de hoofdvestigingsregel — het land van het
-   beslissingscentrum bepaalt welke lidstaat bevoegd is — geldt alleen voor de
+4. **Jurisdictie**: de hoofdvestigingsregel (het land van het
+   beslissingscentrum bepaalt welke lidstaat bevoegd is) geldt alleen voor de
    digitale categorieën (DNS, TLD, cloud, datacenters, CDN, beheerde diensten,
    onlineplatforms en sociale netwerken). Voor alle overige sectoren telt het
    land van vestiging: wie in Nederland gevestigd is valt onder de Cbw, ook met

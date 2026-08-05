@@ -21,11 +21,11 @@ const { ICONS, DATATYPES, IMPACT_QUESTIONS, TIERS, TIER_ORDER, MATURITY_OPTS, MA
 // gerechtvaardigd vertrouwen wekken dat de disclaimer juist moet breken.
 const SCOPE_VERDICT_ICON = { essentieel: 'siren', belangrijk: 'shield', waarschijnlijk_buiten_scope: 'shield', keten: 'truck' };
 const SCOPE_VERDICT_MEANING = {
-  essentieel: 'Essentiële entiteiten dragen hetzelfde zorgplicht-pakket als belangrijke entiteiten, maar vallen onder proactief toezicht en de hoogste boetecategorie; alleen bij essentiële entiteiten kan de toezichthouder een certificering schorsen of een tijdelijk bestuursverbod laten opleggen.',
+  essentieel: 'Essentiële entiteiten dragen hetzelfde zorgplicht-pakket als belangrijke entiteiten, maar vallen onder proactief toezicht en de hoogste boetecategorie. Alleen bij essentiële entiteiten kan de toezichthouder een certificering schorsen of een tijdelijk bestuursverbod laten opleggen.',
   belangrijk: 'Belangrijke entiteiten vallen naar verwachting onder de NIS2-zorgplicht en meldplicht, met toezicht achteraf (in plaats van proactief) en een lagere boetecategorie dan essentiële entiteiten.',
-  waarschijnlijk_buiten_scope: 'Op basis van deze antwoorden valt uw organisatie waarschijnlijk niet onder de Cbw. Let op: ook kleinere organisaties kunnen alsnog aangewezen worden — bijvoorbeeld als enige aanbieder van een essentiële dienst, bij risico voor de openbare veiligheid of volksgezondheid, bij systeemrisico of als kritieke entiteit (CER/Wwke). Controleer de uitzonderingen in de officiële RDI-zelfevaluatie. Vrijwillige basishygiëne blijft hoe dan ook aan te raden.',
+  waarschijnlijk_buiten_scope: 'Op basis van deze antwoorden valt uw organisatie waarschijnlijk niet onder de Cbw. Let op: ook kleinere organisaties kunnen alsnog aangewezen worden, bijvoorbeeld als enige aanbieder van een essentiële dienst, bij risico voor de openbare veiligheid of volksgezondheid, bij systeemrisico of als kritieke entiteit (CER/Wwke). Controleer de uitzonderingen in de officiële RDI-zelfevaluatie. Vrijwillige basishygiëne blijft hoe dan ook aan te raden.',
   keten: 'Uw organisatie valt waarschijnlijk niet rechtstreeks onder de Cbw, maar u levert aan organisaties die er wél onder vallen. Die klanten zijn verplicht hun toeleveringsketen te borgen (art. 21) en leggen de eisen contractueel bij u neer: verwacht vragen om bewijs van uw maatregelen en mogelijk audits of een keurmerk-eis.',
-  onbekend: "Beantwoord de vragen hierboven voor een indicatie van uw Cbw-classificatie. Overslaan kan ook — de uitkomst blijft dan 'onbekend'.",
+  onbekend: "Beantwoord de vragen hierboven voor een indicatie van uw Cbw-classificatie. Overslaan kan ook; de uitkomst blijft dan 'onbekend'.",
 };
 
 // ---------- werk-typen (rapport) — presentatie, geen normdata ----------
@@ -35,7 +35,7 @@ const SCOPE_VERDICT_MEANING = {
 const WORK_META = {
   techniek: { label: 'Techniek', owner: 'levert uw IT-partner' },
   beleid: { label: 'Beleid & procedures', owner: 'met uw IT- en compliance-partner' },
-  mensen: { label: 'Mens & organisatie', owner: 'training en HR — samen' },
+  mensen: { label: 'Mens & organisatie', owner: 'training en HR samen' },
   toetsing: { label: 'Toetsing & bewijs', owner: 'onafhankelijke partij' },
 };
 const WORK_ORDER = ['techniek', 'beleid', 'mensen', 'toetsing'];
@@ -54,7 +54,7 @@ const SCOPE_EXTRA = {
   ],
   hq: [
     { v: 'nl', t: 'Nederland', d: 'De Cyberbeveiligingswet en de Nederlandse toezichthouder zijn van toepassing.' },
-    { v: 'eu', t: 'Ander EU-land', d: "Voor de meeste sectoren geldt de wet van het land van vestiging — een Nederlandse vestiging valt dan gewoon onder de Cbw. Alleen voor digitale aanbieders (cloud, MSP's, DNS e.d.) is het land van de hoofdvestiging bevoegd." },
+    { v: 'eu', t: 'Ander EU-land', d: "Voor de meeste sectoren geldt de wet van het land van vestiging: een Nederlandse vestiging valt dan gewoon onder de Cbw. Alleen voor digitale aanbieders (cloud, MSP's, DNS e.d.) is het land van de hoofdvestiging bevoegd." },
     { v: 'non_eu', t: 'Buiten de EU', d: 'Digitale aanbieders zonder EU-vestiging moeten een EU-vertegenwoordiger aanwijzen; dat land wordt bevoegd. Voor overige sectoren geldt de wet van het land van vestiging.' },
   ],
   designation: [
@@ -212,7 +212,7 @@ const BRAND_MAILTO = typeof BRAND.mailto === 'string' && /^[^\s?&@]+@[^\s?&@]+\.
 // AI-NOTE: bewust GEEN onderdeel van MSP_BRAND — de powered-by-vermelding,
 // het Dxfferent-supportkanaal en de disclaimer zijn voorwaarden voor
 // white-label-gebruik (zie ATTRIBUTION.md) en blijven in elke variant staan.
-const DXF = { name: 'Dxfferent', url: 'https://dxfferent.nl', mailto: 'hallo@dxfferent.nl' };
+const DXF = { name: 'Dxfferent', url: 'https://dxfferent.com', mailto: 'hallo@dxfferent.nl' };
 // AGPL-3.0 §13: wie een (aangepaste) versie via een netwerk aanbiedt, moet
 // gebruikers de bijbehorende broncode aanbieden. Deze link is die aanbieding en
 // staat daarom buiten MSP_BRAND. Een MSP die de code wijzigt, moet hem naar zijn
@@ -262,7 +262,7 @@ const BRAND_LOGO = safeImageUrl(BRAND.logo);
 const GATE_CONFIGURED = Boolean(GATE_CFG.portalId && GATE_CFG.formId && GATE_OPERATOR && GATE_PRIVACY_URL);
 // AVG: rapportlevering vergt géén checkbox (de klik ís het verzoek);
 // marketing is een aparte, optionele default-uit opt-in (art. 7(4) AVG + Tw 11.7).
-const GATE_CONSENT_TEXT = 'Houd mij per e-mail op de hoogte van NIS2-ontwikkelingen (optioneel — afmelden kan altijd).';
+const GATE_CONSENT_TEXT = 'Houd mij per e-mail op de hoogte van NIS2-ontwikkelingen (optioneel; afmelden kan altijd).';
 
 // ---------- mode-schakelaar (OSS lead/pro) ----------
 // 'lead' = leadmagnet op de MSP-site: 5 stappen (geen maatregelen-stap,
@@ -499,10 +499,10 @@ function App() {
         setDossierMsg('');
         go(clean.step || ACTIVE_STEPS.length);
       } catch {
-        setDossierMsg('Dossier kon niet gelezen worden — kies een eerder opgeslagen nis2-dossier-*.json.');
+        setDossierMsg('Dossier kon niet gelezen worden. Kies een eerder opgeslagen nis2-dossier-*.json.');
       }
     };
-    reader.onerror = () => setDossierMsg('Bestand kon niet gelezen worden — probeer het opnieuw te kiezen.');
+    reader.onerror = () => setDossierMsg('Bestand kon niet gelezen worden. Probeer het opnieuw te kiezen.');
     reader.readAsText(file);
   }
   function dossierLoadBtn() {
@@ -529,7 +529,7 @@ function App() {
         </div>
         <div className="rail-mid">
           <h2 className="rail-title">Wat is uw data waard als het misgaat?</h2>
-          <p className="rail-sub">In {ACTIVE_STEPS.length} stappen van Cbw-scope naar concrete maatregelen en diensten — afgestemd op NIS2.</p>
+          <p className="rail-sub">In {ACTIVE_STEPS.length} stappen van Cbw-scope naar concrete maatregelen en diensten, afgestemd op NIS2.</p>
         </div>
         <nav className="rail-prog">
           {ACTIVE_STEPS.map((s, i) => {
@@ -561,16 +561,16 @@ function App() {
   // ---------- step bodies ----------
   function intro() {
     const pts = [
-      { ic: 'layers', t: 'Breng uw data in kaart', d: 'Welke gegevens en systemen zijn cruciaal voor uw bedrijf?' },
+      { ic: 'layers', t: 'Breng uw data in kaart', d: 'Welke gegevens en systemen kan uw bedrijf geen dag missen?' },
       { ic: 'recover', t: 'Bepaal uw hersteltempo', d: 'Hoe snel moet u terug zijn (RTO) en hoeveel verlies is acceptabel (RPO)?' },
-      { ic: 'shield', t: 'Zie welke maatregelen nodig zijn', d: 'NIS2-maatregelen plus de diensten waarmee u ze invult — en wat er als eerste moet gebeuren.' },
+      { ic: 'shield', t: 'Zie welke maatregelen nodig zijn', d: 'NIS2-maatregelen plus de diensten waarmee u ze invult, en wat er als eerste moet gebeuren.' },
     ];
     return (
       <div className="intro-hero fade">
         <div className="eyebrow">Begeleide intake · ± 10 minuten</div>
         <h1 className="step-h" style={{ fontSize: 40, maxWidth: '15ch' }}>In {ACTIVE_STEPS.length} stappen van Cbw-scope naar een concreet beveiligingsplan.</h1>
         <p className="step-sub">Doorloop deze intake samen met uw IT-partner. Per type data bepaalt u de impact en het
-          benodigde herstelprofiel; aan het eind ziet u precies welke NIS2-maatregelen en diensten u nodig heeft.</p>
+          benodigde herstelprofiel. Aan het eind ziet u welke NIS2-maatregelen en diensten daarbij horen.</p>
         <div className="intro-points">
           {pts.map((p) => (
             <div className="intro-point" key={p.t}>
@@ -600,7 +600,7 @@ function App() {
     const eu2690Hit = (scope.sectorId && (sc.eu2690?.sectors || []).includes(scope.sectorId))
       || (scope.alwaysInScope || []).some((id) => id.startsWith('vertrouwensdiensten'));
     if (eu2690Hit && sc.eu2690?.note) { scopeNotes.push(sc.eu2690.note); }
-    if ((scope.exceptions || []).length > 0) { scopeNotes.push('U heeft een wettelijke uitzondering aangevinkt: voor die taken of activiteiten geldt de Cbw niet of beperkt. De classificatie hieronder blijft gelden voor uw overige activiteiten — controleer dit in de RDI-zelfevaluatie.'); }
+    if ((scope.exceptions || []).length > 0) { scopeNotes.push('U heeft een wettelijke uitzondering aangevinkt: voor die taken of activiteiten geldt de Cbw niet of beperkt. De classificatie hieronder blijft gelden voor uw overige activiteiten. Controleer dit in de RDI-zelfevaluatie.'); }
     // Jurisdictie (NIS2 art. 26): de hoofdvestigingsregel geldt alleen voor de
     // digitale categorieën; overige sectoren vallen onder het land van vestiging.
     const HQ_DIGITAL = new Set(['digitale_infra', 'ict_beheer_b2b', 'digitale_aanbieders']);
@@ -608,29 +608,29 @@ function App() {
       || (scope.alwaysInScope || []).some((id) => id.startsWith('vertrouwensdiensten') || ['tld_registers', 'dns_diensten', 'domeinnaamregistratie'].includes(id));
     if (scope.hq === 'eu') {
       scopeNotes.push(hqDigital
-        ? 'Hoofdvestiging in een ander EU-land: voor digitale aanbieders bepaalt de hoofdvestiging welk land bevoegd is (NIS2 art. 26) — de NIS2-omzetting van dát land is dan van toepassing. Deze intake volgt de Nederlandse Cbw.'
-        : 'Hoofdvestiging in een ander EU-land: voor uw sector geldt de wet van het land van vestiging — uw Nederlandse vestiging valt dus gewoon onder de Cbw, ook met een hoofdkantoor elders.');
+        ? 'Hoofdvestiging in een ander EU-land: voor digitale aanbieders bepaalt de hoofdvestiging welk land bevoegd is (NIS2 art. 26), dus de NIS2-omzetting van dát land is van toepassing. Deze intake volgt de Nederlandse Cbw.'
+        : 'Hoofdvestiging in een ander EU-land: voor uw sector geldt de wet van het land van vestiging, dus uw Nederlandse vestiging valt gewoon onder de Cbw, ook met een hoofdkantoor elders.');
     }
     if (scope.hq === 'non_eu') {
       scopeNotes.push(hqDigital
         ? 'Hoofdvestiging buiten de EU: als digitale aanbieder met diensten in de EU moet u een EU-vertegenwoordiger aanwijzen; het land van die vertegenwoordiger wordt bevoegd.'
-        : 'Hoofdvestiging buiten de EU: voor uw sector geldt de wet van het land van vestiging — uw Nederlandse vestiging valt onder de Cbw.');
+        : 'Hoofdvestiging buiten de EU: voor uw sector geldt de wet van het land van vestiging, dus uw Nederlandse vestiging valt onder de Cbw.');
     }
     const sizeDone = (sc.size_cap_criteria || []).every((c) => scope.sizeAnswers?.[c.id]);
     const onbekendHint = !scope.sectorId
-      ? "Kies hierboven uw sector, of vink een van-rechtswege-categorie aan — de indicatie verschijnt hier direct. Overslaan kan ook; de uitkomst blijft dan 'onbekend'."
+      ? "Kies hierboven uw sector, of vink een van-rechtswege-categorie aan; de indicatie verschijnt hier direct. Overslaan kan ook, de uitkomst blijft dan 'onbekend'."
       : !sizeDone
-        ? 'Uw sector is ingevuld — vul nu de omvang in (medewerkers, jaaromzet en balanstotaal), dan verschijnt hier uw indicatie.'
+        ? 'Uw sector is ingevuld. Vul nu de omvang in (medewerkers, jaaromzet en balanstotaal), dan verschijnt hier uw indicatie.'
         : SCOPE_VERDICT_MEANING.onbekend;
-    if (scopeOutcome === 'waarschijnlijk_buiten_scope' && (scope.designation || []).length > 0) { scopeNotes.push('Op basis van de aangevinkte criteria kan uw organisatie ondanks de kleine omvang alsnog worden aangewezen — houd rekening met verplichtingen en doe de officiële check.'); }
+    if (scopeOutcome === 'waarschijnlijk_buiten_scope' && (scope.designation || []).length > 0) { scopeNotes.push('Op basis van de aangevinkte criteria kan uw organisatie ondanks de kleine omvang alsnog worden aangewezen. Houd rekening met verplichtingen en doe de officiële check.'); }
     return (
       <div className="fade">
         <div className="eyebrow">Stap {stepNum('scope')} · Cbw-scope</div>
         <h1 className="step-h">Valt uw organisatie onder de Cyberbeveiligingswet?</h1>
-        <p className="step-sub">Beantwoord wat van toepassing is — de indicatie onderaan groeit met elk antwoord mee.
-          De uitkomst is een onderbouwde indicatie; de{' '}
-          <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">officiële RDI-zelfevaluatie</a> blijft leidend.
-          Deze stap overslaan kan — de intake werkt ook zonder een scope-uitkomst.</p>
+        <p className="step-sub">Beantwoord wat van toepassing is; de indicatie onderaan groeit met elk antwoord mee.
+          Wat eruit komt is een onderbouwde inschatting. De wettekst is bepalend, en de{' '}
+          <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">officiële RDI-zelfevaluatie</a> is het hulpmiddel om uw classificatie vast te stellen.
+          Deze stap overslaan mag: de intake werkt ook zonder scope-uitkomst.</p>
 
         <div className="sec-h">Sector (Cbw bijlage 1/2)</div>
           <div className="dt-grid scope-sector-grid">
@@ -673,7 +673,7 @@ function App() {
           </div>
 
           <div className="sec-h">Wettelijke uitzonderingen</div>
-          <p className="scope-hint">Voor enkele (overheids)taken geldt de Cbw niet of beperkt. Vink aan wat van toepassing is — meestal geldt hier geen van deze uitzonderingen.</p>
+          <p className="scope-hint">Voor enkele (overheids)taken geldt de Cbw niet of beperkt. Vink aan wat van toepassing is; meestal geldt hier geen van deze uitzonderingen.</p>
           <div className="scope-checklist">
             {SCOPE_EXTRA.exceptions.map((a) => (
               <label key={a.id} className={`scope-check-item ${scope.exceptions.includes(a.id) ? 'sel' : ''}`}>
@@ -751,7 +751,7 @@ function App() {
         </div>
 
         <div className="scope-disclaimer">
-          <p>Deze indicatie is géén juridisch advies — de officiële <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">RDI-zelfevaluatie</a> blijft leidend.</p>
+          <p>Deze indicatie is géén juridisch advies. De wettekst is bepalend; de officiële <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">RDI-zelfevaluatie</a> is het hulpmiddel om uw classificatie vast te stellen.</p>
           <details><summary>Meer over deze indicatie</summary><p>{sc.disclaimer}</p></details>
         </div>
       </div>
@@ -807,7 +807,7 @@ function App() {
       <div className="fade">
         <div className="eyebrow">Stap {stepNum('rtorpo')} · Herstelprofiel</div>
         <h1 className="step-h">Dit is uw voorgestelde hersteltempo</h1>
-        <p className="step-sub">Op basis van uw antwoorden. Niet passend? Stel het profiel per onderdeel bij — de aanbevelingen passen automatisch mee.</p>
+        <p className="step-sub">Op basis van uw antwoorden. Niet passend? Stel het profiel per onderdeel bij; de aanbevelingen passen automatisch mee.</p>
         {selected.map((id) => {
           const dt = DATATYPES.find((d) => d.id === id);
           const base = profileFor(answers[id]);
@@ -823,7 +823,7 @@ function App() {
                 <span className={`tierbadge tone-${tier.tone}`}>{tier.label}</span>
               </div>
               <div className="rtorpo">
-                <div className="cell"><div className="l">RTO — weer up</div><div className="v">{rr.rto}</div></div>
+                <div className="cell"><div className="l">RTO — weer online</div><div className="v">{rr.rto}</div></div>
                 <div className="cell"><div className="l">RPO — max. dataverlies</div><div className="v">{rr.rpo}</div></div>
               </div>
               <p className="rtorpo-note">
@@ -863,7 +863,7 @@ function App() {
     return (
       <div className="fade">
         <div className="eyebrow">Stap {stepNum('measures')} · Maatregelen & huidige situatie</div>
-        <h1 className="step-h">Dit heeft u nodig — en waar staat u nu?</h1>
+        <h1 className="step-h">Dit heeft u nodig. En waar staat u nu?</h1>
         <p className="step-sub">Op basis van uw profiel zijn dit de relevante NIS2-domeinen. Open een domein, bekijk de
           maatregelen en bijbehorende diensten, en geef per domein aan hoever u al bent. Dat bepaalt uw gap.</p>
 
@@ -1128,7 +1128,7 @@ function App() {
           <div className={`scope-report-banner tone-${scopeTone}`}>
             <Icon name="shield" style={{ width: 16, height: 16 }} />
             <span>{scopeOutcome === 'keten'
-              ? <>Uw organisatie wordt vermoedelijk <b>indirect geraakt via de keten</b>: uw klanten moeten kunnen aantonen dat hun leveranciers — u dus — hun zaken op orde hebben.</>
+              ? <>Uw organisatie wordt vermoedelijk <b>indirect geraakt via de keten</b>: uw klanten moeten kunnen aantonen dat hun leveranciers (u dus) hun zaken op orde hebben.</>
               : <>Uw organisatie kwalificeert vermoedelijk als <b>{scopeOutcomeMeta?.label || 'Cbw-entiteit'}</b>.{scopeInScope ? ' Vergeet de registratieplicht niet (mijn.ncsc.nl).' : ''}</>}</span>
           </div>
         )}
@@ -1148,7 +1148,7 @@ function App() {
             </div>
           </div>
 
-          <div className="sec-h">Waar te beginnen — prioriteit uit uw profiel</div>
+          <div className="sec-h">Waar te beginnen: prioriteit uit uw profiel</div>
           <div className="bars">
             {r.roadmap.map((row) => (
               <div className="bar-row" key={row.id}>
@@ -1167,11 +1167,11 @@ function App() {
           <div className="meet-cta">
             <b>Volwassenheid nog niet gemeten.</b>
             {isLead ? (<>
-              <p>Doorloop de meting per maatregel samen met uw IT-partner — dan wordt dit rapport een
+              <p>Doorloop de meting per maatregel samen met uw IT-partner. Dan wordt dit rapport een
                 gap-analyse met concrete percentages per domein.</p>
               {BRAND_MAILTO && <a className="btn btn-primary btn-sm" href={`mailto:${BRAND_MAILTO}?subject=${encodeURIComponent('NIS2-meting plannen')}`}>Plan de meting <Icon name="arrow" style={{ width: 15, height: 15 }} /></a>}
             </>) : (<>
-              <p>De maatregelen-stap is nog niet ingevuld — zonder meting toont dit rapport geen
+              <p>De maatregelen-stap is nog niet ingevuld, dus dit rapport toont geen
                 percentages. Vul de maatregelen in om de gap-analyse per domein te zien.</p>
               <button className="btn btn-primary btn-sm" onClick={() => go(stepNum('measures'))}>Naar de maatregelen <Icon name="arrow" style={{ width: 15, height: 15 }} /></button>
             </>)}
@@ -1194,10 +1194,10 @@ function App() {
           </div>
           <div className="verdict-legend">Beoordelingsgrenzen: ≥75 goed op weg · 50–74 belangrijke gaps · &lt;50 urgente aandacht</div>
           {measuredCount < totalMeasures && (
-            <div className="verdict-legend">Gemeten: {measuredCount} van {totalMeasures} maatregelen — niet-ingevulde maatregelen tellen als 'We doen het, maar informeel' (50%).</div>
+            <div className="verdict-legend">Gemeten: {measuredCount} van {totalMeasures} maatregelen. Niet-ingevulde maatregelen tellen als 'We doen het, maar informeel' (50%).</div>
           )}
 
-          <div className="sec-h">Gap per domein — huidig vs. gewenst</div>
+          <div className="sec-h">Gap per domein: huidig tegenover gewenst</div>
           <div className="bars">
             {r.rows.map((row) => (
               <div className="bar-row" key={row.id}>
@@ -1243,8 +1243,8 @@ function App() {
                     <span key={l}>{i > 0 ? ' · ' : ' '}<b>{i > 0 ? '+' : ''}{scLevelCounts[l]}</b> vanaf SC-{l}</span>
                   ))}.
                   {' '}Bij <b>{pkg.sc_ambition || pkg.label}</b> horen er <b>{covered}</b>
-                  {covered < scOpenTotal ? <>; de overige <b>{scOpenTotal - covered}</b> komen pas bij een hoger ambitieniveau in beeld</> : ' — alle niveaus'}.
-                  {' '}Weeg dit samen met uw IT-partner — het niveau is een startpunt voor het gesprek, geen uitkomst.
+                  {covered < scOpenTotal ? <>; de overige <b>{scOpenTotal - covered}</b> komen pas bij een hoger ambitieniveau in beeld</> : ': alle niveaus'}.
+                  {' '}Weeg dit samen met uw IT-partner: het niveau is een startpunt voor het gesprek, geen uitkomst.
                 </p>
               );
             })()}
@@ -1308,7 +1308,7 @@ function App() {
             </div>
           </div>
           <div className={`road ${gateOn ? 'blurred' : ''}`}>
-            {r.roadmap.length === 0 && <p className="step-sub">Geen openstaande gaps — sterk uitgangspunt. Blijf toetsen en bijwerken.</p>}
+            {r.roadmap.length === 0 && <p className="step-sub">Geen openstaande gaps. Sterk uitgangspunt; blijf toetsen en bijwerken.</p>}
             {r.roadmap.map((row) => (
               <div className={`road-card p-${row.meta.tone}`} key={row.id}>
                 <div className="rh">
@@ -1345,12 +1345,12 @@ function App() {
           {gateOn && (
             <div className="gate locked">
               <h3>Ontvang het volledige rapport</h3>
-              <p>Vul uw e-mailadres in en het volledige rapport verschijnt direct op het scherm — alle maatregelen met normverwijzingen, plus een PDF om te delen. {GATE_OPERATOR} stuurt u het rapport daarna ook per e-mail.</p>
+              <p>Vul uw e-mailadres in en het volledige rapport verschijnt direct op het scherm: alle maatregelen met normverwijzingen, plus een PDF om te delen. {GATE_OPERATOR} stuurt u het rapport daarna ook per e-mail.</p>
               <form onSubmit={submitGate}>
                 <div className="gate-form">
                   <input type="email" required placeholder="naam@bedrijf.nl" value={email} onChange={(e) => setEmail(e.target.value)} />
                   <button className="btn btn-primary btn-sm" type="submit" disabled={gateState === 'submitting'}>
-                    {gateState === 'submitting' ? 'Versturen…' : 'Stuur rapport'}
+                    {gateState === 'submitting' ? 'Versturen…' : 'Stuur mij het rapport'}
                   </button>
                 </div>
                 {/* Zonder subscriptionTypeId kan de opt-in niet in HubSpot
@@ -1364,7 +1364,7 @@ function App() {
                 )}
                 <p className="gate-privacy">Uw e-mailadres en de rapport-samenvatting worden verwerkt door {GATE_OPERATOR} om u het rapport te sturen (via HubSpot). <a href={GATE_PRIVACY_URL} target="_blank" rel="noopener noreferrer">Privacyverklaring</a></p>
                 {gateState === 'error' && (
-                  <p className="gate-msg">Versturen lukte niet. Probeer het opnieuw{BRAND_MAILTO ? <>, of mail <a href={`mailto:${BRAND_MAILTO}?subject=NIS2-risicorapport`}>{BRAND_MAILTO}</a> — dan sturen we het rapport toe</> : ' — of neem contact op met de aanbieder van deze intake'}.</p>
+                  <p className="gate-msg">Versturen lukte niet. Probeer het opnieuw{BRAND_MAILTO ? <>, of mail <a href={`mailto:${BRAND_MAILTO}?subject=NIS2-risicorapport`}>{BRAND_MAILTO}</a>; dan sturen we het rapport toe</> : ', of neem contact op met de aanbieder van deze intake'}.</p>
                 )}
               </form>
             </div>
@@ -1410,7 +1410,7 @@ function App() {
 
         {!gateOn && (
           <div className="gate" style={{ textAlign: 'left' }}>
-            {submitted && <div className="ok" style={{ marginBottom: 12 }}><Icon name="check" style={{ width: 16, height: 16 }} /> Aanvraag ontvangen — het volledige rapport staat hieronder{email ? ` en wordt ook per e-mail gestuurd naar ${email}` : ''}.</div>}
+            {submitted && <div className="ok" style={{ marginBottom: 12 }}><Icon name="check" style={{ width: 16, height: 16 }} /> Aanvraag ontvangen. Het volledige rapport staat hieronder{email ? ` en wordt ook per e-mail gestuurd naar ${email}` : ''}.</div>}
             <h3>Klaar om te delen</h3>
             <p>Download het rapport als PDF of bespreek het met uw IT-partner.</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>

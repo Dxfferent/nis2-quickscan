@@ -23,7 +23,7 @@ Eén config-blok in `index.html` van de gehoste tool:
 `window.MSP_BRAND = { name, accent, mailto, hubspot: { portalId, formId } }`
 — naam/kleur/leadflow zijn dan van de MSP. Vier dingen blijven staan:
 de attributie-footer (ADR/NOREA-licentievoorwaarde), "powered by Dxfferent",
-de disclaimer in het rapport, en de broncode-link die AGPL-3.0 §13 eist.
+de disclaimer in het rapport en de broncode-link die AGPL-3.0 §13 eist.
 Zie MSP-ENABLEMENT.md bij de tool voor hosting-details.
 
 ## Boodschap-discipline
@@ -31,8 +31,8 @@ Zie MSP-ENABLEMENT.md bij de tool voor hosting-details.
 - Urgentie uit de wet halen (inwerkingtreding 15 augustus 2026; verplichte
   bestuurderstraining; eerste signaal binnen 24 uur, volledige melding binnen
   72 uur), niet uit angstbeelden.
-- Claim nooit "NIS2-compliant worden met tool X" — de intake is een diagnose
-  en gespreksstarter, compliance is een traject.
+- Claim nooit "NIS2-compliant worden met tool X". De intake is een diagnose
+  en gespreksstarter; compliance is een traject.
 - Positionering en verkoopargumentatie: via het Dxfferent-partnerprogramma.
 - Altijd: indicatief, geen juridisch advies; de wettekst is bepalend en de
   RDI-zelfevaluatie is het officiële hulpmiddel om de classificatie vast te

@@ -11,64 +11,83 @@
 **[Releases](../../releases)** ·
 **[Wijzigingen](CHANGELOG.md)**
 
-**Open-source NIS2-check voor Nederlandse organisaties en MSP's.** In vijf
-(leadmagnet) of zes (pro) begeleide stappen van Cbw-scope-indicatie naar
-RTO/RPO-herstelprofielen en een gap-overzicht over 78 maatregelen uit
-het Cbw (NIS2) Control Framework en NIS2 Supply Chain (voorheen NIS2
-Kwaliteitsmerk). Volledig
-statisch (geen backend, geen account); antwoorden blijven op het apparaat —
-alleen wie in de lead-stand zelf het rapport aanvraagt, stuurt zijn
-e-mailadres en een rapport-samenvatting naar het CRM van de aanbiedende
-partij.
-White-label inzetbaar door elke MSP.
+**Uw klanten gaan vragen hoe zij aan NIS2 voldoen.** De Cyberbeveiligingswet
+treedt op 15 augustus 2026 in werking. Organisaties die eronder vallen moeten
+hun toeleveringsketen borgen (art. 21), en die eis komt contractueel terecht
+bij hun IT-leverancier: bij u.
 
-> **Voor MSP's: eigen huisstijl in vijf minuten.** Naam, logo, kleuren, thema en
-> uw eigen leadflow via één configblok, zonder rebuild — zie
-> [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md).
+Deze gratis, open-source intake maakt dat gesprek concreet. In tien minuten
+ziet u of een organisatie in scope valt, hoe snel ze na een incident terug moet
+zijn en welke van de 78 maatregelen nog open staan. Geen account, geen
+installatie, rapport als PDF.
+
+Voor wie het technisch wil beoordelen: de tool is volledig statisch, draait
+zonder backend en bewaart de antwoorden op het apparaat van de invuller.
+Alleen wie in de lead-stand zelf het rapport aanvraagt, stuurt een e-mailadres
+en een rapport-samenvatting naar het CRM van de aanbiedende partij.
+
+> **Voor MSP's: uw eigen huisstijl in vijf minuten.** Naam, logo, kleuren,
+> thema en uw eigen leadflow via één configblok, zonder rebuild. De leads
+> landen in úw CRM. Zie [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md).
 
 ![Introscherm van de NIS2 Quickscan (white-label, donker thema)](docs/screenshot.png)
 
 ![Rapportstap: risicoprofiel, Cbw-indicatie en prioriteiten per domein](docs/screenshot-rapport.png)
 
-> *Free, open-source NIS2 / Cyberbeveiligingswet self-assessment for the
-> Dutch market: scope check, RTO/RPO recovery profiles and a prioritised
-> gap overview across 78 controls. Static site, white-label ready for MSPs.
-> Built by [Dxfferent](https://dxfferent.nl).*
+> *Free, open-source NIS2 / Cyberbeveiligingswet self-assessment for the Dutch
+> market. Scope check, RTO/RPO recovery profiles and a prioritised gap overview
+> across 78 controls from the ADR/NOREA Cbw Control Framework. Static site, no
+> backend, white-label ready for MSPs. Built by
+> [Dxfferent](https://dxfferent.com).*
 
-## Wat de intake doet
+## Wat u eruit krijgt
 
-1. **Cbw-scope in kaart** — sector (bijlage 1/2), omvang en
-   van-rechtswege-categorieën → indicatie *essentieel / belangrijk / indirect
-   geraakt via de keten / buiten scope*, met doorverwijzing naar de officiële
-   [RDI-zelfevaluatie](https://regelhulpenvoorbedrijven.nl/NIS-2-NL).
-2. **Risicoprofiel per datatype** — impact en veranderfrequentie per systeem
-   → concrete RTO/RPO-herstelprofielen.
-3. **Volwassenheid per maatregel** — 5 niveaus, van "niets geregeld" tot
-   "aantoonbaar op orde".
-4. **Wat er moet gebeuren** — het gap-overzicht per domein, met per maatregel
-   het soort werk (techniek · beleid & procedures · mens & organisatie ·
-   toetsing & bewijs) en de telling als kop: zo is direct zichtbaar dat het
-   merendeel geen techniek is maar aantoonbaarheid. Filterbaar op
-   Cbw-verplicht, doorzoekbaar op letterlijke artikelcodes; in de pro-stand
-   draagt elke maatregel het MSP-werkpakket dat hem afdekt. Inclusief
-   meldplicht-tijdlijn (24u / 72u / eindverslag).
+Vijf begeleide stappen in de lead-stand, zes in de pro-stand. Elke stap levert
+een uitkomst die u in het klantgesprek kunt gebruiken.
 
-   > De 78 maatregelen clusteren in **25 MSP-werkpakketten** — herkenbare
-   > brokken werk als *Managed back-up* of *Monitoring & detectie (SOC/SIEM)*,
-   > bedoeld als denkraam voor het gesprek met de klant. In de data zijn dat
-   > `domains[].themes[]` in `assets/intake-config.json`; elke maatregel wijst
-   > er via `theme` naar. De 78 `service`-waarden zijn de laag eronder
-   > (dienstnaam per maatregel), de menukaart in `package_suggestion` de laag
-   > erboven (verkoopregels per SC-niveau).
-5. **Ambitieniveau en menukaart** — een matrix van diensten × de drie
-   SC-niveaus (SC-10 / SC-20 / SC-30) met het geadviseerde niveau uitgelicht,
-   afgeleid uit scope-uitkomst en herstelprofiel. Elke dienstregel draagt het
-   Cbw-artikel dat ze raakt. White-label vervangbaar door de eigen menukaart
-   (`MSP_BRAND.packages`).
+**1. Valt deze organisatie eronder?**
+Sector (bijlage 1/2), omvang en van-rechtswege-categorieën leiden tot een
+indicatie: *essentieel*, *belangrijk*, *indirect geraakt via de keten* of
+*buiten scope*. De wettekst is bepalend; de officiële
+[RDI-zelfevaluatie](https://regelhulpenvoorbedrijven.nl/NIS-2-NL) is het
+hulpmiddel om de classificatie vast te stellen, en de intake verwijst daarnaar.
+
+**2. Hoe snel moet het terug zijn?**
+Impact en veranderfrequentie per systeem leveren per datatype een RTO en een
+RPO op: hersteltijd en maximaal aanvaardbaar dataverlies, in uren en minuten.
+Concreet genoeg om een back-upcontract naast te leggen.
+
+**3. Waar staat de organisatie nu?**
+Volwassenheid per maatregel in vijf niveaus, van "niets geregeld" tot
+"aantoonbaar op orde".
+
+**4. Wat er nog moet gebeuren**
+Het gap-overzicht per domein. Elke maatregel draagt het soort werk dat erbij
+hoort (techniek · beleid & procedures · mens & organisatie · toetsing &
+bewijs), met de telling als kop. Dat maakt in één oogopslag zichtbaar dat het
+meeste werk in aantoonbaarheid zit en niet in techniek, en dat is meteen het
+argument voor een traject in plaats van een product. Filterbaar op
+Cbw-verplicht en doorzoekbaar op letterlijke artikelcodes; in de pro-stand
+draagt elke maatregel het MSP-werkpakket dat hem afdekt. Inclusief de
+meldplicht-tijdlijn (24u / 72u / eindverslag).
+
+> De 78 maatregelen clusteren in **25 MSP-werkpakketten**: herkenbare brokken
+> werk als *Managed back-up* of *Monitoring & detectie (SOC/SIEM)*, bedoeld als
+> denkraam voor het gesprek met de klant. In de data zijn dat
+> `domains[].themes[]` in `assets/intake-config.json`; elke maatregel wijst er
+> via `theme` naar. De 78 `service`-waarden zijn de laag eronder (dienstnaam
+> per maatregel), de menukaart in `package_suggestion` de laag erboven
+> (verkoopregels per SC-niveau).
+
+**5. Welk ambitieniveau past?**
+Een matrix van diensten × de drie SC-niveaus (SC-10 / SC-20 / SC-30), met het
+geadviseerde niveau uitgelicht en afgeleid uit scope-uitkomst en
+herstelprofiel. Elke dienstregel draagt het Cbw-artikel dat ze raakt.
+White-label vervangbaar door uw eigen menukaart (`MSP_BRAND.packages`).
 
 ## Twee standen: leadmagnet én consultant-gereedschap
 
-Dezelfde tool, twee inzetten — gekozen via `?mode=` in de URL (of
+Dezelfde tool, twee inzetten. Kiezen doet u met `?mode=` in de URL (of met
 `MSP_BRAND.mode`):
 
 | | `?mode=lead` (default) | `?mode=pro` |
@@ -78,21 +97,21 @@ Dezelfde tool, twee inzetten — gekozen via `?mode=` in de URL (of
 | Rapport | achter lead-gate (lead in uw CRM) | direct, nooit een gate |
 | Dossier | — | opslaan/laden als `.json` (QBR-hermeting) |
 
-Beide standen bewaren de voortgang automatisch op het apparaat
-(localStorage) — een gesloten tabblad verliest niets. De pro-stand is het
-werkinstrument (klant aan tafel, dossier per klant); de lead-stand is de
+Beide standen bewaren de voortgang automatisch op het apparaat (localStorage),
+dus een per ongeluk gesloten tabblad kost niets. De pro-stand is het
+werkinstrument met de klant aan tafel, dossier per klant. De lead-stand is de
 vanger op uw site.
 
 ## Snel starten
 
-**Zonder ontwikkelomgeving:** download de zip bij de laatste
+**Zonder ontwikkelomgeving.** Download de zip bij de laatste
 [release](../../releases), pak uit, zet uw `MSP_BRAND`-blok in `index.html` en
 upload de bestanden naar uw webhosting. Geen Node, geen terminal. Let op:
-dubbelklikken op `index.html` werkt niet — de tool heeft een webserver nodig.
-De skill [`skills/nis2-installatie/`](skills/nis2-installatie/) loopt het met u
+dubbelklikken op `index.html` werkt niet, de tool heeft een webserver nodig. De
+skill [`skills/nis2-installatie/`](skills/nis2-installatie/) loopt het met u
 door.
 
-**Met Node:**
+**Met Node.**
 
 ```bash
 npm install
@@ -102,13 +121,13 @@ npm run build        # → dist/ — statisch, self-contained, geen CDN
 Host `dist/` op elke webserver of CDN. Lokaal proberen zonder build:
 `python -m http.server 8123` in de repo-root → http://localhost:8123/. Dat is de
 **dev-variant**: die laadt React en Babel van unpkg en hoort niet gehost te
-worden — publiceer altijd `dist/`, dat is self-contained en zonder CDN. Zie [docs/HOSTING.md](docs/HOSTING.md) voor
-lead-gate (HubSpot), nginx-voorbeeld en cache-regels.
+worden. Publiceer altijd `dist/`: self-contained, zonder CDN. Zie
+[docs/HOSTING.md](docs/HOSTING.md) voor lead-gate (HubSpot), nginx-voorbeeld en
+cache-regels.
 
 ## White-label voor MSP's
 
-Eén config-blok — eigen naam, logo, kleuren, thema en leadflow, zonder
-rebuild:
+Eén config-blok voor naam, logo, kleuren, thema en leadflow, zonder rebuild:
 
 ```html
 <script>
@@ -129,38 +148,44 @@ window.MSP_BRAND = {
 Volledige uitleg: [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md). Vier
 dingen blijven in elke variant staan (voorwaarden, zie
 [ATTRIBUTION.md](ATTRIBUTION.md)): de bronvermelding, *powered by Dxfferent*,
-de disclaimer en de broncode-link die AGPL-3.0 §13 vereist — wijzigt u de
-code, dan wijst die link naar uw eigen bron. Support of white-label-hulp:
+de disclaimer en de broncode-link die AGPL-3.0 §13 vereist. Wijzigt u de code,
+dan wijst die link naar uw eigen bron. Support of white-label-hulp:
 **hallo@dxfferent.nl**.
 
 ## Claude-skills voor MSP's
 
-`skills/` bevat zes zelfstandige [Claude-skills](skills/README.md):
-installatie- en CRM-koppelingsbegeleiding voor de tool zelf, plus
-Cbw-scope-check, meldplicht-coach, rapport-naar-voorstel-adviseur en
-MSP go-to-market op hetzelfde kennisniveau als de tool. Kopieer ze naar
-`.claude/skills/` en voer NIS2-gesprekken met dezelfde normbasis.
+`skills/` bevat zes zelfstandige [Claude-skills](skills/README.md). Twee helpen
+de tool zelf neerzetten: installatie en CRM-koppeling. De andere vier voeren
+het inhoudelijke gesprek op dezelfde normbasis als de tool: scope-check,
+meldplicht-coach, rapport-naar-voorstel-adviseur en MSP go-to-market. Kopieer
+ze naar `.claude/skills/` en u werkt met dezelfde bron.
+
+De gids [skills/README.md](skills/README.md) beschrijft per skill wat hij doet,
+welke vragen u eraan stelt en waar zijn grens ligt, met installatie-instructies
+voor Claude Code, Claude Desktop en claude.ai.
 
 ## Bronnen & betrouwbaarheid
 
 Gebouwd op de bron, niet op een blog: gegenereerd uit het **Cbw (NIS2)
-Control Framework v1.2** (ADR & NOREA, CC BY 4.0 — bewerkt door Dxfferent
+Control Framework v1.2** (ADR & NOREA, CC BY 4.0, bewerkt door Dxfferent
 B.V.), met maatregel-titelverwijzingen naar de norm **NIS2 Supply Chain**
-(voorheen NIS2 Kwaliteitsmerk; Stichting Kwaliteitsinnovatie). Dxfferent B.V. en deze tool zijn niet
-verbonden aan, gecertificeerd door of goedgekeurd door Stichting
-Kwaliteitsinnovatie; de intake is geen certificeringsinstrument en het
-doorlopen ervan levert geen keurmerk-certificaat op. Wet vastgesteld en
-gepubliceerd als Cyberbeveiligingswet (Stb. 2026, 187), met het
-Cyberbeveiligingsbesluit
-(Stb. 2026, 189); beide in werking 15 augustus 2026.
-Volledige bronvermelding: [ATTRIBUTION.md](ATTRIBUTION.md). Dxfferent
-streeft ernaar normdata-updates bij wetswijzigingen te publiceren als nieuwe
-`assets/intake-config.json` — een config-swap, geen rebuild — vrijblijvend
-en zonder daartoe verplicht te zijn.
+(voorheen NIS2 Kwaliteitsmerk; Stichting Kwaliteitsinnovatie). De wet is
+vastgesteld en gepubliceerd als Cyberbeveiligingswet (Stb. 2026, 187), met het
+Cyberbeveiligingsbesluit (Stb. 2026, 189); beide treden 15 augustus 2026 in
+werking. Volledige bronvermelding: [ATTRIBUTION.md](ATTRIBUTION.md).
+
+Dxfferent B.V. en deze tool zijn niet verbonden aan, gecertificeerd door of
+goedgekeurd door Stichting Kwaliteitsinnovatie. De intake is geen
+certificeringsinstrument; het doorlopen ervan levert geen keurmerk-certificaat
+op.
+
+Bij een wetswijziging streeft Dxfferent ernaar de normdata te publiceren als
+een nieuwe `assets/intake-config.json`, dus als config-swap en niet als
+rebuild. Dat gebeurt vrijblijvend en zonder daartoe verplicht te zijn.
 
 `assets/intake-config.json` in deze repository **is** de normdata: er is geen
 verborgen backend die hem aanlevert en geen build-stap die hem genereert. Wie
-de tool forkt, bewerkt dit bestand rechtstreeks — alle 78 maatregelen, de
+de tool forkt, bewerkt dit bestand rechtstreeks; alle 78 maatregelen, de
 scope-check en de menukaart staan erin. De structuur is gedocumenteerd in
 [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md); `tests/engine-smoke.mjs`
 bewaakt de invarianten en draait in CI.
@@ -195,32 +220,33 @@ RTO (Recovery Time Objective) = hoe snel een systeem terug moet zijn; RPO
 leidt beide per datatype af uit impact en veranderfrequentie.
 
 **Waar meld ik een incident?**
-Bij het meldpunt van het NCSC: mijn.ncsc.nl — eerste melding binnen 24 uur,
+Bij het meldpunt van het NCSC: mijn.ncsc.nl. Eerste melding binnen 24 uur,
 incidentmelding binnen 72 uur, eindverslag binnen een maand. De intake bevat
-de volledige tijdlijn inclusief uitzonderingen.
+de volledige tijdlijn inclusief de uitzonderingen.
 
 **Is dit gratis, ook commercieel?**
-Ja — AGPL-3.0-licentie: vrij te gebruiken, aan te passen en white-label in
-te zetten, ook commercieel. Wie een aangepaste versie verspreidt of publiek
+Ja. De AGPL-3.0-licentie laat u de tool gebruiken, aanpassen en white-label
+inzetten, ook commercieel. Wie een aangepaste versie verspreidt of publiek
 host, deelt die aanpassingen onder dezelfde licentie terug; doorverkoop als
 gesloten product kan dus niet. Zie [ATTRIBUTION.md](ATTRIBUTION.md).
 
 ## Over Dxfferent
 
-[Dxfferent](https://dxfferent.nl) is de gids in MSP-ondernemerschap. Wij
-helpen MSP's hun bedrijf voorspelbaar, winstgevend en audit-proof te maken —
+[Dxfferent](https://dxfferent.com) is de gids in MSP-ondernemerschap. Wij
+helpen MSP's hun bedrijf voorspelbaar, winstgevend en audit-proof te maken:
 procesoptimalisatie, ISO 27001- en NIS2/Cbw-implementaties, Security
-Officer-training en vCISO-invulling — en we volgen de consoliderende
-MSP-markt met een redactioneel marktregister. Deze quickscan hoort bij dat
-verhaal: in een consoliderende markt is aantoonbare compliance mede bepalend
-voor de waarde van een MSP, en via het white-label-partnermodel voert u er
-het NIS2-gesprek met uw klanten mee — op dezelfde lijn als alles wat we
-publiceren: geen claim zonder bron. Vragen, support of samenwerken:
-**hallo@dxfferent.nl**.
+Officer-training en vCISO-invulling. Daarnaast volgen we de consolidatie in de
+MSP-markt met een redactioneel marktregister.
+
+Deze quickscan hoort bij dat werk. In een markt die consolideert weegt
+aantoonbare compliance mee in wat een MSP waard is, en via het
+white-label-partnermodel voert u er het NIS2-gesprek met uw klanten mee. Op
+dezelfde lijn als alles wat we publiceren: geen claim zonder bron. Vragen,
+support of samenwerken: **hallo@dxfferent.nl**.
 
 ## Bijdragen
 
-Issues en PR's welkom — zie [CONTRIBUTING.md](CONTRIBUTING.md).
+Issues en PR's zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md).
 Beveiligingsissues: [SECURITY.md](SECURITY.md).
 
 ## Licentie

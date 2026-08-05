@@ -30,17 +30,18 @@ description:
       Gratis open-source NIS2/Cyberbeveiligingswet-quickscan: Cbw-scope-indicatie,
       RTO/RPO-herstelprofielen en een gap-overzicht over 78 maatregelen.
     longDescription: >-
-      De NIS2 Quickscan is een statische, white-label inzetbare webtool die
-      Nederlandse organisaties in vijf tot zes begeleide stappen van een
-      Cbw-scope-indicatie (essentieel, belangrijk, keten of buiten scope) naar
-      een concreet gap-overzicht brengt. De normdata is gegenereerd uit het Cbw
+      De NIS2 Quickscan is een statische, white-label inzetbare webtool. In
+      vijf tot zes begeleide stappen brengt hij een Nederlandse organisatie van
+      een Cbw-scope-indicatie (essentieel, belangrijk, keten of buiten scope)
+      naar een concreet gap-overzicht. De normdata is gegenereerd uit het Cbw
       (NIS2) Control Framework v1.2 van de Auditdienst Rijk en NOREA (CC BY
       4.0), met maatregel-titelverwijzingen naar de norm NIS2 Supply Chain van
       Stichting Kwaliteitsinnovatie en referenties naar ISO/IEC 27001, CIS
       Controls v8, IEC 62443 en NIST SP 800-53. De tool draait volledig in de
       browser, zonder backend of account; antwoorden blijven op het apparaat
-      van de gebruiker. Uitkomsten zijn indicatief; de officiële
-      RDI-zelfevaluatie blijft leidend.
+      van de gebruiker. Uitkomsten zijn indicatief: de wettekst is bepalend en
+      de officiële RDI-zelfevaluatie is het hulpmiddel om de classificatie vast
+      te stellen.
     features:
       - Cbw-scope-indicatie op sector, omvang en van-rechtswege-categorieën
       - RTO/RPO-herstelprofielen per datatype

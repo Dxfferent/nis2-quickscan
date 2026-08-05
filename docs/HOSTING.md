@@ -39,12 +39,12 @@ window.HUBSPOT_GATE = { enabled: true, portalId: '<portal>', formId: '<form>' };
 ```
 
 Ids uit HubSpot > Marketing > Forms. **De gate verschijnt alleen als naast de
-ids ook `MSP_BRAND.name` en `MSP_BRAND.privacyUrl` gezet zijn** — wie
-persoonsgegevens verzamelt moet zich identificeren en naar zijn eigen
+ids ook `MSP_BRAND.name` en `MSP_BRAND.privacyUrl` gezet zijn.** Wie
+persoonsgegevens verzamelt, moet zich identificeren en naar de eigen
 privacyverklaring wijzen. Ontbreekt een van die gegevens, dan blijft het rapport
-zichtbaar zonder gate: geen valse "verstuurd"-melding en geen link naar de
+zichtbaar zonder gate: geen valse "verstuurd"-melding, en geen link naar de
 privacyverklaring van een andere partij.
-De daadwerkelijke PDF-mail is een HubSpot-workflow op dat formulier.
+De PDF-mail zelf is een HubSpot-workflow op dat formulier.
 
 ## Nginx (eigen subdomein)
 
@@ -67,10 +67,9 @@ server {
 }
 ```
 
-`intake-config.json` no-cache: de config is bedoeld om bij een normupdate als
-los bestand vervangen te worden, dus hij moet altijd gerevalideerd worden —
-en `no-cache` levert dan een 304 in plaats van de volle ~105 KB opnieuw.
-Gebruik dus geen `no-store`.
+`intake-config.json` op no-cache: bij een normupdate wordt dat bestand los
+vervangen, dus het moet altijd gerevalideerd worden. `no-cache` levert dan een
+304 in plaats van de volle ~105 KB opnieuw. Gebruik hier dus geen `no-store`.
 
 ## Security headers
 
@@ -80,14 +79,14 @@ dan het blok hierboven over — nginx leest geen van beide bestanden.
 
 `frame-ancestors 'self'` is er voor de lead-gate: die vraagt een e-mailadres, en
 zonder deze header kan elke derde de pagina in een iframe zetten en de gate
-overklikken. De tool is een zelfstandige pagina, geen widget — framen door een
+overklikken. De tool is een zelfstandige pagina, geen widget; framen door een
 derde heeft geen legitiem gebruik.
 
-Bewust géén volledige `Content-Security-Policy`: `index.html` draagt een inline
+Bewust géén volledige `Content-Security-Policy`. `index.html` draagt een inline
 script (de HubSpot-ids, zodat u ze server-side kunt invullen zonder rebuild) en
 de brand-tokens zetten inline styles. Een werkende CSP zou dus hoe dan ook
-`'unsafe-inline'` bevatten — nauwelijks winst, en een reëel risico dat een
-white-label-fork stilletjes breekt op zijn eigen leadflow.
+`'unsafe-inline'` bevatten: nauwelijks winst, en een reëel risico dat een
+white-label-fork stilletjes breekt op de eigen leadflow.
 
 ## Querystring
 

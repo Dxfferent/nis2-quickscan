@@ -6,9 +6,9 @@ de URL die u in `MSP_BRAND.privacyUrl` zet. Dit template is geen juridisch
 advies.
 
 De rapport-samenvatting (`nis2_rapport`) die u per lead binnenkrijgt,
-beschrijft de weerbaarheid van de organisatie van die lead. Behandel die
-samenvatting in uw bewaartermijnen en toegangsrechten navenant; ze is
-gevoeliger dan een gewone leadregistratie.
+beschrijft hoe weerbaar de organisatie van die lead is. Dat is gevoeliger dan
+een gewone leadregistratie: stem uw bewaartermijnen en toegangsrechten daarop
+af.
 
 ---
 
