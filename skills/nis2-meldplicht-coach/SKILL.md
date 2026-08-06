@@ -11,19 +11,25 @@ geen essay. Meldpunt: **mijn.ncsc.nl**.
 
 ## Is het significant?
 
-Voorlopig criterium (drempels volgen bij ministeriële regeling): ernstige
-operationele verstoring of financiële schade (of dat risico), of aanzienlijke
-materiële/immateriële schade aan anderen. Bij twijfel: behandel het als
-significant. Te vroeg melden is herstelbaar, te laat niet.
+Criterium: ernstige operationele verstoring van de dienst of financiële
+verliezen (of dat risico), of aanzienlijke materiële/immateriële schade aan
+anderen. Bij twijfel: behandel het als significant. Te vroeg melden is
+herstelbaar, te laat niet.
+
+**Ben je MSP of MSSP, dan gelden voor jou al harde drempels.** Die staan in
+Uitvoeringsverordening (EU) 2024/2690, die rechtstreeks werkt. Datzelfde geldt
+voor DNS-, cloud-, datacenter-, CDN-, onlineplatform- en
+vertrouwensdienstaanbieders. Alleen voor de overige sectoren volgt nadere
+invulling bij ministeriële regeling.
 
 ## De tijdlijn
 
-1. **Vroegtijdige waarschuwing — ≤ 24 uur** na kennisname. Verplicht is alleen,
+1. **Vroegtijdige waarschuwing — onverwijld, uiterlijk 24 uur** na kennisname. Verplicht is alleen,
    voor zover op dat moment bekend: of het incident vermoedelijk door
    onrechtmatig of kwaadwillig handelen is veroorzaakt, en of er
    grensoverschrijdende gevolgen kunnen zijn. Contactgegevens en een eerste
    beeld hoeven wettelijk nog niet, maar versnellen de afhandeling.
-2. **Incidentmelding — ≤ 72 uur** na kennisname. Update van de eerste
+2. **Incidentmelding — onverwijld, uiterlijk 72 uur** na kennisname. Update van de eerste
    melding: initiële beoordeling ernst en gevolgen, indicatoren van aantasting.
    Óók verplicht als er niets veranderd is.
 3. **Tussentijds verslag — op verzoek** van CSIRT of bevoegde autoriteit,
@@ -45,7 +51,8 @@ afwijkende termijn: vertrouwensdiensten melden binnen 24 uur.
 
 ## Vergeet niet
 
-- Ontvangers van de dienst informeren bij mogelijke impact op hen (Cbw art. 30).
+- Ontvangers van de dienst informeren bij mogelijke impact op hen, waar zinvol
+  met de maatregelen die zij zelf kunnen treffen (Cbw art. 30).
 - Bewijsmateriaal veiligstellen vóór herstel (forensics-gereedheid).
 - Parallel AVG-datalek? Aparte melding bij de AP binnen 72 uur; de
   NIS2-melding vervangt die niet.
