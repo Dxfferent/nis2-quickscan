@@ -36,7 +36,9 @@ window.HUBSPOT_GATE = { enabled: false, portalId: '', formId: '' };
 //   legal: 'Uw Bedrijf B.V. · KvK 12345678 · Straat 1, 1234 AB Plaats',
 //   mailto: 'security@uwbedrijf.example',
 //   privacyUrl: 'https://uwbedrijf.example/privacy', // verplicht voor de lead-gate
-//   hubspot: { portalId: '', formId: '' },
+//   hubspot: { portalId: '', formId: '' },  // leadflow via HubSpot Forms,
+//   // of, zonder HubSpot: uw eigen backend die een JSON-POST aanneemt
+//   // leadEndpoint: '/api/nis2-lead',
 // };
 </script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>

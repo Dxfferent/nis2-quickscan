@@ -9,6 +9,15 @@ volgen [SemVer](https://semver.org/lang/nl/): major = breaking (bv. ander
 configschema), minor = nieuwe functionaliteit of normdata-uitbreiding,
 patch = fixes.
 
+## Niet uitgebracht
+
+- **`MSP_BRAND.leadEndpoint`**: leadflow zonder HubSpot. De gate doet één
+  JSON-POST naar een eigen backend (payload: e-mailadres, opt-in, scope,
+  score, compacte rapport-samenvatting). Wint van `MSP_BRAND.hubspot`; alleen
+  http(s). De NIS2-updates-opt-in verschijnt bij deze route alleen met
+  `MSP_BRAND.consentOptIn: true`, zodat er geen vinkje staat zonder lijst
+  erachter. Zie [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md).
+
 ## 1.0.0 — augustus 2026
 
 Eerste publieke release.

@@ -44,6 +44,8 @@ window.MSP_BRAND = {
     formId: 'abcd-…',
     subscriptionTypeId: 123,       // optioneel: HubSpot-subscription voor de NIS2-updates-opt-in
   },
+  // geen HubSpot? Vervang het blok hierboven door uw eigen endpoint:
+  // leadEndpoint: '/api/nis2-lead',  // JSON-POST, zie 'Zonder HubSpot' hieronder
   packages: { tiers: [], lines: [] }, // uw eigen menukaart — zie 'Pakket-suggestie' hieronder
 };
 </script>
@@ -58,7 +60,8 @@ window.MSP_BRAND = {
 - [ ] `MSP_BRAND.name` is ingevuld. Zonder die sleutel toont de rail de
       placeholder **`[Uw MSP]`**, ook in de rapportkop en dus in de PDF.
 - [ ] `MSP_BRAND.legal` gevuld (colofon, art. 3:15d BW).
-- [ ] Draait u de lead-gate? Dan zijn `privacyUrl` én de HubSpot-ids gezet.
+- [ ] Draait u de lead-gate? Dan zijn `privacyUrl` én de HubSpot-ids (of
+      `leadEndpoint`) gezet.
       Ontbreekt er één, dan verschijnt er bewust géén gate; zie
       *Privacy (AVG)* hieronder.
 - [ ] Logo laadt (URL of data-URI); andere schema's worden genegeerd.
@@ -192,6 +195,49 @@ packages: {
 - De regels onder de kaart komen uit `package_suggestion.legal_note` (de
   NIS2/Cbw-verankering) en `package_suggestion.note` (de disclaimer).
 
+## Zonder HubSpot: uw eigen lead-endpoint
+
+Draait u geen HubSpot, zet dan `MSP_BRAND.leadEndpoint` in plaats van
+`MSP_BRAND.hubspot`. De gate doet dan één JSON-POST naar uw eigen backend
+(een serverless function, een formulier-endpoint, uw eigen CRM-API):
+
+```js
+leadEndpoint: '/api/nis2-lead',   // same-origin pad of absolute https-URL
+consentOptIn: false,              // true = toon de NIS2-updates-opt-in (alleen als er een lijst achter zit)
+```
+
+De payload:
+
+```json
+{
+  "email": "naam@bedrijf.nl",
+  "consent": false,
+  "source": "nis2-quickscan",
+  "scope": "belangrijk",
+  "score": 62,
+  "rapport": { "scope": "…", "overall": 62, "domains": [], "profiles": [], "top_gaps": [] },
+  "pageUri": "https://uwsite.nl/tool/nis2-quickscan/"
+}
+```
+
+- **HTTP 2xx = gelukt**; alles daarbuiten toont de bezoeker de
+  mailto-fallback. Antwoord dus pas 200 als de lead écht opgeslagen is.
+- `rapport` is dezelfde compacte samenvatting als het HubSpot-veld
+  `nis2_rapport` hieronder, maar dan als object.
+- `consent` is de optionele NIS2-updates-opt-in en staat alleen aan als de
+  bezoeker het vinkje zette. Zonder `consentOptIn: true` verschijnt dat vinkje
+  niet en is `consent` altijd `false` — een opt-in zonder lijst erachter wekt
+  ten onrechte de indruk dat er toestemming ligt.
+- **De gate belooft dat u het rapport per e-mail nastuurt.** Bij HubSpot is dat
+  een workflow; hier is het uw endpoint. Zorg dat die follow-up bestaat vóór u
+  live gaat.
+- Alleen `http`/`https` wordt geaccepteerd; `leadEndpoint` wint van `hubspot`
+  als beide gezet zijn.
+- Staat het endpoint op een ander domein, dan moet dát domein CORS toestaan
+  voor uw site. Same-origin (een pad) heeft dat probleem niet.
+- **Privacy:** dezelfde eisen als bij HubSpot (zie *Privacy (AVG)* hieronder),
+  met uw eigen verwerkers in plaats van HubSpot in de privacyverklaring.
+
 ## CRM-veld `nis2_rapport` (aanbevolen)
 
 De gate-submit stuurt naast het e-mailadres een compacte rapport-payload
@@ -222,6 +268,8 @@ end-to-end-test, inclusief de routes voor MSP's zonder HubSpot.
   verschijnt er géén gate en blijft het rapport gewoon zichtbaar. Dat geldt voor
   elke deployer, ook voor die van Dxfferent zelf: de tool kent hier geen
   ingebouwde uitzondering en geen Dxfferent-fallback.
+- `MSP_BRAND.leadEndpoint` gezet → gate staat aan en submit gaat als JSON-POST
+  naar uw eigen backend (zie *Zonder HubSpot* hierboven). Wint van `hubspot`.
 - `MSP_BRAND.hubspot` gezet → gate staat aan en submit gaat naar de
   HubSpot-forms van de MSP (rapportlevering zonder checkbox — de actieve
   aanvraag geldt als toestemming, de NIS2-updates-opt-in blijft een aparte

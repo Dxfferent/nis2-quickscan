@@ -200,7 +200,9 @@ const STEPS = [
 //     name, accent, logo,                    // logo = URL of data-URI (rail)
 //     theme: 'dark' | 'light',               // start-thema
 //     tokens: { '--bg-canvas': '#0b1220' },  // vrije CSS-token-overrides
-//     mailto, hubspot: { portalId, formId },
+//     mailto,
+//     hubspot: { portalId, formId },       // leadflow via HubSpot Forms
+//     leadEndpoint: '/api/nis2-lead',      // of: eigen backend (JSON-POST)
 //   }
 // Zonder MSP_BRAND geldt de Dxfferent-default. Zie docs/MSP-ENABLEMENT.md.
 const BRAND = window.MSP_BRAND || {};
@@ -239,14 +241,27 @@ function safeImageUrl(url) {
 }
 const DISCLAIMER = 'Dit is een gratis hulpmiddel. De uitkomsten zijn indicatief en geautomatiseerd gegenereerd op basis van de stand van wet- en regelgeving ten tijde van de in het rapport vermelde normdata-versie; latere wijzigingen (waaronder ministeriële regelingen) kunnen de uitkomst achterhalen. Aan de uitkomsten kunnen geen rechten worden ontleend en er wordt geen garantie gegeven op juistheid, volledigheid of actualiteit. Voor zover wettelijk toegestaan aanvaarden Dxfferent en de aanbiedende partner geen aansprakelijkheid voor schade door gebruik van dit hulpmiddel, behoudens opzet of bewuste roekeloosheid. Controleer de uitkomst altijd zelf tegen de officiële bronnen (RDI-zelfevaluatie, wettekst) en win waar nodig professioneel advies in. Dit is geen juridisch advies.';
 
-// Lead-gate-config: MSP_BRAND.hubspot wint (white-label leads landen bij de
-// MSP), anders window.HUBSPOT_GATE (Dxfferent-deploy; ids server-side
-// invulbaar zonder rebuild). Zonder ids degradeert de gate naar een eerlijke
-// mailto-fallback. De PDF-
-// follow-up zelf is een HubSpot-workflow, geconfigureerd dáár.
-const GATE_CFG = BRAND.hubspot
-  ? { enabled: true, ...BRAND.hubspot }
-  : (window.HUBSPOT_GATE || {});
+// Een lead-endpoint is elke URL die een JSON-POST aanneemt; safeUrl laat ook
+// mailto: door en dat protocol slikt een fetch-body zonder iets te versturen —
+// de gate zou dan succes melden zonder lead. Alleen http(s).
+function safeEndpoint(url) {
+  if (!safeUrl(url)) { return null; }
+  try { return new URL(url, window.location.href).protocol.startsWith('http') ? url : null; } catch { return null; }
+}
+
+// Lead-gate-config, in volgorde van winnen: MSP_BRAND.leadEndpoint (eigen
+// backend, geen HubSpot nodig — de MSP ontvangt een JSON-POST), dan
+// MSP_BRAND.hubspot (white-label leads landen bij de MSP), dan
+// window.HUBSPOT_GATE (Dxfferent-deploy; ids server-side invulbaar zonder
+// rebuild). Zonder configuratie degradeert de gate naar een eerlijke
+// mailto-fallback. De follow-up-mail zelf regelt de deployer: een
+// HubSpot-workflow, of de backend achter het endpoint.
+const BRAND_ENDPOINT = safeEndpoint(BRAND.leadEndpoint);
+const GATE_CFG = BRAND_ENDPOINT
+  ? { enabled: true, endpoint: BRAND_ENDPOINT }
+  : BRAND.hubspot
+    ? { enabled: true, ...BRAND.hubspot }
+    : (window.HUBSPOT_GATE || {});
 // Een white-label-deploy die wél een eigen HubSpot-portal zet maar géén eigen
 // privacyverklaring, zou de bezoeker "verwerkt door <MSP>" tonen met een link
 // naar de privacyverklaring van Dxfferent, terwijl de data naar de MSP gaat.
@@ -259,10 +274,15 @@ const GATE_CFG = BRAND.hubspot
 const GATE_OPERATOR = typeof BRAND.name === 'string' && BRAND.name.trim() ? BRAND.name.trim() : null;
 const GATE_PRIVACY_URL = safeUrl(BRAND.privacyUrl);
 const BRAND_LOGO = safeImageUrl(BRAND.logo);
-const GATE_CONFIGURED = Boolean(GATE_CFG.portalId && GATE_CFG.formId && GATE_OPERATOR && GATE_PRIVACY_URL);
+const GATE_CONFIGURED = Boolean((GATE_CFG.endpoint || (GATE_CFG.portalId && GATE_CFG.formId)) && GATE_OPERATOR && GATE_PRIVACY_URL);
 // AVG: rapportlevering vergt géén checkbox (de klik ís het verzoek);
 // marketing is een aparte, optionele default-uit opt-in (art. 7(4) AVG + Tw 11.7).
 const GATE_CONSENT_TEXT = 'Houd mij per e-mail op de hoogte van NIS2-ontwikkelingen (optioneel; afmelden kan altijd).';
+// De opt-in verschijnt alleen als hij érgens landt: bij HubSpot vraagt dat een
+// subscriptionTypeId, bij een eigen endpoint moet de deployer bevestigen dat er
+// een lijst achter zit (MSP_BRAND.consentOptIn). Een vinkje dat nergens
+// aankomt, wekt de indruk dat er toestemming ligt.
+const GATE_CONSENT_ON = Boolean(GATE_CFG.endpoint ? BRAND.consentOptIn === true : GATE_CFG.subscriptionTypeId);
 
 // ---------- mode-schakelaar (OSS lead/pro) ----------
 // 'lead' = leadmagnet op de MSP-site: 5 stappen (geen maatregelen-stap,
@@ -1022,6 +1042,28 @@ function App() {
     if (!email.includes('@')) { return; }
     setGateState('submitting');
     try {
+      if (GATE_CFG.endpoint) {
+        const res = await fetch(GATE_CFG.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            consent,
+            source: 'nis2-quickscan',
+            scope: scopeOutcome,
+            score: report ? report.overall : null,
+            rapport: report ? compactReport(report) : null,
+            // Zonder querystring: die kan modus-, brand- of campagneparameters
+            // dragen die niets met de rapportaanvraag te maken hebben.
+            pageUri: window.location.origin + window.location.pathname,
+          }),
+        });
+        if (!res.ok) { throw new Error(`HTTP ${res.status}`); }
+        setGateState('idle');
+        setSubmitted(true);
+        return;
+      }
+
       const baseFields = [
         { objectTypeId: '0-1', name: 'email', value: email },
         { objectTypeId: '0-1', name: 'message', value: `[nis2-quickscan] scope=${scopeOutcome} score=${report ? report.overall : '-'}` },
@@ -1353,16 +1395,13 @@ function App() {
                     {gateState === 'submitting' ? 'Versturen…' : 'Stuur mij het rapport'}
                   </button>
                 </div>
-                {/* Zonder subscriptionTypeId kan de opt-in niet in HubSpot
-                    geregistreerd worden; een vinkje dat nergens landt wekt de
-                    indruk dat er toestemming ligt. Dan liever niet tonen. */}
-                {GATE_CFG.subscriptionTypeId && (
+                {GATE_CONSENT_ON && (
                   <label className="gate-consent">
                     <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
                     <span>{GATE_CONSENT_TEXT}</span>
                   </label>
                 )}
-                <p className="gate-privacy">Uw e-mailadres en de rapport-samenvatting worden verwerkt door {GATE_OPERATOR} om u het rapport te sturen (via HubSpot). <a href={GATE_PRIVACY_URL} target="_blank" rel="noopener noreferrer">Privacyverklaring</a></p>
+                <p className="gate-privacy">Uw e-mailadres en de rapport-samenvatting worden verwerkt door {GATE_OPERATOR} om u het rapport te sturen{GATE_CFG.endpoint ? '' : ' (via HubSpot)'}. <a href={GATE_PRIVACY_URL} target="_blank" rel="noopener noreferrer">Privacyverklaring</a></p>
                 {gateState === 'error' && (
                   <p className="gate-msg">Versturen lukte niet. Probeer het opnieuw{BRAND_MAILTO ? <>, of mail <a href={`mailto:${BRAND_MAILTO}?subject=NIS2-risicorapport`}>{BRAND_MAILTO}</a>; dan sturen we het rapport toe</> : ', of neem contact op met de aanbieder van deze intake'}.</p>
                 )}
