@@ -373,6 +373,10 @@ function App() {
   // lead-gate, een geloofwaardige impersonatie-opstelling.
   const mspName = ui.mspName;
   const [step, setStep] = useState(RESTORED?.step ?? 0); // 0 intro, 1..N = ACTIVE_STEPS index+1
+  // Verste stap die deze intake al bereikt heeft. Zonder deze grens kon je in de
+  // rail wel terug maar daarna niet meer vooruit: alles voorbij de huidige stap
+  // gold als onbetreden, ook wat je al had ingevuld.
+  const [maxStep, setMaxStep] = useState(RESTORED?.step ?? 0);
   const [scope, setScope] = useState(RESTORED?.scope ?? { ...EMPTY_SCOPE });
   const [selected, setSelected] = useState(RESTORED?.selected ?? []);
   const [answers, setAnswers] = useState(RESTORED?.answers ?? {});
@@ -455,7 +459,7 @@ function App() {
   }
   const scopeOutcome = useMemo(() => determineScopeOutcome(scope), [scope]);
 
-  function go(n) { setStep(n); document.querySelector('.main')?.scrollTo({ top: 0 }); }
+  function go(n) { setStep(n); setMaxStep((m) => Math.max(m, n)); document.querySelector('.main')?.scrollTo({ top: 0 }); }
 
   // ---------- navigation handlers ----------
   function next() {
@@ -554,7 +558,7 @@ function App() {
         <nav className="rail-prog">
           {ACTIVE_STEPS.map((s, i) => {
             const cls = step === 0 ? '' : i + 1 < step ? 'done' : i + 1 === step ? 'on' : '';
-            const canJump = step !== 0 && i + 1 < step;
+            const canJump = step !== 0 && i + 1 !== step && i + 1 <= Math.max(step, maxStep);
             return (
               <div key={s.key} className={`rail-step ${cls} ${canJump ? 'clickable' : ''}`}
                 aria-current={i + 1 === step ? 'step' : undefined}
@@ -1167,7 +1171,7 @@ function App() {
     // van de default en dan wijzen from-indices naar kolommen die niet bestaan.
     const pkgOverride = BRAND.packages && Array.isArray(BRAND.packages.tiers) && Array.isArray(BRAND.packages.lines) ? BRAND.packages : null;
     const pkgCfg = { ...PACKAGE_SUGGESTION, ...(pkgOverride || {}) };
-    const pkg = suggestPackage(pkgCfg, scopeOutcome, r.ctx.maxCrit, scope.chain === 'access');
+    const pkg = suggestPackage(pkgCfg, scopeOutcome, r.ctx.maxCrit, scope.chain === 'access', scope.sizeAnswers);
     const pkgTiers = pkgCfg.tiers || [];
     const pkgIdx = pkgTiers.indexOf(pkg);
     // Secties met een `requires` tonen alleen bij het bijbehorende datatype: een

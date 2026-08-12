@@ -443,7 +443,7 @@ function directScopeOutcome(scope) {
 // chainAccess: leverancier mét toegang tot klantsystemen — dat is de
 // SC-20-positionering (rechtstreekse dienstverlening aan NIS2-organisaties
 // plus toegang tot gevoelige systemen), ook als de eigen scope 'keten' is.
-function suggestPackage(pkgCfg, scopeOutcome, maxCrit, chainAccess) {
+function suggestPackage(pkgCfg, scopeOutcome, maxCrit, chainAccess, sizeAnswers) {
   const tiers = pkgCfg?.tiers || [];
   if (!tiers.length) { return null; }
   const top = tiers.length - 1;
@@ -453,16 +453,22 @@ function suggestPackage(pkgCfg, scopeOutcome, maxCrit, chainAccess) {
   // tier can be a size or licence step rather than a heavier ambition). A tier
   // may therefore claim its band with `advise: 'basis' | 'belangrijk' |
   // 'essentieel'`, and that claim wins over its position.
-  const band = (scopeOutcome === 'essentieel' || crit >= 3) ? 'essentieel'
-    : (scopeOutcome === 'belangrijk' || chainAccess || crit >= 2) ? 'belangrijk'
-      : 'basis';
+  // Omvang gaat voor ambitie: een catalogus heeft vaak een zwaarste pakket dat
+  // zich op grootte onderscheidt (meer werkplekken, andere licentie) en niet op
+  // een hogere ambitie. Zo'n pakket claimt de band 'groot' en wint dan van de
+  // scope-banden, want een grote organisatie past daar hoe dan ook.
+  const large = scopeSizeClass(sizeAnswers || {}) === 'large';
+  const band = large ? 'groot'
+    : (scopeOutcome === 'essentieel' || crit >= 3) ? 'essentieel'
+      : (scopeOutcome === 'belangrijk' || chainAccess || crit >= 2) ? 'belangrijk'
+        : 'basis';
   // advise mag een band of een lijst banden zijn: een pakket dat zowel de
   // belangrijke als de essentiele entiteit bedient (compliance is compliance)
   // moet beide kunnen claimen, zonder dat het zwaarste pakket per ongeluk de
   // essentiele bak opslokt terwijl het op omvang geselecteerd hoort te worden.
   const claimed = tiers.find((t) => (Array.isArray(t.advise) ? t.advise : [t.advise]).includes(band));
   if (claimed) { return claimed; }
-  const idx = band === 'essentieel' ? top : band === 'belangrijk' ? Math.min(1, top) : 0;
+  const idx = (band === 'groot' || band === 'essentieel') ? top : band === 'belangrijk' ? Math.min(1, top) : 0;
   return tiers[idx] || null;
 }
 
