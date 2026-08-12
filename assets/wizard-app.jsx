@@ -679,7 +679,18 @@ function App() {
             ))}
           </div>
 
-        <div className="sec-h">Altijd in scope, ongeacht sector of omvang</div>
+        {/* Deze twee blokken gelden voor bijna geen enkele invuller: de eerste
+            alleen voor telecom-, DNS- en vertrouwensdienstaanbieders, de tweede
+            voor een handvol overheidstaken. Ze stonden wel volledig uitgeklapt
+            en maakten de scope-stap twee schermen langer dan nodig. Dichtgeklapt
+            met een teller, zodat wie ze nodig heeft ze vindt en de rest ze niet
+            hoeft weg te scrollen. */}
+        <details className="scope-fold">
+          <summary>
+            <span className="sec-h">Bijzondere categorieën die altijd onder de wet vallen</span>
+            {scope.alwaysInScope.length > 0 && <span className="fold-count">{scope.alwaysInScope.length} aangevinkt</span>}
+          </summary>
+          <p className="scope-hint">Telecom, DNS, TLD-registers, vertrouwensdiensten, aangewezen kritieke entiteiten en overheidsorganisaties vallen eronder ongeacht sector of omvang.</p>
           <div className="scope-checklist">
             {sc.always_in_scope.map((a) => (
               <label key={a.id} className={`scope-check-item ${scope.alwaysInScope.includes(a.id) ? 'sel' : ''}`}>
@@ -691,9 +702,14 @@ function App() {
               </label>
             ))}
           </div>
+        </details>
 
-          <div className="sec-h">Wettelijke uitzonderingen</div>
-          <p className="scope-hint">Voor enkele (overheids)taken geldt de Cbw niet of beperkt. Vink aan wat van toepassing is; meestal geldt hier geen van deze uitzonderingen.</p>
+        <details className="scope-fold">
+          <summary>
+            <span className="sec-h">Wettelijke uitzonderingen</span>
+            {scope.exceptions.length > 0 && <span className="fold-count">{scope.exceptions.length} aangevinkt</span>}
+          </summary>
+          <p className="scope-hint">Voor enkele (overheids)taken geldt de Cbw niet of beperkt. Meestal geldt hier geen van deze uitzonderingen.</p>
           <div className="scope-checklist">
             {SCOPE_EXTRA.exceptions.map((a) => (
               <label key={a.id} className={`scope-check-item ${scope.exceptions.includes(a.id) ? 'sel' : ''}`}>
@@ -705,6 +721,7 @@ function App() {
               </label>
             ))}
           </div>
+        </details>
 
         <div className="sec-h">Waar ligt de hoofdvestiging (het bestuurscentrum)?</div>
           <div className="choices">

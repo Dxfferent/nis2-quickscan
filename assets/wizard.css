@@ -53,6 +53,11 @@ body { background: var(--bg-canvas); }
 .rail-brand .bn { font-size: 15px; font-weight: 700; line-height: 1.15; }
 .rail-brand .bs { font-size: 11px; opacity: .75; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
 .rail-mid { z-index: 1; }
+/* The rail paints itself in the accent colour, so its heading and paragraph must
+   inherit the rail foreground instead of the page tokens: h2/p carry
+   --fg-highlighted / --fg-default, which are dark in the light theme and turn
+   the rail text unreadable (observed on a light-theme white-label deploy). */
+.rail-title, .rail-sub { color: inherit; }
 .rail-title { font-size: 23px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 6px; }
 .rail-sub { font-size: 13px; opacity: .82; line-height: 1.5; }
 
@@ -194,6 +199,17 @@ body { background: var(--bg-canvas); }
 .scope-check-item.sel { border-color: var(--accent); background: var(--accent-soft); }
 .scope-check-item input { margin-top: 3px; accent-color: var(--accent); flex: none; }
 .scope-check-item .tl { display: block; font-size: 13.5px; font-weight: 700; color: var(--fg-highlighted); }
+/* Collapsible blocks inside the scope step. Native <details>: no state, no
+   script, and it stays open when the browser restores a form. */
+.scope-fold { margin-top: 18px; border-top: 1px solid var(--border-default); padding-top: 14px; }
+.scope-fold > summary { cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.scope-fold > summary::-webkit-details-marker { display: none; }
+.scope-fold > summary::after { content: "+"; margin-left: auto; font-size: 15px; color: var(--fg-dimmed); }
+.scope-fold[open] > summary::after { content: "2"; }
+.scope-fold > summary .sec-h { margin: 0; }
+.scope-fold .fold-count { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent); }
+.scope-fold[open] > .scope-checklist, .scope-fold[open] > .scope-hint { margin-top: 12px; }
+
 .scope-check-item .hl { display: block; font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
 .scope-size-grid { display: grid; gap: 14px; margin-top: 12px; }
 .scope-size-block .al { font-size: 12.5px; font-weight: 700; color: var(--fg-highlighted); margin-bottom: 7px; }
