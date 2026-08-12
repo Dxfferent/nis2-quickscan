@@ -1297,7 +1297,7 @@ function App() {
                     <th className="pkg-rowhead">Dienst <span className="pkg-colnote">wettelijk voorschrift</span></th>
                     {pkgTiers.map((t, i) => (
                       <th key={t.id} className={i === pkgIdx ? 'on' : ''}>
-                        <span className="pkg-sc">{t.sc_ambition || t.label}</span>
+                        {t.sc_ambition && <span className="pkg-sc">{t.sc_ambition}</span>}
                         <span className="pkg-tiername">{t.label}</span>
                       </th>
                     ))}
