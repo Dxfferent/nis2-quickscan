@@ -652,6 +652,7 @@ function App() {
           <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">officiële RDI-zelfevaluatie</a> is het hulpmiddel om uw classificatie vast te stellen.</p>
 
         <div className="sec-h">Sector (Cbw bijlage 1/2)</div>
+          <p className="scope-hint">Bijlage 1 zijn de sectoren van hoge kriticiteit, bijlage 2 de overige kritieke sectoren. Samen met uw omvang bepaalt die indeling of u als essentiële of als belangrijke entiteit kwalificeert. Zorgplicht en meldplicht gelden voor beide; het toezicht verschilt (bij essentiële entiteiten mag de toezichthouder uit zichzelf komen kijken, bij belangrijke pas na een signaal).</p>
           <div className="dt-grid scope-sector-grid">
             {sc.sectors.map((s) => (
               <button key={s.id} className={`dt scope-sector ${scope.sectorId === s.id ? 'sel' : ''}`}
