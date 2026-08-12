@@ -1338,7 +1338,11 @@ function App() {
         <div style={{ position: 'relative' }}>
           <div className="work-head">
             <div className="sec-h">Wat er moet gebeuren</div>
-            <div className="work-count"><b>{openMeasures}</b> maatregelen open
+            {/* In de lead-stand is de volwassenheid niet gemeten, dus is niet
+                vastgesteld dat deze maatregelen open staan: het zijn de
+                maatregelen die op dit profiel van toepassing zijn. "Open"
+                claimen zou een oordeel zijn dat de tool nooit geveld heeft. */}
+            <div className="work-count"><b>{openMeasures}</b> {isLead ? 'maatregelen van toepassing' : 'maatregelen open'}
               {openMeasures > 0 && <> — {WORK_ORDER.filter((w) => workCounts[w]).map((w, i) => (
                 <span key={w}>{i > 0 ? ' · ' : ''}<b>{workCounts[w]}</b> {WORK_META[w].label.toLowerCase()}</span>
               ))}</>}
