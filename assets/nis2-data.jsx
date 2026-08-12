@@ -456,7 +456,11 @@ function suggestPackage(pkgCfg, scopeOutcome, maxCrit, chainAccess) {
   const band = (scopeOutcome === 'essentieel' || crit >= 3) ? 'essentieel'
     : (scopeOutcome === 'belangrijk' || chainAccess || crit >= 2) ? 'belangrijk'
       : 'basis';
-  const claimed = tiers.find((t) => t.advise === band);
+  // advise mag een band of een lijst banden zijn: een pakket dat zowel de
+  // belangrijke als de essentiele entiteit bedient (compliance is compliance)
+  // moet beide kunnen claimen, zonder dat het zwaarste pakket per ongeluk de
+  // essentiele bak opslokt terwijl het op omvang geselecteerd hoort te worden.
+  const claimed = tiers.find((t) => (Array.isArray(t.advise) ? t.advise : [t.advise]).includes(band));
   if (claimed) { return claimed; }
   const idx = band === 'essentieel' ? top : band === 'belangrijk' ? Math.min(1, top) : 0;
   return tiers[idx] || null;
