@@ -698,7 +698,10 @@ function App() {
           </div>
 
           {sc.chain_question && (<>
-            <div className="sec-h">Uw plek in de keten</div>
+            {/* De concrete vraag staat in de config; het kopje 'Uw plek in de keten'
+                verving hem door een categorie, en dan moet de lezer zelf raden wat er
+                gevraagd wordt. */}
+            <div className="sec-h">{sc.chain_question.title || 'Uw plek in de keten'}</div>
             <p className="scope-hint">{sc.chain_question.help}</p>
             <div className="choices">
               {sc.chain_question.options.map((o) => (
@@ -731,10 +734,10 @@ function App() {
             hoeft weg te scrollen. */}
         <details className="scope-fold">
           <summary>
-            <span className="sec-h">Bijzondere categorieën die altijd onder de wet vallen</span>
+            <span className="sec-h">Bent u telecom-, DNS- of vertrouwensdienstaanbieder, of een overheidsorganisatie?</span>
             {scope.alwaysInScope.length > 0 && <span className="fold-count">{scope.alwaysInScope.length} aangevinkt</span>}
           </summary>
-          <p className="scope-hint">Telecom, DNS, TLD-registers, vertrouwensdiensten, aangewezen kritieke entiteiten en overheidsorganisaties vallen eronder ongeacht sector of omvang.</p>
+          <p className="scope-hint">Deze categorieën vallen onder de wet ongeacht sector of omvang. Voor de meeste organisaties geldt geen ervan; vink alleen aan wat op u van toepassing is.</p>
           <div className="scope-checklist">
             {sc.always_in_scope.map((a) => (
               <label key={a.id} className={`scope-check-item ${scope.alwaysInScope.includes(a.id) ? 'sel' : ''}`}>
@@ -750,7 +753,7 @@ function App() {
 
         <details className="scope-fold">
           <summary>
-            <span className="sec-h">Wettelijke uitzonderingen</span>
+            <span className="sec-h">Voert u een taak uit waarvoor de wet niet geldt?</span>
             {scope.exceptions.length > 0 && <span className="fold-count">{scope.exceptions.length} aangevinkt</span>}
           </summary>
           <p className="scope-hint">Voor enkele (overheids)taken geldt de Cbw niet of beperkt. Meestal geldt hier geen van deze uitzonderingen.</p>
@@ -779,7 +782,13 @@ function App() {
           {scopeNotes.map((n, i) => <p className="verdict-hero-note" key={i}><b>Let op:</b> {n}</p>)}
           {inScope && (
             <div className="verdict-hero-actions">
-              <p className="verdict-hero-note">{sc.registration_note}</p>
+              {/* De registratie-uitleg is drie keer zo lang als de uitkomst zelf en
+                  duwde die uit beeld. Ingeklapt: wie wil weten wat hij moet regelen
+                  klapt hem open, de rest leest de conclusie en de disclaimer. */}
+              <details className="verdict-fold">
+                <summary>Wat betekent dit voor registratie en melden?</summary>
+                <p className="verdict-hero-note">{sc.registration_note}</p>
+              </details>
               <div className="verdict-hero-links">
                 <a href={safeUrl(sc.registration_portal_url)} target="_blank" rel="noopener noreferrer">Registreren via mijn.ncsc.nl <Icon name="arrow" /></a>
                 <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">Officiële RDI-zelfevaluatie <Icon name="arrow" /></a>

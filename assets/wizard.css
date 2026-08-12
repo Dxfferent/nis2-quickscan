@@ -248,6 +248,15 @@ body { background: var(--bg-canvas); }
 .verdict-hero-meaning { font-size: 13.5px; color: var(--fg-muted); line-height: 1.55; margin: 16px 0 0; max-width: 62ch; }
 .verdict-hero-actions { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-default); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
 .verdict-hero-note { font-size: 12.5px; color: var(--fg-muted); line-height: 1.5; margin: 0; max-width: 46ch; }
+/* Collapsible detail inside the verdict block: the outcome stays the first thing
+   you read, the paperwork sits one click away. */
+.verdict-fold { width: 100%; }
+.verdict-fold > summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--fg-muted); list-style: none; }
+.verdict-fold > summary::-webkit-details-marker { display: none; }
+.verdict-fold > summary::after { content: " +"; }
+.verdict-fold[open] > summary::after { content: " 2"; }
+.verdict-fold[open] > .verdict-hero-note { margin-top: 8px; }
+
 .verdict-hero-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-left: auto; }
 .verdict-hero-links a { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; font-weight: 700; color: var(--accent); white-space: nowrap; }
 .verdict-hero-links a .svg { width: 13px; height: 13px; }
