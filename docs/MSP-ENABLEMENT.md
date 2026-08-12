@@ -37,6 +37,7 @@ window.MSP_BRAND = {
   mode: 'lead',                    // deploy-default: 'lead' of 'pro' (querystring wint)
   mailto: 'security@acme-it.example',   // contactadres in de gate-fallbacks
   supportMailto: 'support@acme-it.example', // optioneel: uw eigen supportkanaal in de rail
+  bookingUrl: 'https://acme-it.example/afspraak', // optioneel: de meting-CTA wijst hierheen i.p.v. naar een mailto
   legal: 'Acme IT B.V. · KvK 12345678 · Straat 1, 1234 AB Plaats', // colofon (art. 3:15d BW)
   privacyUrl: 'https://acme-it.example/privacy', // VERPLICHT voor de gate: uw privacyverklaring
   hubspot: {                       // eigen leadflow: leads landen bij de MSP

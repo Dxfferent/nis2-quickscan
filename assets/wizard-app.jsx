@@ -210,6 +210,10 @@ const BRAND = window.MSP_BRAND || {};
 // bij een white-label-deploy zouden de leads van de MSP anders bij ons in de bus
 // vallen. Niet gezet = geen mailadres tonen (zie de gate-teksten hieronder).
 const BRAND_MAILTO = typeof BRAND.mailto === 'string' && /^[^\s?&@]+@[^\s?&@]+\.[^\s?&@]+$/.test(BRAND.mailto) ? BRAND.mailto : null;
+// Wie een afsprakenpagina heeft, laat de meting-CTA daarheen wijzen: een mailto
+// vraagt de bezoeker zelf een mail op te stellen, een boekingslink kost een klik.
+// Zonder deze sleutel blijft de mailto staan.
+const BRAND_BOOKING_URL = safeEndpoint(BRAND.bookingUrl);
 
 // AI-NOTE: bewust GEEN onderdeel van MSP_BRAND — de powered-by-vermelding,
 // het Dxfferent-supportkanaal en de disclaimer zijn voorwaarden voor
@@ -1233,7 +1237,7 @@ function App() {
             {isLead ? (<>
               <p>Doorloop de meting per maatregel samen met uw IT-partner. Dan wordt dit rapport een
                 gap-analyse met concrete percentages per domein.</p>
-              {BRAND_MAILTO && <a className="btn btn-primary btn-sm" href={`mailto:${BRAND_MAILTO}?subject=${encodeURIComponent('NIS2-meting plannen')}`}>Plan de meting <Icon name="arrow" style={{ width: 15, height: 15 }} /></a>}
+              {(BRAND_BOOKING_URL || BRAND_MAILTO) && <a className="btn btn-primary btn-sm" href={BRAND_BOOKING_URL || `mailto:${BRAND_MAILTO}?subject=${encodeURIComponent('NIS2-meting plannen')}`}>Plan de meting <Icon name="arrow" style={{ width: 15, height: 15 }} /></a>}
             </>) : (<>
               <p>De maatregelen-stap is nog niet ingevuld, dus dit rapport toont geen
                 percentages. Vul de maatregelen in om de gap-analyse per domein te zien.</p>
