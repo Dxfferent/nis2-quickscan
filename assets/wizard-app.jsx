@@ -1294,7 +1294,7 @@ function App() {
               <table className="pkg-matrix">
                 <thead>
                   <tr>
-                    <th className="pkg-rowhead">Dienst <span className="pkg-colnote">wettelijk voorschrift</span></th>
+                    <th className="pkg-rowhead">Dienst <span className="pkg-colnote">norm en wetsartikel</span></th>
                     {pkgTiers.map((t, i) => (
                       <th key={t.id} className={i === pkgIdx ? 'on' : ''}>
                         {t.sc_ambition && <span className="pkg-sc">{t.sc_ambition}</span>}
