@@ -649,8 +649,7 @@ function App() {
         <h1 className="step-h">Valt uw organisatie onder de Cyberbeveiligingswet?</h1>
         <p className="step-sub">Beantwoord wat van toepassing is; de indicatie onderaan groeit met elk antwoord mee.
           Wat eruit komt is een onderbouwde inschatting. De wettekst is bepalend, en de{' '}
-          <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">officiële RDI-zelfevaluatie</a> is het hulpmiddel om uw classificatie vast te stellen.
-          Deze stap overslaan mag: de intake werkt ook zonder scope-uitkomst.</p>
+          <a href={safeUrl(sc.rdi_self_assessment_url)} target="_blank" rel="noopener noreferrer">officiële RDI-zelfevaluatie</a> is het hulpmiddel om uw classificatie vast te stellen.</p>
 
         <div className="sec-h">Sector (Cbw bijlage 1/2)</div>
           <div className="dt-grid scope-sector-grid">
@@ -665,6 +664,7 @@ function App() {
           </div>
 
           <div className="sec-h">Omvang (size-cap)</div>
+          <p className="scope-hint">Tel moeder-, dochter- en partnerondernemingen mee: verbonden ondernemingen volledig, partnerondernemingen naar rato (bijlage bij Aanbeveling 2003/361/EG). Hoort u bij een groep, dan telt die groep mee en kan een op zichzelf klein bedrijf alsnog als middelgroot of groot uitkomen.</p>
           <div className="scope-size-grid">
             {sc.size_cap_criteria.map((c) => (
               <div className="scope-size-block" key={c.id}>
@@ -678,6 +678,41 @@ function App() {
               </div>
             ))}
           </div>
+
+        <div className="sec-h">Waar ligt de hoofdvestiging (het bestuurscentrum)?</div>
+          <div className="choices">
+            {SCOPE_EXTRA.hq.map((o) => (
+              <button key={o.v} className={`choice ${scope.hq === o.v ? 'sel' : ''}`} onClick={() => setScope((s) => ({ ...s, hq: s.hq === o.v ? null : o.v }))}>
+                <div className="ct">{o.t}</div><div className="cd">{o.d}</div>
+              </button>
+            ))}
+          </div>
+
+          {sc.chain_question && (<>
+            <div className="sec-h">Uw plek in de keten</div>
+            <p className="scope-hint">{sc.chain_question.help}</p>
+            <div className="choices">
+              {sc.chain_question.options.map((o) => (
+                <button key={o.v} className={`choice ${scope.chain === o.v ? 'sel' : ''}`}
+                  onClick={() => setScope((s) => ({ ...s, chain: s.chain === o.v ? null : o.v }))}>
+                  <div className="ct">{o.t}</div><div className="cd">{o.d}</div>
+                </button>
+              ))}
+            </div>
+          </>)}
+
+          {scopeOutcome === 'waarschijnlijk_buiten_scope' && (<>
+            <div className="sec-h">Mogelijke aanwijzing ondanks kleine omvang</div>
+            <p className="scope-hint">Ook kleinere organisaties kunnen worden aangewezen. Geldt een van deze situaties?</p>
+            <div className="scope-checklist">
+              {SCOPE_EXTRA.designation.map((a) => (
+                <label key={a.id} className={`scope-check-item ${scope.designation.includes(a.id) ? 'sel' : ''}`}>
+                  <input type="checkbox" checked={scope.designation.includes(a.id)} onChange={() => toggleScopeList('designation', a.id)} />
+                  <span><span className="tl">{a.label}</span></span>
+                </label>
+              ))}
+            </div>
+          </>)}
 
         {/* Deze twee blokken gelden voor bijna geen enkele invuller: de eerste
             alleen voor telecom-, DNS- en vertrouwensdienstaanbieders, de tweede
@@ -722,41 +757,6 @@ function App() {
             ))}
           </div>
         </details>
-
-        <div className="sec-h">Waar ligt de hoofdvestiging (het bestuurscentrum)?</div>
-          <div className="choices">
-            {SCOPE_EXTRA.hq.map((o) => (
-              <button key={o.v} className={`choice ${scope.hq === o.v ? 'sel' : ''}`} onClick={() => setScope((s) => ({ ...s, hq: s.hq === o.v ? null : o.v }))}>
-                <div className="ct">{o.t}</div><div className="cd">{o.d}</div>
-              </button>
-            ))}
-          </div>
-
-          {sc.chain_question && (<>
-            <div className="sec-h">Uw plek in de keten</div>
-            <p className="scope-hint">{sc.chain_question.help}</p>
-            <div className="choices">
-              {sc.chain_question.options.map((o) => (
-                <button key={o.v} className={`choice ${scope.chain === o.v ? 'sel' : ''}`}
-                  onClick={() => setScope((s) => ({ ...s, chain: s.chain === o.v ? null : o.v }))}>
-                  <div className="ct">{o.t}</div><div className="cd">{o.d}</div>
-                </button>
-              ))}
-            </div>
-          </>)}
-
-          {scopeOutcome === 'waarschijnlijk_buiten_scope' && (<>
-            <div className="sec-h">Mogelijke aanwijzing ondanks kleine omvang</div>
-            <p className="scope-hint">Ook kleinere organisaties kunnen worden aangewezen. Geldt een van deze situaties?</p>
-            <div className="scope-checklist">
-              {SCOPE_EXTRA.designation.map((a) => (
-                <label key={a.id} className={`scope-check-item ${scope.designation.includes(a.id) ? 'sel' : ''}`}>
-                  <input type="checkbox" checked={scope.designation.includes(a.id)} onChange={() => toggleScopeList('designation', a.id)} />
-                  <span><span className="tl">{a.label}</span></span>
-                </label>
-              ))}
-            </div>
-          </>)}
 
         <div className={`verdict-hero tone-${outcomeTone}`} data-outcome={scopeOutcome}>
           <div className="verdict-hero-head">
@@ -1508,7 +1508,16 @@ function App() {
   const body = step === 0 ? intro() : bodyByKey[stepKey]();
 
   // ---------- footer nav ----------
-  const canNext = stepKey === 'data' ? selected.length > 0 : true;
+  // De scope-uitkomst stuurt het hele rapport aan: zonder sector en omvang
+  // blijft hij 'onbekend' en krijgt de invuller een rapport dat juist de
+  // eerste vraag niet beantwoordt. Een van-rechtswege-categorie vervangt de
+  // sector; wie buiten scope uitkomt gaat verder via de knop in het
+  // verdict-blok, niet via deze poort.
+  const scopeComplete = (!!scope.sectorId || scope.alwaysInScope.length > 0)
+    && (SCOPE_CHECK.size_cap_criteria || []).every((c) => scope.sizeAnswers[c.id]);
+  const canNext = stepKey === 'data' ? selected.length > 0
+    : stepKey === 'scope' ? scopeComplete
+      : true;
   const isLast = stepKey === 'report';
   function footer() {
     if (step === 0) { return null; }
@@ -1521,7 +1530,11 @@ function App() {
     return (
       <div className="footnav">
         <button className="btn-link" onClick={back}>← Terug</button>
-        <span className="count">Stap {step} van {ACTIVE_STEPS.length}</span>
+        <span className="count">
+          {stepKey === 'scope' && !canNext
+            ? 'Kies uw sector of een categorie hieronder, en beantwoord de drie omvangvragen'
+            : `Stap ${step} van ${ACTIVE_STEPS.length}`}
+        </span>
         {!isLast
           ? <button className="btn btn-primary btn-sm" onClick={next} disabled={!canNext}>{nextLabel} →</button>
           : <button className="btn btn-outline btn-sm" onClick={() => go(step - 1)}>← Pas antwoorden aan</button>}
