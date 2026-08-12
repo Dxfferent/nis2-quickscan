@@ -1163,7 +1163,7 @@ function App() {
       <div className="fade">
         <div className="eyebrow">Stap {stepNum('report')} · Rapport</div>
         <h1 className="step-h">Uw NIS2-risicorapport</h1>
-        <div className="rep-annot">Rapport — NIS2 Quickscan · <b>{mspName}</b> · {new Date().toLocaleDateString('nl-NL', { day: '2-digit', month: '2-digit', year: 'numeric' })}</div>
+        <div className="rep-annot">Rapport · NIS2 Quickscan · <b>{mspName}</b> · {new Date().toLocaleDateString('nl-NL', { day: '2-digit', month: '2-digit', year: 'numeric' })}</div>
         <p className="step-sub">Een momentopname op basis van deze intake. Bespreek het met uw IT-partner als startpunt voor een plan.</p>
 
         {scopeOutcomeMeta && (
