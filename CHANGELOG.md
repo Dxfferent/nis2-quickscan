@@ -18,6 +18,11 @@ patch = fixes.
   `MSP_BRAND.consentOptIn: true`, zodat er geen vinkje staat zonder lijst
   erachter. Zie [docs/MSP-ENABLEMENT.md](docs/MSP-ENABLEMENT.md).
 
+- **`advise` per pakket-tier**: koppelt een niveau uit `MSP_BRAND.packages` rechtstreeks
+  aan de scope-uitkomst (`basis` / `belangrijk` / `essentieel`) in plaats van aan zijn
+  positie in de rij. Nodig zodra het zwaarste pakket een omvang- of licentiestap is en
+  geen zwaardere ambitie. Zonder het veld blijft het oude, positie-gebaseerde gedrag.
+
 ## 1.0.0 — augustus 2026
 
 Eerste publieke release.

@@ -448,9 +448,17 @@ function suggestPackage(pkgCfg, scopeOutcome, maxCrit, chainAccess) {
   if (!tiers.length) { return null; }
   const top = tiers.length - 1;
   const crit = maxCrit ?? 0;
-  const idx = (scopeOutcome === 'essentieel' || crit >= 3) ? top
-    : (scopeOutcome === 'belangrijk' || chainAccess || crit >= 2) ? Math.min(1, top)
-      : 0;
+  // Which band the intake lands in. The positional fallback below assumes the
+  // tiers ARE the ambition ladder; a real service catalogue often is not (a top
+  // tier can be a size or licence step rather than a heavier ambition). A tier
+  // may therefore claim its band with `advise: 'basis' | 'belangrijk' |
+  // 'essentieel'`, and that claim wins over its position.
+  const band = (scopeOutcome === 'essentieel' || crit >= 3) ? 'essentieel'
+    : (scopeOutcome === 'belangrijk' || chainAccess || crit >= 2) ? 'belangrijk'
+      : 'basis';
+  const claimed = tiers.find((t) => t.advise === band);
+  if (claimed) { return claimed; }
+  const idx = band === 'essentieel' ? top : band === 'belangrijk' ? Math.min(1, top) : 0;
   return tiers[idx] || null;
 }
 

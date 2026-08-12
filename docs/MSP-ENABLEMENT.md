@@ -162,6 +162,12 @@ packages: {
 }
 ```
 
+- `advise` (optioneel, per tier: `'basis' | 'belangrijk' | 'essentieel'`) koppelt een
+  niveau rechtstreeks aan de uitkomst van de scope-check. Zonder dat veld kiest de trap
+  op **positie**, en dat klopt alleen als uw niveaus een ambitieladder zijn. Is uw
+  zwaarste pakket bijvoorbeeld een omvang- of licentiestap (300+, E5) in plaats van een
+  zwaardere ambitie, zet `advise` dan expliciet, anders adviseert de tool bij een
+  belangrijke entiteit het tweede pakket in de rij, ook als daar geen compliance in zit.
 - `from` is de **index** van het laagste niveau waarin de dienst zit; alles
   daarboven erft hem (cumulatieve trap). Voor regels mét `sc`-codes is `from`
   **norm-gedreven**: het laagste `sc_from`-vanaf-niveau van die codes in de
