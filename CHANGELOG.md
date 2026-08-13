@@ -9,7 +9,10 @@ volgen [SemVer](https://semver.org/lang/nl/): major = breaking (bv. ander
 configschema), minor = nieuwe functionaliteit of normdata-uitbreiding,
 patch = fixes.
 
-## Niet uitgebracht
+## 1.1.0 — augustus 2026
+
+**Normdata:** ongewijzigd t.o.v. 1.0.0 (Cbw Control Framework v1.2 ·
+NIS2 Supply Chain V3.2 · Cyberbeveiligingswet Stb. 2026, 187).
 
 - **`MSP_BRAND.leadEndpoint`**: leadflow zonder HubSpot. De gate doet één
   JSON-POST naar een eigen backend (payload: e-mailadres, opt-in, scope,
@@ -22,6 +25,24 @@ patch = fixes.
   aan de scope-uitkomst (`basis` / `belangrijk` / `essentieel`) in plaats van aan zijn
   positie in de rij. Nodig zodra het zwaarste pakket een omvang- of licentiestap is en
   geen zwaardere ambitie. Zonder het veld blijft het oude, positie-gebaseerde gedrag.
+
+- **`MSP_BRAND.bookingUrl`**: de CTA onder de volwassenheidsmeting wijst naar uw
+  eigen afspraakpagina in plaats van naar een e-mailadres.
+
+- **Omvang-band bij het pakket-advies**: een pakket mag meerdere scope-uitkomsten
+  claimen, zodat een licentiestap niet als zwaardere ambitie leest.
+
+- **Scope-stap**: begint bij het gewone geval, zeldzame categorieën en
+  uitzonderingen staan ingeklapt, en de groepsregel telt mee in de omvangvraag.
+
+- **Printuitvoer**: het rapport print als A4-document met marges, behouden
+  kleuren, paginabreuken die kaarten heel laten en zonder knoppen. De knop heet
+  nu "Opslaan als PDF" en belooft niets meer dat de tool niet doet (er wordt geen
+  rapport gemaild).
+
+- **Rapportcopy**: kolomkop herhaalt de pakketnaam niet meer (`sc_ambition` is
+  daarmee echt optioneel), de kolomnoot benoemt de verwijzing in plaats van een
+  voorschrift.
 
 ## 1.0.0 — augustus 2026
 
