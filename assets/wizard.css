@@ -578,6 +578,24 @@ body { background: var(--bg-canvas); }
      holding the document. */
   .eyebrow { display: none; }
 
+  /* A button on paper is a dead end: nothing to click, and it reads as an artefact
+     of the screen. The link text stays available in the surrounding sentence. */
+  .btn, button { display: none !important; }
+
+  /* Title block: on screen the report title competes with the interface, on paper
+     it is the first thing a reader meets and it carries the document. */
+  .step-h { font-size: 24pt; margin-bottom: 2mm; }
+  .rep-annot { font-size: 9pt; letter-spacing: 0.06em; margin-bottom: 6mm; }
+
+  /* Paper reads at a smaller size than a screen; 10.5pt keeps the 78 measures
+     legible without stretching the report over twice the pages. */
+  body { font-size: 10.5pt; line-height: 1.45; }
+  .sec-h { font-size: 11pt; margin-top: 8mm; }
+
+  /* The menukaart is the widest block; it gets its own page rather than a column
+     that lands orphaned under a heading. */
+  .pkg-matrix-wrap { break-before: page; page-break-before: always; }
+
   /* Backgrounds carry meaning here: the priority bars, the badges and the advised
      column in the menukaart are unreadable once the printer drops their fill. */
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
