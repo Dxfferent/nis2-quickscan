@@ -549,8 +549,48 @@ body { background: var(--bg-canvas); }
 @keyframes fadein { from { transform: translateY(9px); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
 
+/* The report is meant to leave the browser as a document, so the page itself must
+   be defined: without an @page rule the browser picks its own paper and margins,
+   and every card is free to break in half. Page numbers and running headers are
+   deliberately absent — Chrome ignores @page margin boxes, and polyfilling that
+   costs a dependency this build does not carry. */
+@page {
+  size: A4;
+  margin: 16mm 14mm 18mm;
+}
+
 @media print {
-  .rail, .footnav, .topbar, .gate-form, .resume-banner, .gate, .dossier-msg { display: none !important; }
+  .footnav, .topbar, .gate-form, .resume-banner, .gate, .dossier-msg { display: none !important; }
+
+  /* The brand lives in the rail, and hiding the rail wholesale left the printed
+     report without a single mark of who issued it. Keep the brand line as the
+     document header; the navigation inside the rail has no meaning on paper. */
+  .rail {
+    display: block !important;
+    background: none; color: inherit; padding: 0 0 6mm; overflow: visible;
+    border-bottom: 1px solid var(--border-default); margin-bottom: 6mm;
+  }
+  .rail::after, .rail-mid, .rail-prog, .rail-foot { display: none !important; }
+  .rail-mark { background: none; padding: 0; }
+  .rail-mark img { height: 26px; }
+
+  /* Step labels are wayfinding for someone clicking through, not for a reader
+     holding the document. */
+  .eyebrow { display: none; }
+
+  /* Backgrounds carry meaning here: the priority bars, the badges and the advised
+     column in the menukaart are unreadable once the printer drops their fill. */
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  /* A heading at the foot of a page belongs to the block that follows it. */
+  /* The legacy page-break-* names ride along: Safari and older Edge ignore the
+     modern break-* properties, and a report that splits a card down the middle is
+     exactly what this rule exists to prevent. */
+  .sec-h, .step-h, h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+  .rep-score, .road-card, .verdict-hero, .meldplicht-phase, .card, .dt,
+  .pkg-sec, .work-legend { break-inside: avoid; page-break-inside: avoid; }
+  .pkg-matrix tr, .road-card { page-break-inside: avoid; }
+  .scope-disclaimer, .attribution { break-before: auto; }
   .app { display: block; height: auto; }
   .main { overflow: visible; }
   .main-inner { max-width: none; padding: 0; }

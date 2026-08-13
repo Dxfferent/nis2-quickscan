@@ -610,7 +610,7 @@ function App() {
         <div className="intro-cta">
           <button className="btn btn-primary" onClick={() => go(1)}>Start de intake <Icon name="arrow" /></button>
           {MODE === 'pro' && dossierLoadBtn()}
-          <span className="intro-meta">Geen account nodig · uw antwoorden blijven op dit apparaat, tenzij u zelf het rapport per e-mail aanvraagt.</span>
+          <span className="intro-meta">Geen account nodig · uw antwoorden blijven op dit apparaat, tenzij u zelf om contact vraagt.</span>
         </div>
         {dossierMsg && <p className="dossier-msg">{dossierMsg}</p>}
       </div>
@@ -1117,7 +1117,7 @@ function App() {
           legalConsentOptions: {
             consent: {
               consentToProcess: true,
-              text: 'De bezoeker heeft het rapport per e-mail aangevraagd; e-mailadres en rapport-samenvatting worden verwerkt om het rapport te leveren.',
+              text: 'De bezoeker heeft om opvolging gevraagd; e-mailadres en rapport-samenvatting worden verwerkt om contact op te nemen over de uitkomst.',
               // marketing-opt-in alleen bij expliciet aangevinkt (default uit);
               // subscriptionTypeId is per portal — zie MSP-ENABLEMENT.md
               communications: (consent && GATE_CFG.subscriptionTypeId)
@@ -1426,7 +1426,7 @@ function App() {
           {gateOn && (
             <div className="gate locked">
               <h3>Ontvang het volledige rapport</h3>
-              <p>Vul uw e-mailadres in en het volledige rapport verschijnt direct op het scherm: alle maatregelen met normverwijzingen, plus een PDF om te delen. {GATE_OPERATOR} stuurt u het rapport daarna ook per e-mail.</p>
+              <p>Vul uw e-mailadres in en het volledige rapport verschijnt direct op het scherm: alle maatregelen met normverwijzingen. U kunt het meteen opslaan of printen. {GATE_OPERATOR} neemt daarna contact op om het met u door te nemen.</p>
               <form onSubmit={submitGate}>
                 <div className="gate-form">
                   <input type="email" required placeholder="naam@bedrijf.nl" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -1488,11 +1488,11 @@ function App() {
 
         {!gateOn && (
           <div className="gate" style={{ textAlign: 'left' }}>
-            {submitted && <div className="ok" style={{ marginBottom: 12 }}><Icon name="check" style={{ width: 16, height: 16 }} /> Aanvraag ontvangen. Het volledige rapport staat hieronder{email ? ` en wordt ook per e-mail gestuurd naar ${email}` : ''}.</div>}
+            {submitted && <div className="ok" style={{ marginBottom: 12 }}><Icon name="check" style={{ width: 16, height: 16 }} /> Aanvraag ontvangen. Het volledige rapport staat hieronder{email ? `; we nemen contact op via ${email}` : ''}.</div>}
             <h3>Klaar om te delen</h3>
             <p>Download het rapport als PDF of bespreek het met uw IT-partner.</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <button className="btn btn-primary btn-sm" onClick={() => window.print()}><Icon name="check" style={{ width: 16, height: 16 }} /> Download PDF</button>
+              <button className="btn btn-primary btn-sm" onClick={() => window.print()}><Icon name="check" style={{ width: 16, height: 16 }} /> Opslaan als PDF</button>
               {MODE === 'pro' && <button className="btn btn-outline btn-sm" onClick={saveDossier}>Dossier opslaan</button>}
               {MODE === 'pro' && dossierLoadBtn()}
               <button className="btn btn-outline btn-sm" onClick={resetIntake}>Nieuwe intake</button>
