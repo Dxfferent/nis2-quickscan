@@ -6,7 +6,7 @@
     "build": "node build.mjs"
   },
   "devDependencies": {
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.2"
   },
   "description": "Gratis open-source NIS2 / Cyberbeveiligingswet risico-intake: scope-check, RTO/RPO-herstelprofielen en een concreet overzicht van wat er moet gebeuren. White-label inzetbaar voor MSP's.",
   "license": "AGPL-3.0-only",
