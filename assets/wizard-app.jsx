@@ -795,7 +795,11 @@ function App() {
               </div>
             </div>
           )}
-          {scopeOutcome === 'waarschijnlijk_buiten_scope' && (
+          {/* Ook bij 'keten' en 'onbekend': een organisatie buiten elke sector
+              (een deurwaarderskantoor) krijgt hier de juiste uitkomst, maar de
+              footer-poort vraagt een sector, dus zonder deze knop loopt de
+              intake hier dood. */}
+          {!inScope && (
             <div className="verdict-hero-actions">
               <button className="btn btn-outline btn-sm" onClick={next}>Toch doorgaan met de intake →</button>
               <div className="verdict-hero-links">
@@ -923,11 +927,11 @@ function App() {
           maatregelen en bijbehorende diensten, en geef per domein aan hoever u al bent. Dat bepaalt uw gap.</p>
 
         <div className="live-bar" role="status" aria-label="Gereedheid tot nu toe">
-          <div className="live-score"><b>{r.overall}</b><span>gereed tot nu toe</span></div>
+          <div className="live-score"><b>{answeredCount ? r.overall : '–'}</b><span>gereed tot nu toe</span></div>
           <div className="live-doms">
             {r.rows.map((row) => (
               <span className="live-dom" key={row.id} title={`${row.label}: ${row.current}%`}>
-                <span className="live-fill"><i style={{ width: row.current + '%' }} /></span>{row.label}
+                <span className="live-fill"><i style={{ width: (row.measures.some((m) => readiness[measureKey(row.id, m)] != null) ? row.current : 0) + '%' }} /></span>{row.label}
               </span>
             ))}
           </div>
@@ -1282,10 +1286,10 @@ function App() {
                   <Icon name={row.icon} style={{ width: 16, height: 16 }} />
                   <span className="nm">{row.label}</span>
                   <span className={`prio tone-${row.meta.tone}`} style={{ marginLeft: 4 }}>{row.meta.label}</span>
-                  <span className="pc">{row.current}% / {row.target}%</span>
+                  <span className="pc">{row.measures.some((m) => readiness[measureKey(row.id, m)] != null) ? row.current + '%' : 'niet ingevuld'} / {row.target}%</span>
                 </div>
                 <div className="track">
-                  <div className="cur" style={{ width: row.current + '%' }}></div>
+                  <div className="cur" style={{ width: (row.measures.some((m) => readiness[measureKey(row.id, m)] != null) ? row.current : 0) + '%' }}></div>
                   <div className="tgt" style={{ left: `calc(${row.target}% - 1px)` }}></div>
                 </div>
               </div>
@@ -1395,7 +1399,7 @@ function App() {
                 <div className="rh">
                   <Icon name={row.icon} style={{ width: 18, height: 18, color: 'var(--accent)' }} />
                   <span className="nm">{row.label}</span>
-                  {!isLead && <span className="road-status">Huidig: {row.current}% → doel {row.target}%</span>}
+                  {!isLead && row.measures.some((m) => readiness[measureKey(row.id, m)] != null) && <span className="road-status">Huidig: {row.current}% → doel {row.target}%</span>}
                   <span className={`prio tone-${row.meta.tone}`}>{row.meta.label}</span>
                 </div>
                 <div className="road-measures">
