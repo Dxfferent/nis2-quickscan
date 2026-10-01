@@ -795,7 +795,11 @@ function App() {
               </div>
             </div>
           )}
-          {scopeOutcome === 'waarschijnlijk_buiten_scope' && (
+          {/* Ook bij 'keten' en 'onbekend': een organisatie buiten elke sector
+              (een deurwaarderskantoor) krijgt hier de juiste uitkomst, maar de
+              footer-poort vraagt een sector, dus zonder deze knop loopt de
+              intake hier dood. */}
+          {!inScope && (
             <div className="verdict-hero-actions">
               <button className="btn btn-outline btn-sm" onClick={next}>Toch doorgaan met de intake →</button>
               <div className="verdict-hero-links">
