@@ -1399,7 +1399,7 @@ function App() {
                 <div className="rh">
                   <Icon name={row.icon} style={{ width: 18, height: 18, color: 'var(--accent)' }} />
                   <span className="nm">{row.label}</span>
-                  {!isLead && <span className="road-status">Huidig: {row.current}% → doel {row.target}%</span>}
+                  {!isLead && row.measures.some((m) => readiness[measureKey(row.id, m)] != null) && <span className="road-status">Huidig: {row.current}% → doel {row.target}%</span>}
                   <span className={`prio tone-${row.meta.tone}`}>{row.meta.label}</span>
                 </div>
                 <div className="road-measures">
